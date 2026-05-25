@@ -1,54 +1,192 @@
 <!doctype html>
-<html lang="sv">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Magnus Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <title>Magnus portfolio</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <h2>MC</h2>
-        <ul>
-          <li><a href="#about">About me</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Project</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <main class="portfolio-app">
+      <!-- VÄNSTER SIDA -->
+      <section class="intro-panel" aria-label="Portfolio introduction">
+        <p class="eyebrow">Interactive Portfolio</p>
 
-    <section id="hero">
-      <h1>Magnus Callenholm</h1>
-      <p>Frontend-student</p>
+        <img
+          src="assets/images/profile1.jpg"
+          alt="Portrait of Magnus Callenholm"
+          class="profile-image"
+        />
 
-      <img src="images/magnus.png" alt="Magnus" />
+        <div id="info-content" class="info-content">
+          <h1>Magnus Callenholm</h1>
+          <p>
+            .NET student with previous IT experience in IT and a growing
+            interest in frontend, backend and user-friendly digital solutions.
+          </p>
+        </div>
+      </section>
 
-      <a href="files/CV.pdf" download>Download CV</a>
-    </section>
+      <!-- HÖGER SIDA -->
+      <section class="package-panel" aria-label="Interactive portfolio package">
+        <div class="package-scene">
+          <div class="package-card" id="packageCard">
+            <!-- ACTIONFIGUR Magnus FRAMSIDA -->
+            <div class="package-face package-front">
+              <img
+                src="assets/images/front.png"
+                alt="Action figure package used as a navbar"
+                class="package-image"
+              />
 
-    <section id="about">
-      <h2>About me</h2>
-      <p>Some information about me...</p>
-    </section>
+              <button
+                type="button"
+                class="press-btn"
+                aria-label="Play voice greeting"
+              >
+                PRESS ME
+              </button>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <p>C#, SQL, HTML, CSS, JavaScript</p>
-    </section>
+              <nav class="package-navbar" aria-label="Main navigation">
+                <button
+                  type="button"
+                  class="package-btn"
+                  data-action="show-info"
+                  data-section="about"
+                >
+                  About me
+                </button>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>My projects will be listed here...</p>
-    </section>
+                <button
+                  type="button"
+                  class="package-btn"
+                  data-action="show-info"
+                  data-section="skills"
+                >
+                  Skills
+                </button>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: din@email.com</p>
-    </section>
+                <button
+                  type="button"
+                  class="package-btn"
+                  data-action="flip-card"
+                  data-section="cv"
+                >
+                  CV
+                </button>
 
-    <footer>
+                <button
+                  type="button"
+                  class="package-btn"
+                  data-action="flip-card"
+                  data-section="projects"
+                >
+                  Projects
+                </button>
+
+                <a
+                  href="https://www.linkedin.com/in/magnus-callenholm-b5428569/"
+                  class="package-social-link linkedin-hotspot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit my LinkedIn profile"
+                >
+                </a>
+
+                <a
+                  href="https://github.com/magnuscallenholm"
+                  class="package-social-link github-hotspot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit my GitHub profile"
+                >
+                </a>
+
+                <button
+                  type="button"
+                  class="package-btn"
+                  data-action="show-info"
+                  data-section="contact"
+                >
+                  Mail
+                </button>
+              </nav>
+            </div>
+
+            <!-- ACTIONFIGUR Magnus BAKSIDA -->
+            <div class="package-face package-back">
+              <img
+                src="assets/images/back.png"
+                alt="Back side of Magnus action figure package"
+                class="package-image"
+              />
+
+              <section class="back-section" id="cv-panel">
+                <h2>CV</h2>
+
+                <p>
+                  Download my CV or view a short summary of my education, work
+                  experience and references.
+                </p>
+
+                <a href="assets/documents/CV.pdf" download class="card-link">
+                  Download CV
+                </a>
+
+                <div class="cv-options">
+                  <button
+                    type="button"
+                    class="cv-tab active"
+                    data-cv-tab="education"
+                  >
+                    Education
+                  </button>
+
+                  <button type="button" class="cv-tab" data-cv-tab="experience">
+                    Work Experience
+                  </button>
+
+                  <button type="button" class="cv-tab" data-cv-tab="references">
+                    References
+                  </button>
+                </div>
+              </section>
+
+              <div class="back-section" id="projects-panel">
+                <h2>Projects</h2>
+                <p>Choose a project to view more details.</p>
+
+                <button type="button" class="project-btn" data-project="snake">
+                  Snake Game
+                </button>
+
+                <button type="button" class="project-btn" data-project="zoo">
+                  Butterfly website
+                </button>
+              </div>
+
+              <button type="button" class="back-btn" id="backToFrontBtn">
+                ← Back to front
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
       <p>© 2026 Magnus Callenholm</p>
+
+      <div class="weather-widget" id="weatherWidget">
+        <span id="weatherCity">Stockholm</span>
+        <span id="weatherIcon">--</span>
+        <span id="weatherTemp">--°C</span>
+      </div>
     </footer>
+    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
