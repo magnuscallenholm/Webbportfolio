@@ -6,7 +6,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Luckiest+Guy&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -20,6 +24,12 @@
       <span class="brand-name">mange</span>
       <span class="brand-symbol">M</span>
     </a>
+    <!-- BYTA SPRÅK KNAPPAR-->
+    <div class="language-toggle" aria-label="Language selection">
+      <button type="button" class="language-btn active">EN</button>
+      <span>/</span>
+      <button type="button" class="language-btn">SV</button>
+    </div>
 
     <main class="portfolio-app">
       <!-- VÄNSTER SIDA -->
@@ -27,7 +37,7 @@
         <p class="eyebrow">Interactive Portfolio</p>
 
         <img
-          src="assets/images/profile1.png"
+          src="assets/images/magnus.png"
           alt="Portrait of Magnus Callenholm"
           class="profile-image"
         />
@@ -35,10 +45,36 @@
         <div id="info-content" class="info-content">
           <h1>Magnus Callenholm</h1>
           <p>
-            .NET student with previous IT experience in IT and a growing
-            interest in frontend, backend and user-friendly digital solutions.
+            .NET student and former application specialist focused on building
+            clean, useful and user-friendly digital solutions.
           </p>
         </div>
+
+        <div class="intro-actions">
+          <button
+            type="button"
+            class="cta-btn cta-primary"
+            data-action="flip-card"
+            data-section="projects"
+          >
+            See My Work
+          </button>
+
+          <button
+            type="button"
+            class="cta-btn cta-secondary"
+            data-action="flip-card"
+            data-section="cv"
+          >
+            CV & References
+          </button>
+        </div>
+        <!-- VISAR ARROW NED, INDIKERA på SCROLL-FUNKTION TILL ANVÄNDAREN -->
+        <img
+          src="assets/icons/scroll-arrow.svg"
+          alt="Scroll down"
+          class="scroll-arrow-icon"
+        />
       </section>
 
       <!-- HÖGER SIDA -->
