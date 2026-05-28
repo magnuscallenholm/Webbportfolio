@@ -6,11 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Luckiest+Guy&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Luckiest+Guy&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -24,7 +20,7 @@
       <span class="brand-name">mange</span>
       <span class="brand-symbol">M</span>
     </a>
-    <!-- BYTA SPRÅK KNAPPAR-->
+    <!-- TOGGLE LANGUAGE BUTTONS -->
     <div class="language-toggle" aria-label="Language selection">
       <button type="button" class="language-btn active">EN</button>
       <span>/</span>
@@ -32,7 +28,7 @@
     </div>
 
     <main class="portfolio-app">
-      <!-- VÄNSTER SIDA -->
+      <!-- LEFT SIDE CONTENT -->
       <section class="intro-panel" aria-label="Portfolio introduction">
         <p class="eyebrow">Interactive Portfolio</p>
 
@@ -41,35 +37,36 @@
           alt="Portrait of Magnus Callenholm"
           class="profile-image"
         />
-
-        <div id="info-content" class="info-content">
-          <h1>Magnus Callenholm</h1>
-          <p>
-            .NET student and former application specialist focused on building
-            clean, useful and user-friendly digital solutions.
-          </p>
+        <div class="hero-content">
+          <div id="info-content" class="info-content">
+            <h1>Magnus Callenholm</h1>
+            <p>
+              .NET student and former application specialist with a focus on
+              clean, useful and user-friendly digital solutions.
+            </p>
+          </div>
+          <!-- PRIMARY CALL TO ACTION BUTTON -->
+          <div class="intro-actions">
+            <button
+              type="button"
+              class="cta-btn cta-primary"
+              data-action="flip-card"
+              data-section="projects"
+            >
+              See My Work
+            </button>
+            <!-- SECONDARY CALL TO ACTION BUTTON -->
+            <button
+              type="button"
+              class="cta-btn cta-secondary"
+              data-action="flip-card"
+              data-section="cv"
+            >
+              CV & References
+            </button>
+          </div>
         </div>
-
-        <div class="intro-actions">
-          <button
-            type="button"
-            class="cta-btn cta-primary"
-            data-action="flip-card"
-            data-section="projects"
-          >
-            See My Work
-          </button>
-
-          <button
-            type="button"
-            class="cta-btn cta-secondary"
-            data-action="flip-card"
-            data-section="cv"
-          >
-            CV & References
-          </button>
-        </div>
-        <!-- VISAR ARROW NED, INDIKERA på SCROLL-FUNKTION TILL ANVÄNDAREN -->
+        <!-- ARROW DOWN ANIMATION -->
         <img
           src="assets/icons/scroll-arrow.svg"
           alt="Scroll down"
@@ -77,7 +74,7 @@
         />
       </section>
 
-      <!-- HÖGER SIDA -->
+      <!-- RIGHT SIDA -->
       <section class="package-panel" aria-label="Interactive portfolio package">
         <div class="package-scene">
           <div class="package-card" id="packageCard">

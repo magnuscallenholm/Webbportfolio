@@ -1,5 +1,8 @@
+/*========================
+  DESIGN TOKENS
+=========================*/
 :root {
-  /* COLOR */
+  /* COLORS */
   --background-gradient:
     radial-gradient(
       circle at 75% 35%,
@@ -15,13 +18,37 @@
   --background-dark: #050914;
   --brand-mark-color: white;
   --border-arrow-white: white;
+  --heading-color: #fff7e8;
   --text-color: white;
+
+  /* CTA COLORS */
+  --background-cta-primary-before: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  --background-cta-primary: linear-gradient(135deg, #e3c08f, #c79f70);
+  --border-cta-primary: rgba(255, 255, 255, 0.35);
+  --text-color-cta-primary: #050914;
+  --box-shadow-cta-primary:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 25px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(0, 183, 255, 0.18);
+
+  --background-cta-secondary: transparent;
+  --text-color-cta-secondary: white;
+  --border-color-cta-secondary: rgba(255, 255, 255, 0.55);
+  --background-cta-secondary-hover: rgba(255, 255, 255, 0.1);
+  --border-color-cta-secondary-hover: rgba(255, 255, 255, 0.8);
 
   /* FONTS */
   --font-brand: "DynaPuff", system-ui, sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-heading: "Sora", sans-serif;
   --font-body: "Inter", sans-serif;
 }
+
+/*========================
+  RESET
+===========================*/
 
 *,
 *::before,
@@ -31,7 +58,15 @@
   padding: 0;
 }
 
+/*========================
+  GLOBAL STYLES
+=========================*/
+
 /* MOBILE FIRST */
+html {
+  min-height: 100%;
+  background: #050914;
+}
 
 body {
   min-height: 100vh;
@@ -39,7 +74,11 @@ body {
   font-family: var(--font-body);
 }
 
-/* MIN BRAND LOGO */
+/*========================
+  BRAND & LANGUAGE
+=========================*/
+
+/* BRAND MARK / HOME BUTTON */
 .brand-mark {
   position: absolute;
   top: 1.9rem;
@@ -57,7 +96,12 @@ body {
   transform: rotate(-6deg);
 }
 
-/* MINDRE TEXT INNAN h1 */
+.brand-mark:hover {
+  opacity: 1;
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* HIDDEN EYEBROW TEXT ON MOBILE */
 .eyebrow {
   display: none;
 }
@@ -78,12 +122,7 @@ body {
   line-height: 1;
 }
 
-.brand-mark:hover {
-  opacity: 1;
-  transform: rotate(-8deg) scale(1.05);
-}
-
-/* VAL AV SPRÅK KNAPP PLACERING */
+/* LANGUAGE TOGGLE */
 .language-toggle {
   position: absolute;
   top: 1.5rem;
@@ -98,7 +137,7 @@ body {
   font-weight: 700;
 }
 
-/* KNAPP FÖR SPRÅK */
+/* LANGUAGE BUTTONS */
 .language-btn {
   font-size: 1rem;
   background: transparent;
@@ -112,23 +151,33 @@ body {
   opacity: 1;
 }
 
-/* MAIN-CONTAINER */
+/*========================
+  HERO SECTION
+=========================*/
+
+/* MAIN LAYOUT */
 .portfolio-app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 5rem 1.5rem 1.5rem;
+  padding: 6rem 1.5rem 1.5rem;
 }
 
-/* FLEX-CONTAINER */
+/* INTRO / HERO SECTION */
 .intro-panel {
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
   gap: 1rem;
 }
 
-/* CENTRERAR OCH SKAPAR AVSTÅND FÖR MIN TEXT/CONTENT */
+/* CREATES VERTICAL SPACE BELOW THE FIXED TOP BRAND/LANGUAGE AREA */
+.hero-content {
+  margin-top: 5.5rem;
+}
+
+/* HERO TEXT CONTENT */
 .info-content {
   display: flex;
   flex-direction: column;
@@ -138,42 +187,101 @@ body {
   color: var(--text-color);
 }
 
-/* h1 RUBRIK */
+/* HERO HEADER */
 .info-content h1 {
-  margin-top: 0.1rem;
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 10vw, 4.5rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: clamp(4rem, 13vw, 5rem);
+  color: var(--heading-color);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
 }
 
-/* BRÖDTEXT */
+/* HERO BODY */
 .info-content p {
-  margin-top: 0.4rem;
+  padding-top: 1rem;
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  line-height: 1.3;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 34rem;
 }
 
-/* CLICK TO ACTION KNAPPAR */
+/*========================
+  CTA BUTTONS
+=========================*/
+
+/* CALL TO ACTION BUTTONS */
 .intro-actions {
   display: flex;
   justify-content: center;
   gap: 0.9rem;
   flex-wrap: wrap;
-  margin-top: 0.5rem;
+  margin-top: 2rem;
 }
 
-/* ARROW & SCROLL INDICATOR */
+/* CALL TO ACTION BUTTONS */
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  min-width: 161px;
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* CONTROL THE "PLASTIC/HIGHLIGHT" AREA ABOVE THE PRIMARY BUTTON */
+.cta-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 45%;
+
+  background: var(--background-cta-primary-before);
+
+  border-radius: inherit;
+  pointer-events: none;
+}
+/* PRIMARY CALL TO ACTION BUTTON */
+.cta-primary {
+  background: var(--background-cta-primary);
+  border: 1px solid var(--border-cta-primary);
+  color: var(--text-color-cta-primary);
+  box-shadow: var(--box-shadow-cta-primary);
+}
+
+/* SECONDARY CALL TO ACTION BUTTON */
+.cta-secondary {
+  background: var(--background-cta-secondary);
+  color: var(--text-color-cta-secondary);
+  border: 2px solid var(--border-color-cta-secondary);
+}
+
+.cta-secondary:hover {
+  background-color: var(--background-cta-secondary-hover);
+  border-color: var(--border-color-cta-secondary-hover);
+}
+
+/*========================
+  SCROLL INDICATOR
+=========================*/
+
+/* SCROLL ARROW ICON */
 .scroll-arrow-icon {
   width: 40px;
   height: 40px;
   display: block;
-  margin: 2rem auto 0;
+  margin: auto auto 6.5rem;
   animation: bounce 2s infinite;
 }
 
-/* ARROW BOUNCE FUNCTION */
+/* BOUNCE ANIMATION FOR THE SCROLL ARROW */
 @keyframes bounce {
   0%,
   20%,
@@ -192,92 +300,31 @@ body {
   }
 }
 
-.package-panel {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-}
+/*========================
+  PROFILE IMAGE
+=========================*/
 
-.cta-btn {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 999px;
-  padding: 0.85rem 1.2rem;
-
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-
-  font-size: 0.95rem;
-  font-weight: 700;
-  min-width: 161px;
-  text-align: center;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.35),
-    0 10px 25px rgba(0, 0, 0, 0.25);
-
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-/* STYR "PLAST/HIGHLIGHT"-YTAN OVAN PÅ PRIMARY KNAPPEN */
-.cta-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 45%;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-
-  border-radius: inherit;
-  pointer-events: none;
-}
-/* CLICK TO ACTION KNAPP */
-.cta-primary {
-  background: linear-gradient(135deg, #e3c08f, #c79f70);
-  color: #050914;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    0 10px 25px rgba(0, 0, 0, 0.25),
-    0 0 20px rgba(0, 183, 255, 0.18);
-}
-
-/* CLICK TO ACTION KNAPP TVÅ */
-.cta-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-}
-
-.cta-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.8);
-}
-
-.package-scene {
-  width: min(100%, 420px);
-}
-
+/* PROFILE IMAGE */
 .profile-image-wrapper {
   position: relative;
   display: inline-block;
 }
 
+/* PROFILE PICTURE - REUSED LATER IN "ABOUT ME" */
 .profile-image {
   max-width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.35));
   border-radius: 7px;
 }
 
+/* HIDES THE PROFILE IMAGE IN THE MOBILE HERO, BUT KEEPS THE STYLING REUSABLE */
+.intro-panel .profile-image {
+  display: none;
+}
+
+/* SOFT FADE USED TO BLEND THE PROFILE IMAGE INTO THE DARK BACKGROUND */
 .profile-image-wrapper::after {
   content: "";
   position: absolute;
@@ -289,6 +336,22 @@ body {
   pointer-events: none;
 }
 
+/*========================
+  PACKAGE SECTION
+===========================*/
+
+/* PACKAGE / ACTION FIGURE */
+.package-panel {
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTROLS THE RESPONSIVE SIZE OF THE INTERACTIVE PACKAGE */
+.package-scene {
+  width: min(100%, 420px);
+}
+
+/* MAKES THE PACKAGE IMAGES FIT INSIDE THE PACKAGE SCENE */
 .package-image {
   max-width: 100%;
   height: 100%;
@@ -298,7 +361,10 @@ body {
   background: transparent;
 }
 
-/* DESKTOP */
+/*========================
+  DESKTOP
+=========================*/
+
 @media (min-width: 900px) {
   .portfolio-app {
     display: grid;
