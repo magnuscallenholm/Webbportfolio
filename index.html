@@ -33,7 +33,7 @@
         <p class="eyebrow">Interactive Portfolio</p>
 
         <img
-          src="assets/images/magnus.png"
+          src="assets/images/portrait/magnus.png"
           alt="Portrait of Magnus Callenholm"
           class="profile-image"
         />
@@ -91,23 +91,23 @@
             <!-- ACTIONFIGUR Magnus FRAMSIDA -->
             <div class="package-face package-front">
               <img
-                src="assets/images/front.png"
+                src="assets/images/actionfigure/front.png"
                 alt="Action figure package used as a navbar"
                 class="package-image"
               />
 
-              <button
-                type="button"
-                class="press-btn"
-                aria-label="Play voice greeting"
-              >
-                PRESS ME
-              </button>
-
               <nav class="package-navbar" aria-label="Main navigation">
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-pressme"
+                  aria-label="Play voice greeting"
+                >
+                  PRESS ME
+                </button>
+
+                <button
+                  type="button"
+                  class="package-btn package-btn-aboutme"
                   data-action="show-info"
                   data-section="about"
                 >
@@ -116,7 +116,7 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-skills"
                   data-action="show-info"
                   data-section="skills"
                 >
@@ -125,7 +125,7 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-cv"
                   data-action="flip-card"
                   data-section="cv"
                 >
@@ -134,16 +134,25 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-projects"
                   data-action="flip-card"
                   data-section="projects"
                 >
                   Projects
                 </button>
 
+                <button
+                  type="button"
+                  class="package-btn package-ongoing-project"
+                  data-action="show-info"
+                  data-section="projects"
+                >
+                  ongoing Projects
+                </button>
+
                 <a
                   href="https://www.linkedin.com/in/magnus-callenholm-b5428569/"
-                  class="package-social-link linkedin-hotspot"
+                  class="package-btn package-btn-linkedin"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit my LinkedIn profile"
@@ -152,7 +161,7 @@
 
                 <a
                   href="https://github.com/magnuscallenholm"
-                  class="package-social-link github-hotspot"
+                  class="package-btn package-btn-github"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit my GitHub profile"
@@ -161,7 +170,7 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-mail"
                   data-action="show-info"
                   data-section="contact"
                 >
@@ -173,7 +182,7 @@
             <!-- ACTIONFIGUR Magnus BAKSIDA -->
             <div class="package-face package-back">
               <img
-                src="assets/images/back.png"
+                src="assets/images/actionfigure/back.png"
                 alt="Back side of Magnus action figure package"
                 class="package-image"
               />
