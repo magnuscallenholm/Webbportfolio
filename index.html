@@ -6,11 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Luckiest+Guy&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Luckiest+Guy&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -20,11 +16,11 @@
   </head>
   <body>
     <!-- EGET BRAND LOGO samt HEMKNAPP -->
-    <a href="#" class="brand-mark" aria-label="Back to start">
+    <a href="home" class="brand-mark" aria-label="Back to main">
       <span class="brand-name">mange</span>
       <span class="brand-symbol">M</span>
     </a>
-    <!-- BYTA SPRÅK KNAPPAR-->
+    <!-- TOGGLE LANGUAGE BUTTONS -->
     <div class="language-toggle" aria-label="Language selection">
       <button type="button" class="language-btn active">EN</button>
       <span>/</span>
@@ -32,75 +28,90 @@
     </div>
 
     <main class="portfolio-app">
-      <!-- VÄNSTER SIDA -->
-      <section class="intro-panel" aria-label="Portfolio introduction">
+      <!-- LEFT SIDE CONTENT -->
+      <section
+        id="home"
+        class="intro-panel"
+        aria-label="Portfolio introduction"
+      >
         <p class="eyebrow">Interactive Portfolio</p>
 
         <img
-          src="assets/images/magnus.png"
+          src="assets/images/portrait/magnus.png"
           alt="Portrait of Magnus Callenholm"
           class="profile-image"
         />
-
-        <div id="info-content" class="info-content">
-          <h1>Magnus Callenholm</h1>
-          <p>
-            .NET student and former application specialist focused on building
-            clean, useful and user-friendly digital solutions.
-          </p>
+        <div class="hero-content">
+          <div id="info-content" class="info-content">
+            <h1>Magnus Callenholm</h1>
+            <p>
+              .NET student and former application specialist with a focus on
+              clean, useful and user-friendly digital solutions.
+            </p>
+          </div>
+          <!-- PRIMARY CALL TO ACTION BUTTON -->
+          <div class="intro-actions">
+            <button
+              type="button"
+              class="cta-btn cta-primary"
+              data-action="flip-card"
+              data-section="projects"
+            >
+              See My Work
+            </button>
+            <!-- SECONDARY CALL TO ACTION BUTTON -->
+            <button
+              type="button"
+              class="cta-btn cta-secondary"
+              data-action="flip-card"
+              data-section="cv"
+            >
+              CV & References
+            </button>
+          </div>
         </div>
-
-        <div class="intro-actions">
-          <button
-            type="button"
-            class="cta-btn cta-primary"
-            data-action="flip-card"
-            data-section="projects"
-          >
-            See My Work
-          </button>
-
-          <button
-            type="button"
-            class="cta-btn cta-secondary"
-            data-action="flip-card"
-            data-section="cv"
-          >
-            CV & References
-          </button>
-        </div>
-        <!-- VISAR ARROW NED, INDIKERA på SCROLL-FUNKTION TILL ANVÄNDAREN -->
-        <img
-          src="assets/icons/scroll-arrow.svg"
-          alt="Scroll down"
-          class="scroll-arrow-icon"
-        />
+        <!-- ARROW DOWN ANIMATION -->
+        <a
+          href="#package"
+          class="scroll-down-link"
+          aria-label="Scroll to package"
+        >
+          <img
+            src="assets/icons/scroll-arrow.svg"
+            alt="Scroll down"
+            class="scroll-arrow-icon"
+          />
+        </a>
       </section>
 
-      <!-- HÖGER SIDA -->
-      <section class="package-panel" aria-label="Interactive portfolio package">
+      <!-- RIGHT SIDA -->
+      <section
+        id="package"
+        class="package-panel"
+        aria-label="Interactive portfolio package"
+      >
         <div class="package-scene">
           <div class="package-card" id="packageCard">
             <!-- ACTIONFIGUR Magnus FRAMSIDA -->
             <div class="package-face package-front">
               <img
-                src="assets/images/front.png"
+                src="assets/images/actionfigure/front.png"
                 alt="Action figure package used as a navbar"
                 class="package-image"
               />
 
-              <button
-                type="button"
-                class="press-btn"
-                aria-label="Play voice greeting"
-              >
-                PRESS ME
-              </button>
-
               <nav class="package-navbar" aria-label="Main navigation">
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-icon package-btn-pressme"
+                  aria-label="Play voice greeting"
+                >
+                  PRESS ME
+                </button>
+
+                <button
+                  type="button"
+                  class="package-btn package-btn-menu package-btn-aboutme"
                   data-action="show-info"
                   data-section="about"
                 >
@@ -109,7 +120,7 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-menu package-btn-skills"
                   data-action="show-info"
                   data-section="skills"
                 >
@@ -118,7 +129,7 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-menu package-btn-cv"
                   data-action="flip-card"
                   data-section="cv"
                 >
@@ -127,16 +138,25 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-menu package-btn-projects"
                   data-action="flip-card"
                   data-section="projects"
                 >
                   Projects
                 </button>
 
+                <button
+                  type="button"
+                  class="package-btn package-btn-icon package-ongoing-project"
+                  data-action="show-info"
+                  data-section="projects"
+                >
+                  ongoing Projects
+                </button>
+
                 <a
                   href="https://www.linkedin.com/in/magnus-callenholm-b5428569/"
-                  class="package-social-link linkedin-hotspot"
+                  class="package-btn package-btn-icon package-btn-linkedin"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit my LinkedIn profile"
@@ -145,7 +165,7 @@
 
                 <a
                   href="https://github.com/magnuscallenholm"
-                  class="package-social-link github-hotspot"
+                  class="package-btn package-btn-icon package-btn-github"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit my GitHub profile"
@@ -154,7 +174,7 @@
 
                 <button
                   type="button"
-                  class="package-btn"
+                  class="package-btn package-btn-mail"
                   data-action="show-info"
                   data-section="contact"
                 >
@@ -166,7 +186,7 @@
             <!-- ACTIONFIGUR Magnus BAKSIDA -->
             <div class="package-face package-back">
               <img
-                src="assets/images/back.png"
+                src="assets/images/actionfigure/back.png"
                 alt="Back side of Magnus action figure package"
                 class="package-image"
               />
