@@ -22,21 +22,26 @@
   --text-color: white;
   --html-color: #050914;
 
-  /* CTA COLORS */
+  /*========================
+  CTA COLORS
+===========================*/
+
+  /* CTA PRIMARY */
   --background-cta-primary-before: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.35),
     transparent
   );
   --background-cta-primary: linear-gradient(135deg, #e3c08f, #c79f70);
-  --border-cta-primary: rgba(255, 255, 255, 0.35);
   --text-color-cta-primary: #050914;
+  --border-cta-primary: rgba(255, 255, 255, 0.35);
   --box-shadow-cta-primary:
     inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 25px rgba(0, 0, 0, 0.25),
     0 0 20px rgba(0, 183, 255, 0.18);
 
+  /* CTA SECONDARY */
   --background-cta-secondary: transparent;
-  --text-color-cta-secondary: white;
+  --text-color-cta-secondary: rgba(255, 255, 255);
   --border-color-cta-secondary: rgba(255, 255, 255, 0.55);
   --background-cta-secondary-hover: rgba(255, 255, 255, 0.1);
   --border-color-cta-secondary-hover: rgba(255, 255, 255, 0.8);
@@ -44,10 +49,24 @@
   /* ACTIONFIGURE BUTTONS */
   --background-actionfigure-btn: transparent;
   --text-actionfigure-btn: transparent;
-  --box-shadow-btn:
-    0 0 0 1px rgba(255, 255, 255, 0.18), 0 0 12px rgba(0, 183, 255, 0.22);
-  --box-shadow-hint-btn:
-    0 0 0 1px rgba(255, 255, 255, 0.32), 0 0 20px rgba(0, 183, 255, 0.5);
+
+  /* Default package button glow */
+  --shadow-package-menu: 0 0 10px rgba(0, 183, 255, 0.35);
+  --shadow-package-menu-hover:
+    0 0 28px rgba(0, 183, 255, 0.85), 0 0 30px rgba(0, 183, 255, 0.2);
+
+  /* Icon package button glow */
+  --shadow-package-icon: 0 0 10px rgba(0, 183, 255, 0.45);
+  --shadow-package-icon-hover:
+    0 0 18px rgba(0, 183, 255, 0.95), 0 0 30px rgba(0, 183, 255, 0.18);
+
+  /* Mail package button glow */
+  --shadow-package-mail-hover:
+    0 0 16px rgba(255, 220, 90, 0.95), 0 0 30px rgba(255, 180, 40, 0.28);
+
+  /* Press Me package button glow */
+  --shadow-package-pressme-hover:
+    0 0 50px rgba(255, 70, 70, 0.95), 0 0 10px rgba(255, 70, 70, 0.28);
 
   /* FONTS */
   --font-brand: "DynaPuff", system-ui, sans-serif;
@@ -392,81 +411,104 @@ body {
   padding: 0;
   margin: 0;
   border-radius: 10.5px;
-  box-shadow: none;
+  border: none;
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
   color: var(--text-actionfigure-btn);
   background-color: var(--background-actionfigure-btn);
   cursor: pointer;
   z-index: 2;
 }
 
-.package-btn:hover {
-  box-shadow: 5px 0 0 rgba(0, 255, 255, 0.342);
+.package-btn-menu {
+  box-shadow: var(--shadow-package-menu);
 }
 
-/* PACKAGE BUTTON HINT (ADDERA I JAVASCRIPT) */
-.package-btn.is-hinting {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.32),
-    0 0 20px rgba(0, 183, 255, 0.5);
+.package-btn-menu:hover,
+.package-btn-menu.is-hinting {
+  box-shadow: var(--shadow-package-menu-hover);
+}
+.package-btn-icon {
+  box-shadow: var(--shadow-package-icon);
 }
 
+.package-btn-icon:hover,
+.package-btn-icon.is-hinting {
+  box-shadow: var(--shadow-package-icon-hover);
+}
+
+/* PACKAGE BUTTON HINT AND HOVER FOR MAIL */
+.package-btn-mail:hover,
+.package-btn-mail.is-hinting {
+  box-shadow: var(--shadow-package-mail-hover);
+}
+
+.package-btn-pressme:hover,
+.package-btn-pressme.is-hinting {
+  box-shadow: var(--shadow-package-pressme-hover);
+}
+
+/*PACKAGE BUTTON HINT AND HOVER FOR MAIL */
 .package-btn-pressme {
   top: 10.8%;
   right: 9.3%;
   width: 15%;
   height: 10%;
-  border-radius: 28px;
+  border-radius: 35px;
 }
 
 .package-btn-aboutme {
-  top: 28.7%;
-  left: 9.5%;
-  width: 19%;
-  height: 11.8%;
+  top: 28.6%;
+  left: 9.6%;
+  width: 18.3%;
+  height: 12.2%;
 }
 
 .package-btn-skills {
-  top: 42.2%;
+  top: 41.9%;
   left: 9.6%;
   width: 17.8%;
-  height: 10.5%;
+  height: 11.2%;
 }
 
 .package-btn-cv {
   top: 53.7%;
-  left: 9.4%;
+  left: 9.6%;
   width: 18.2%;
-  height: 10.7%;
+  height: 11%;
 }
 
 .package-btn-projects {
-  top: 65.8%;
+  top: 65.6%;
   left: 9.5%;
   width: 17.9%;
-  height: 11.6%;
+  height: 11.8%;
 }
 
 .package-ongoing-project {
-  top: 31.5%;
-  right: 10.5%;
-  width: 16%;
+  top: 31.3%;
+  right: 11.2%;
+  width: 15%;
   height: 8%;
+  border-radius: 5%;
 }
 
 .package-btn-linkedin {
   top: 50.5%;
-  right: 13%;
-  width: 10%;
-  height: 6.8%;
-  border-radius: 5px;
+  right: 12.8%;
+  width: 10.1%;
+  height: 6.6%;
+  border-radius: 3px;
 }
 
 .package-btn-github {
-  top: 61.2%;
+  top: 61%;
   right: 12%;
-  width: 12.8%;
-  height: 8%;
-  border-radius: 20px;
+  width: 12.6%;
+  height: 8.4%;
+  border-radius: 28px;
 }
 
 .package-btn-mail {
