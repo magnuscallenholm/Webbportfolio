@@ -50,25 +50,37 @@
   --background-actionfigure-btn: transparent;
   --text-actionfigure-btn: transparent;
 
-  /* Default package button glow */
+  /* DEFAULT PACKAGE BUTTON GLOW */
   --shadow-package-menu: 0 0 10px rgba(0, 183, 255, 0.35);
   --shadow-package-menu-hover:
     0 0 28px rgba(0, 183, 255, 0.85), 0 0 30px rgba(0, 183, 255, 0.2);
 
-  /* Icon package button glow */
+  /* ICON PACKAGE BUTTON GLOW */
   --shadow-package-icon: 0 0 10px rgba(0, 183, 255, 0.45);
   --shadow-package-icon-hover:
     0 0 18px rgba(0, 183, 255, 0.95), 0 0 30px rgba(0, 183, 255, 0.18);
 
-  /* Mail package button glow */
+  /* MAIL PACKAGE BUTTON GLOW */
   --shadow-package-mail-hover:
     0 0 16px rgba(255, 220, 90, 0.95), 0 0 30px rgba(255, 180, 40, 0.28);
 
-  /* Press Me package button glow */
+  /* PRESS ME PACKAGE BUTTON GLOW */
   --shadow-package-pressme-hover:
     0 0 50px rgba(255, 70, 70, 0.95), 0 0 10px rgba(255, 70, 70, 0.28);
 
-  /* FONTS */
+  /*========================
+  FOOTER COLORS
+===========================*/
+
+  /* FOOTER BACKGROUND */
+  --background-footer:
+    radial-gradient(circle at 0% 0%, rgba(0, 132, 255, 0.12), transparent 40%),
+    rgba(3, 7, 17, 0.85);
+
+  /*========================
+  FONTS
+===========================*/
+
   --font-brand: "DynaPuff", system-ui, sans-serif;
   --font-heading: "Sora", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -147,7 +159,7 @@ body {
   border: 2px solid currentColor;
   border-radius: 50%;
 
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   line-height: 1;
 }
 
@@ -378,13 +390,13 @@ body {
 .package-panel {
   display: flex;
   justify-content: center;
-  padding: 7rem 0 2rem;
+  padding: 2rem 0 2rem;
 }
 
 /* CONTROLS THE RESPONSIVE SIZE OF THE INTERACTIVE PACKAGE */
 .package-scene {
   position: relative;
-  width: min(96vw, 450px);
+  width: min(96vw, 340px);
   margin: 0 auto;
 }
 
@@ -406,6 +418,7 @@ body {
   PACKAGE BUTTONS SECTION
 ===========================*/
 
+/* PACKAGE BUTTON SETTINGS */
 .package-btn {
   position: absolute;
   padding: 0;
@@ -422,6 +435,7 @@ body {
   z-index: 2;
 }
 
+/* PACKAGE BUTTON BOX SHADOW COLORS */
 .package-btn-menu {
   box-shadow: var(--shadow-package-menu);
 }
@@ -450,7 +464,7 @@ body {
   box-shadow: var(--shadow-package-pressme-hover);
 }
 
-/*PACKAGE BUTTON HINT AND HOVER FOR MAIL */
+/*PACKAGE BOX-SHADOW POSITION */
 .package-btn-pressme {
   top: 10.8%;
   right: 9.3%;
@@ -516,6 +530,62 @@ body {
   right: 12%;
   width: 16%;
   height: 7.5%;
+}
+
+/*========================
+  FOOTER
+=========================*/
+
+/* DEFAULT FOOTER */
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 1.5rem 1.5rem;
+  background: var(--background-footer);
+  color: var(--text-color);
+  border-top: 1px solid rgba(0, 183, 255, 0.18);
+
+  font-size: 0.9rem;
+}
+
+.footer-top-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  color: var(--brand-mark-color);
+  text-decoration: none;
+  font-family: var(--font-brand);
+  font-weight: 700;
+  align-self: auto;
+  padding-top: 0;
+
+  transform: rotate(-10deg);
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  align-self: center;
+  gap: 0.7rem;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.weather-widget {
+  align-self: auto;
 }
 
 /*========================
