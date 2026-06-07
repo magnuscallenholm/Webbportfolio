@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- EGET BRAND LOGO samt HEMKNAPP -->
-    <a href="home" class="brand-mark" aria-label="Back to main">
+    <a href="#home" class="brand-mark" aria-label="Back to main">
       <span class="brand-name">mange</span>
       <span class="brand-symbol">M</span>
     </a>
@@ -91,7 +91,8 @@
         aria-label="Interactive portfolio package"
       >
         <div class="package-scene">
-          <div class="package-card" id="packageCard">
+          <!-- TEMP: add is-flipped while designing the back side -->
+          <div class="package-card is-flipped" id="packageCard">
             <!-- ACTIONFIGUR Magnus FRAMSIDA -->
             <div class="package-face package-front">
               <img
@@ -194,49 +195,90 @@
               <section class="back-section" id="cv-panel">
                 <h2>CV</h2>
 
-                <p>
-                  Download my CV or view a short summary of my education, work
-                  experience and references.
-                </p>
-
-                <a href="assets/documents/CV.pdf" download class="card-link">
-                  Download CV
-                </a>
-
                 <div class="cv-options">
                   <button
                     type="button"
-                    class="cv-tab active"
-                    data-cv-tab="education"
+                    class="cv-tab"
+                    data-cv-tab="education-experience"
                   >
-                    Education
-                  </button>
-
-                  <button type="button" class="cv-tab" data-cv-tab="experience">
-                    Work Experience
+                    Education & Work Experience
                   </button>
 
                   <button type="button" class="cv-tab" data-cv-tab="references">
                     References
                   </button>
+
+                  <a href="assets/documents/CV.pdf" download class="card-link">
+                    Download CV
+                  </a>
                 </div>
               </section>
 
-              <div class="back-section" id="projects-panel">
+              <section class="back-section" id="projects-panel">
                 <h2>Projects</h2>
-                <p>Choose a project to view more details.</p>
 
-                <button type="button" class="project-btn" data-project="snake">
-                  Snake Game
-                </button>
+                <div class="project-options">
+                  <button
+                    type="button"
+                    class="project-card"
+                    data-project="snake"
+                  >
+                    <div class="project-preview-frame">
+                      <img
+                        src="assets/images/projects/snake-preview.png"
+                        alt="Preview of Snake Game"
+                        class="project-preview"
+                      />
+                    </div>
+                  </button>
 
-                <button type="button" class="project-btn" data-project="zoo">
-                  Butterfly website
-                </button>
-              </div>
+                  <button
+                    type="button"
+                    class="project-card"
+                    data-project="butterfly"
+                  >
+                    <div class="project-preview-frame">
+                      <img
+                        src="assets/images/projects/butterfly-preview.png"
+                        alt="Preview of Butterfly Website"
+                        class="project-preview"
+                      />
+                    </div>
+                  </button>
 
-              <button type="button" class="back-btn" id="backToFrontBtn">
-                ← Back to front
+                  <button
+                    type="button"
+                    class="project-card"
+                    data-project="comingsoon"
+                  >
+                    <div class="project-preview-frame">
+                      <img
+                        src="assets/images/projects/comingsoon.png"
+                        alt="Preview of comingsoon"
+                        class="project-preview"
+                      />
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="project-card"
+                    data-project="comingsoon"
+                  >
+                    <div class="project-preview-frame">
+                      <img
+                        src="assets/images/projects/comingsoon.png"
+                        alt="Preview of comingsoon"
+                        class="project-preview"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </section>
+
+              <button type="button" class="flip-back-btn" id="backToFrontBtn">
+                <span class="barcode-lines" aria-hidden="true"></span>
+                <span class="back-btn-text">FLIP BACK</span>
               </button>
             </div>
           </div>
