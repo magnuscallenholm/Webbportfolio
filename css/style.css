@@ -593,8 +593,9 @@ body {
   text-align: center;
 }
 
+/* CV SECTION BACKSIDE */
 #cv-panel {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 
@@ -634,7 +635,7 @@ body {
   border: 1.5px solid var(--border-package-back-btn);
   background: var(--background-package-back-btn);
 
-  color: var(--color-package-text-back);
+  color: var(--text-color-package-back);
   font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 800;
@@ -655,9 +656,65 @@ body {
   transform: translateY(-1px);
 }
 
-/* ska aktiveras sen */
+/* PROJECTS SECTION BACKSIDE */
 #projects-panel {
-  display: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: var(--font-body);
+  top: 18%;
+  left: 10%;
+  width: 80%;
+
+  color: var(--text-color-package-back);
+  padding: 1rem 0.85rem;
+}
+
+#projects-panel h2 {
+  font-family: var(--font-heading);
+  color: inherit;
+  font-size: 1.9rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.project-options {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 90%;
+}
+
+.project-card {
+  aspect-ratio: 4 / 3;
+  padding: 0;
+
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1.5px solid var(--border-package-back-btn);
+  background: var(--background-package-back-btn);
+  cursor: pointer;
+}
+
+.project-preview-frame {
+  width: 100%;
+  height: 100%;
+}
+
+.project-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card:hover {
+  border-color: var(--border-color-package-back-btn-hover);
+  background: var(--background-package-back-btn-hover);
+  transform: translateY(-1px);
 }
 
 .flip-back-btn {
