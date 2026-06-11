@@ -1,0 +1,197 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-gradient:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(0, 132, 255, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 25% 70%,
+      rgba(0, 255, 200, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #050914, #07182d 55%, #030711);
+
+  --background-footer:
+    radial-gradient(circle at 0% 0%, rgba(0, 132, 255, 0.12), transparent 40%),
+    rgba(3, 7, 17, 0.85);
+
+  --html-color: #050914;
+  --heading-color: #fff7e8;
+  --text-color: white;
+  --background-cta-primary: linear-gradient(135deg, #e3c08f, #c79f70);
+  --text-color-cta-primary: #050914;
+  --brand-mark-color: white;
+
+  --font-heading: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-brand: "DynaPuff", system-ui, sans-serif;
+}
+
+html {
+  min-height: 100%;
+  background: var(--html-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--background-gradient);
+  font-family: var(--font-body);
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.thanks-page {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.5rem;
+}
+
+.thanks-card {
+  width: 100%;
+  max-width: 26rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 183, 255, 0.22);
+  background: rgba(5, 9, 20, 0.72);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(0, 183, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+}
+
+.thanks-card h1 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.thanks-card p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.thanks-button {
+  display: inline-block;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+
+  background: var(--background-cta-primary);
+  color: var(--text-color-cta-primary);
+
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/*========================
+  BRAND & LANGUAGE
+=========================*/
+
+/* BRAND MARK / HOME BUTTON */
+.brand-mark {
+  position: absolute;
+  top: 1.9rem;
+  left: 1.5rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  color: var(--brand-mark-color);
+  text-decoration: none;
+  font-family: var(--font-brand);
+  font-weight: 700;
+
+  transform: rotate(-6deg);
+}
+
+/* BRAND SYMBOL */
+.brand-symbol {
+  width: 1.25rem;
+  height: 1.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid currentColor;
+  border-radius: 50%;
+
+  font-size: 0.65rem;
+  line-height: 1;
+}
+
+/*========================
+  FOOTER
+=========================*/
+
+/* DEFAULT FOOTER */
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 1.5rem 1.5rem;
+  background: var(--background-footer);
+  color: var(--text-color);
+  border-top: 1px solid rgba(0, 183, 255, 0.18);
+
+  font-size: 0.9rem;
+}
+
+.footer-top-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  color: var(--brand-mark-color);
+  text-decoration: none;
+  font-family: var(--font-brand);
+  font-weight: 700;
+  padding-top: 0;
+
+  transform: rotate(-10deg);
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  align-self: center;
+  gap: 0.7rem;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.weather-widget {
+  align-self: auto;
+}
