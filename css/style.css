@@ -441,12 +441,12 @@ body {
 .text-highlight {
   color: var(--heading-color);
   font-weight: 900;
-  border-bottom: 2px solid rgba(227, 192, 143, 0.75);
+  border-bottom: 1px solid rgba(227, 192, 143, 0.75);
 }
 
 .about-back-btn {
   align-self: center;
-  margin-top: 1.5rem;
+  margin-top: clamp(1.5rem, 8vw, 4rem);
 
   background: transparent;
   border: none;
@@ -509,32 +509,48 @@ body.about-mode .about-section {
   font-family: var(--font-heading);
   color: var(--heading-color);
   font-size: clamp(1.7rem, 7vw, 3.2rem);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.skills-group {
-  margin-bottom: 1.25rem;
+.skills-intro {
+  max-width: 18rem;
+  margin: 0 auto 1.5rem;
+
+  color: var(--text-section-back-btn);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.skills-group:last-child {
-  margin-bottom: 0;
+.skills-list {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem 0.6rem;
 }
 
-.skills-group h3 {
-  font-family: var(--font-heading);
-  color: var(--heading-color);
-  font-size: 1.1rem;
-  margin-bottom: 0.35rem;
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-color);
+  text-align: center;
 }
 
-.skills-group p {
-  font-size: 1rem;
-  line-height: 1.6;
+.skill-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  display: block;
 }
 
 .skills-back-btn {
   align-self: center;
-  margin-top: 1.5rem;
+  margin-top: clamp(2rem, 8vw, 4rem);
 
   background: transparent;
   border: none;
@@ -1064,7 +1080,7 @@ body.skills-mode .skills-section {
 /* CONTACT BACK BUTTON */
 .contact-back-btn {
   align-self: center;
-  margin-top: 1.5rem;
+  margin-top: clamp(1.5rem, 8vw, 4rem);
 
   background: transparent;
   border: none;
