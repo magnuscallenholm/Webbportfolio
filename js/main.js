@@ -53,3 +53,49 @@ skillsBackBtn.addEventListener("click", function () {
     });
   });
 });
+
+const packageCard = document.querySelector("#packageCard");
+const packageSection = document.querySelector("#package");
+const backToFrontBtn = document.querySelector("#backToFrontBtn");
+
+const cvPanel = document.querySelector("#cv-panel");
+const projectsPanel = document.querySelector("#projects-panel");
+
+const flipButtons = document.querySelectorAll('[data-action="flip-card"]');
+
+function hideBackPanels() {
+  cvPanel.classList.remove("is-active");
+  projectsPanel.classList.remove("is-active");
+}
+
+flipButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const sectionName = button.dataset.section;
+
+    document.body.classList.remove("about-mode");
+    document.body.classList.remove("skills-mode");
+    document.body.classList.remove("contact-mode");
+
+    hideBackPanels();
+
+    if (sectionName === "cv") {
+      cvPanel.classList.add("is-active");
+    }
+
+    if (sectionName === "projects") {
+      projectsPanel.classList.add("is-active");
+    }
+
+    packageCard.classList.add("is-flipped");
+
+    packageSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+});
+
+backToFrontBtn.addEventListener("click", function () {
+  packageCard.classList.remove("is-flipped");
+  hideBackPanels();
+});
