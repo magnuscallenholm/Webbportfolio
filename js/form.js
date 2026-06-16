@@ -2,6 +2,7 @@ const contactSection = document.querySelector("#contact");
 const packageSection = document.querySelector("#package");
 const packageCard = document.querySelector("#packageCard");
 const mailButton = document.querySelector(".package-btn-mail");
+const footerMailLink = document.querySelector(".footer-mail-link");
 const contactBackBtn = document.querySelector("#contactBackBtn");
 
 // Shows the contact form and scrolls it into view
@@ -39,3 +40,17 @@ if (window.location.hash === "#contact") {
     block: "start",
   });
 }
+
+function openContact(event) {
+  event.preventDefault();
+
+  document.body.classList.add("contact-mode");
+
+  contactSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
+mailButton.addEventListener("click", openContact);
+footerMailLink.addEventListener("click", openContact);

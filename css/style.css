@@ -820,6 +820,7 @@ body {
   color: var(--text-color);
   font-family: var(--font-body);
   font-size: 0.95rem;
+  resize: none;
 
   outline: none;
 }
