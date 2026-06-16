@@ -4,6 +4,7 @@ const aboutBackBtn = document.querySelector("#aboutBackBtn");
 
 // Shows the About me section and scrolls it into view.
 aboutButton.addEventListener("click", function () {
+  document.body.classList.remove("contact-mode");
   document.body.classList.add("about-mode");
 
   aboutSection.scrollIntoView({

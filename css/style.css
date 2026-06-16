@@ -14,12 +14,17 @@
       rgba(0, 255, 200, 0.08),
       transparent 35%
     ),
-    linear-gradient(135deg, #050914, #07182d 55%, #030711);
-  --background-dark: #050914;
-  --brand-mark-color: white;
-  --heading-color: #fff7e8;
-  --text-color: white;
-  --html-color: #050914;
+    linear-gradient(
+      135deg,
+      rgba(5, 9, 20, 1),
+      rgba(7, 24, 45, 1) 55%,
+      rgba(3, 7, 17, 1)
+    );
+  --background-dark: rgba(5, 9, 20, 1);
+  --brand-mark-color: rgba(255, 255, 255, 1);
+  --heading-color: rgba(255, 247, 232, 1);
+  --text-color: rgba(255, 255, 255, 1);
+  --html-color: rgba(5, 9, 20, 1);
 
   /*========================
   CTA COLORS
@@ -31,8 +36,12 @@
     rgba(255, 255, 255, 0.35),
     transparent
   );
-  --background-cta-primary: linear-gradient(135deg, #e3c08f, #c79f70);
-  --text-color-cta-primary: #050914;
+  --background-cta-primary: linear-gradient(
+    135deg,
+    rgba(227, 192, 143, 1),
+    rgba(199, 159, 112, 1)
+  );
+  --text-color-cta-primary: rgba(5, 9, 20, 1);
   --border-cta-primary: rgba(255, 255, 255, 0.35);
   --box-shadow-cta-primary:
     inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 25px rgba(0, 0, 0, 0.25),
@@ -75,7 +84,7 @@
  CARD BACK
 ===========================*/
 
-  --text-color-package-back: #2b2118;
+  --text-color-package-back: rgba(43, 33, 24, 1);
 
   --border-package-back-btn: rgba(43, 33, 24, 0.38);
   --background-package-back-btn: rgba(255, 247, 232, 0.08);
@@ -93,6 +102,30 @@
     rgba(43, 33, 24, 0.85) 4px 5px,
     transparent 5px 8px
   );
+
+  /*========================
+  SECTION CARD COLORS
+===========================*/
+
+  --background-section-card: rgba(5, 9, 20, 0.418);
+  --border-section-card: rgba(0, 183, 255, 0.22);
+  --box-shadow-section-card:
+    0 20px 45px rgba(0, 0, 0, 0.35), 0 0 24px rgba(0, 183, 255, 0.12);
+
+  --shadow-portrait-image: 0 18px 35px rgba(0, 0, 0, 0.35);
+
+  --text-section-back-btn: rgba(255, 255, 255, 0.72);
+
+  /*========================
+  FORM COLORS
+===========================*/
+
+  --background-form-field: rgba(255, 255, 255, 0.06);
+  --border-form-field: rgba(255, 255, 255, 0.22);
+  --text-form-placeholder: rgba(255, 255, 255, 0.55);
+
+  --border-form-field-focus: rgba(0, 183, 255, 0.75);
+  --box-shadow-form-field-focus: 0 0 18px rgba(0, 183, 255, 0.18);
 
   /*========================
   FOOTER COLORS
@@ -359,22 +392,28 @@ body {
   padding: 1.25rem;
   border-radius: 1rem;
 
-  background: rgba(5, 9, 20, 0.418);
-  border: 1px solid rgba(0, 183, 255, 0.22);
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.35),
-    0 0 24px rgba(0, 183, 255, 0.12);
+  background: var(--background-section-card);
+  border: 1px solid var(--border-section-card);
+  box-shadow: var(--box-shadow-section-card);
 
   backdrop-filter: blur(10px);
   text-align: center;
 }
 
+.about-card h2 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  margin-bottom: 1rem;
+}
+
 .about-image {
-  width: 11rem;
-  max-width: 100%;
+  width: 14rem;
+  max-width: 85%;
   margin: 0 auto 1.25rem;
   display: block;
   border-radius: 1rem;
+  filter: drop-shadow(var(--shadow-portrait-image));
 }
 
 .about-text h2 {
@@ -390,6 +429,12 @@ body {
   margin-bottom: 1rem;
 }
 
+.text-highlight {
+  color: var(--heading-color);
+  font-weight: 900;
+  border-bottom: 2px solid rgba(227, 192, 143, 0.75);
+}
+
 .about-back-btn {
   align-self: center;
   margin-top: 1.5rem;
@@ -397,7 +442,7 @@ body {
   background: transparent;
   border: none;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--text-section-back-btn);
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 700;
@@ -846,11 +891,9 @@ body.about-mode .about-section {
   padding: 1.25rem;
   border-radius: 1rem;
 
-  background: rgba(5, 9, 20, 0.418);
-  border: 1px solid rgba(0, 183, 255, 0.22);
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.35),
-    0 0 24px rgba(0, 183, 255, 0.12);
+  background: var(--background-section-card);
+  border: 1px solid var(--border-section-card);
+  box-shadow: var(--box-shadow-section-card);
 
   backdrop-filter: blur(10px);
 }
@@ -862,8 +905,8 @@ body.about-mode .about-section {
   padding: 0.75rem 0.9rem;
 
   border-radius: 0.65rem;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-form-field);
+  background: var(--background-form-field);
 
   color: var(--text-color);
   font-family: var(--font-body);
@@ -895,14 +938,14 @@ body.about-mode .about-section {
 /* CONTACT PLACEHOLDER TEXTCOLOR */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-form-placeholder);
 }
 
 /* CONTACT INPUT AND TEXTAREA FOCUS EFFECT */
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: rgba(0, 183, 255, 0.75);
-  box-shadow: 0 0 18px rgba(0, 183, 255, 0.18);
+  border-color: var(--border-form-field-focus);
+  box-shadow: var(--box-shadow-form-field-focus);
 }
 
 /* CONTACT SUBMIT BUTTON */
@@ -929,7 +972,7 @@ body.about-mode .about-section {
   background: transparent;
   border: none;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--text-section-back-btn);
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 700;

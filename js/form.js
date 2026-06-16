@@ -43,7 +43,7 @@ if (window.location.hash === "#contact") {
 
 function openContact(event) {
   event.preventDefault();
-
+  document.body.classList.remove("about-mode");
   document.body.classList.add("contact-mode");
 
   contactSection.scrollIntoView({
