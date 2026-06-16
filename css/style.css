@@ -14,12 +14,17 @@
       rgba(0, 255, 200, 0.08),
       transparent 35%
     ),
-    linear-gradient(135deg, #050914, #07182d 55%, #030711);
-  --background-dark: #050914;
-  --brand-mark-color: white;
-  --heading-color: #fff7e8;
-  --text-color: white;
-  --html-color: #050914;
+    linear-gradient(
+      135deg,
+      rgba(5, 9, 20, 1),
+      rgba(7, 24, 45, 1) 55%,
+      rgba(3, 7, 17, 1)
+    );
+  --background-dark: rgba(5, 9, 20, 1);
+  --brand-mark-color: rgba(255, 255, 255, 1);
+  --heading-color: rgba(255, 247, 232, 1);
+  --text-color: rgba(255, 255, 255, 1);
+  --html-color: rgba(5, 9, 20, 1);
 
   /*========================
   CTA COLORS
@@ -31,8 +36,12 @@
     rgba(255, 255, 255, 0.35),
     transparent
   );
-  --background-cta-primary: linear-gradient(135deg, #e3c08f, #c79f70);
-  --text-color-cta-primary: #050914;
+  --background-cta-primary: linear-gradient(
+    135deg,
+    rgba(227, 192, 143, 1),
+    rgba(199, 159, 112, 1)
+  );
+  --text-color-cta-primary: rgba(5, 9, 20, 1);
   --border-cta-primary: rgba(255, 255, 255, 0.35);
   --box-shadow-cta-primary:
     inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 25px rgba(0, 0, 0, 0.25),
@@ -75,7 +84,7 @@
  CARD BACK
 ===========================*/
 
-  --text-color-package-back: #2b2118;
+  --text-color-package-back: rgba(43, 33, 24, 1);
 
   --border-package-back-btn: rgba(43, 33, 24, 0.38);
   --background-package-back-btn: rgba(255, 247, 232, 0.08);
@@ -93,6 +102,30 @@
     rgba(43, 33, 24, 0.85) 4px 5px,
     transparent 5px 8px
   );
+
+  /*========================
+  SECTION CARD COLORS
+===========================*/
+
+  --background-section-card: rgba(5, 9, 20, 0.418);
+  --border-section-card: rgba(0, 183, 255, 0.22);
+  --box-shadow-section-card:
+    0 20px 45px rgba(0, 0, 0, 0.35), 0 0 24px rgba(0, 183, 255, 0.12);
+
+  --shadow-portrait-image: 0 18px 35px rgba(0, 0, 0, 0.35);
+
+  --text-section-back-btn: rgba(255, 255, 255, 0.72);
+
+  /*========================
+  FORM COLORS
+===========================*/
+
+  --background-form-field: rgba(255, 255, 255, 0.06);
+  --border-form-field: rgba(255, 255, 255, 0.22);
+  --text-form-placeholder: rgba(255, 255, 255, 0.55);
+
+  --border-form-field-focus: rgba(0, 183, 255, 0.75);
+  --box-shadow-form-field-focus: 0 0 18px rgba(0, 183, 255, 0.18);
 
   /*========================
   FOOTER COLORS
@@ -137,9 +170,18 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--background-gradient);
   font-family: var(--font-body);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.about-section,
+.skills-section,
+.contact-section {
+  flex: 1;
 }
 
 /*========================
@@ -225,7 +267,7 @@ body {
 
 /* MAIN LAYOUT */
 .portfolio-app {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -337,6 +379,206 @@ body {
 }
 
 /*========================
+  ABOUT ME SECTION
+=========================*/
+
+.about-section {
+  display: none;
+
+  min-height: auto;
+  padding: 3rem 1.5rem 1.5rem;
+
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.about-card {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+
+  padding: 1.25rem;
+  border-radius: 1rem;
+
+  background: var(--background-section-card);
+  border: 1px solid var(--border-section-card);
+  box-shadow: var(--box-shadow-section-card);
+
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.about-card h2 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  width: 14rem;
+  max-width: 85%;
+  margin: 0 auto 1.25rem;
+  display: block;
+  border-radius: 1rem;
+  filter: drop-shadow(var(--shadow-portrait-image));
+}
+
+.about-text h2 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(1.7rem, 7vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.text-highlight {
+  color: var(--heading-color);
+  font-weight: 900;
+  border-bottom: 1px solid rgba(227, 192, 143, 0.75);
+}
+
+.about-back-btn {
+  align-self: center;
+  margin-top: clamp(1.5rem, 8vw, 4rem);
+
+  background: transparent;
+  border: none;
+
+  color: var(--text-section-back-btn);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.about-back-btn:hover {
+  color: var(--heading-color);
+}
+
+/* ABOUT MODE - MOBILE FIRST */
+body.about-mode .portfolio-app,
+body.about-mode .brand-mark,
+body.about-mode .language-toggle {
+  display: none;
+}
+
+body.about-mode .about-section {
+  display: flex;
+}
+
+/*========================
+  SKILLS SECTION
+=========================*/
+
+.skills-section {
+  display: none;
+
+  flex: 1;
+  padding: 3rem 1.5rem 1.5rem;
+
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.skills-card {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+
+  padding: 1.25rem;
+  border-radius: 1rem;
+
+  background: var(--background-section-card);
+  border: 1px solid var(--border-section-card);
+  box-shadow: var(--box-shadow-section-card);
+
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.skills-card h2 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(1.7rem, 7vw, 3.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.skills-intro {
+  max-width: 18rem;
+  margin: 0 auto 1.5rem;
+
+  color: var(--text-section-back-btn);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.skills-list {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem 0.6rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.skill-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  display: block;
+}
+
+.skills-back-btn {
+  align-self: center;
+  margin-top: clamp(2rem, 8vw, 4rem);
+
+  background: transparent;
+  border: none;
+
+  color: var(--text-section-back-btn);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.skills-back-btn:hover {
+  color: var(--heading-color);
+}
+
+/* SKILLS MODE - MOBILE FIRST */
+body.skills-mode .portfolio-app,
+body.skills-mode .brand-mark,
+body.skills-mode .language-toggle {
+  display: none;
+}
+
+body.skills-mode .skills-section {
+  display: flex;
+}
+
+/*========================
   SCROLL INDICATOR
 =========================*/
 
@@ -371,42 +613,6 @@ body {
   60% {
     transform: translateY(-5px);
   }
-}
-
-/*========================
-  PROFILE IMAGE
-=========================*/
-
-/* PROFILE IMAGE */
-.profile-image-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-/* PROFILE PICTURE - REUSED LATER IN "ABOUT ME" */
-.profile-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.35));
-  border-radius: 7px;
-}
-
-/* HIDES THE PROFILE IMAGE IN THE MOBILE HERO, BUT KEEPS THE STYLING REUSABLE */
-.intro-panel .profile-image {
-  display: none;
-}
-
-/* SOFT FADE USED TO BLEND THE PROFILE IMAGE INTO THE DARK BACKGROUND */
-.profile-image-wrapper::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 90px;
-  background: linear-gradient(to bottom, transparent, var(--background-dark));
-  pointer-events: none;
 }
 
 /*========================
@@ -798,11 +1004,9 @@ body {
   padding: 1.25rem;
   border-radius: 1rem;
 
-  background: rgba(5, 9, 20, 0.418);
-  border: 1px solid rgba(0, 183, 255, 0.22);
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.35),
-    0 0 24px rgba(0, 183, 255, 0.12);
+  background: var(--background-section-card);
+  border: 1px solid var(--border-section-card);
+  box-shadow: var(--box-shadow-section-card);
 
   backdrop-filter: blur(10px);
 }
@@ -814,8 +1018,8 @@ body {
   padding: 0.75rem 0.9rem;
 
   border-radius: 0.65rem;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-form-field);
+  background: var(--background-form-field);
 
   color: var(--text-color);
   font-family: var(--font-body);
@@ -847,14 +1051,14 @@ body {
 /* CONTACT PLACEHOLDER TEXTCOLOR */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-form-placeholder);
 }
 
 /* CONTACT INPUT AND TEXTAREA FOCUS EFFECT */
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: rgba(0, 183, 255, 0.75);
-  box-shadow: 0 0 18px rgba(0, 183, 255, 0.18);
+  border-color: var(--border-form-field-focus);
+  box-shadow: var(--box-shadow-form-field-focus);
 }
 
 /* CONTACT SUBMIT BUTTON */
@@ -876,12 +1080,12 @@ body {
 /* CONTACT BACK BUTTON */
 .contact-back-btn {
   align-self: center;
-  margin-top: 1.5rem;
+  margin-top: clamp(1.5rem, 8vw, 4rem);
 
   background: transparent;
   border: none;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--text-section-back-btn);
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 700;
@@ -982,7 +1186,7 @@ body.contact-mode .contact-section {
   }
 
   .intro-actions {
-    display: none;
+    display: flex;
   }
 
   .scroll-arrow-icon {
