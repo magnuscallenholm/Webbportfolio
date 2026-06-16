@@ -97,5 +97,9 @@ flipButtons.forEach(function (button) {
 
 backToFrontBtn.addEventListener("click", function () {
   packageCard.classList.remove("is-flipped");
-  hideBackPanels();
+
+  // Wait until the flip animation is finished before hiding the back content.
+  setTimeout(function () {
+    hideBackPanels();
+  }, 800);
 });
