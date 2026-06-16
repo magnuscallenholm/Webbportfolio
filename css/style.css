@@ -1186,7 +1186,7 @@ body.contact-mode .contact-section {
   }
 
   .intro-actions {
-    display: none;
+    display: flex;
   }
 
   .scroll-arrow-icon {
