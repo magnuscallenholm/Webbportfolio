@@ -2,7 +2,7 @@ const aboutButton = document.querySelector(".package-btn-aboutme");
 const aboutSection = document.querySelector("#about");
 const aboutBackBtn = document.querySelector("#aboutBackBtn");
 
-// Shows the About me section and scrolls it into view.
+// Shows the About me section and scrolls it into view. Remove other sections, such as contact-mode.
 aboutButton.addEventListener("click", function () {
   document.body.classList.remove("contact-mode");
   document.body.classList.add("about-mode");
