@@ -458,42 +458,6 @@ body.about-mode .about-section {
 }
 
 /*========================
-  PROFILE IMAGE
-=========================*/
-
-/* PROFILE IMAGE */
-.profile-image-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-/* PROFILE PICTURE - REUSED LATER IN "ABOUT ME" */
-.profile-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.35));
-  border-radius: 7px;
-}
-
-/* HIDES THE PROFILE IMAGE IN THE MOBILE HERO, BUT KEEPS THE STYLING REUSABLE */
-.intro-panel .profile-image {
-  display: none;
-}
-
-/* SOFT FADE USED TO BLEND THE PROFILE IMAGE INTO THE DARK BACKGROUND */
-.profile-image-wrapper::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 90px;
-  background: linear-gradient(to bottom, transparent, var(--background-dark));
-  pointer-events: none;
-}
-
-/*========================
   PACKAGE SECTION
 ===========================*/
 
