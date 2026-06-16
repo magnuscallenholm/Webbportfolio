@@ -6,10 +6,25 @@ const skillsButton = document.querySelector(".package-btn-skills");
 const skillsSection = document.querySelector("#skills");
 const skillsBackBtn = document.querySelector("#skillsBackBtn");
 
+const experienceBtn = document.querySelector("#experienceBtn");
+const experienceSection = document.querySelector("#experience");
+const experienceBackCvBtn = document.querySelector("#experienceBackCvBtn");
+const experienceBackPackageBtn = document.querySelector(
+  "#experienceBackPackageBtn",
+);
+
+const packageCard = document.querySelector("#packageCard");
+const packageSection = document.querySelector("#package");
+const backToFrontBtn = document.querySelector("#backToFrontBtn");
+
+const cvPanel = document.querySelector("#cv-panel");
+const projectsPanel = document.querySelector("#projects-panel");
+
+const flipButtons = document.querySelectorAll('[data-action="flip-card"]');
+
 //ABOUT: Shows the About me section and scrolls it into view. Remove/hide other sections.
 aboutButton.addEventListener("click", function () {
-  document.body.classList.remove("contact-mode");
-  document.body.classList.remove("skills-mode");
+  clearPageModes();
   document.body.classList.add("about-mode");
 
   aboutSection.scrollIntoView({
@@ -32,8 +47,7 @@ aboutBackBtn.addEventListener("click", function () {
 
 //SKILLS: Shows the Skills section and scrolls it into view. Remove/hide other sections.
 skillsButton.addEventListener("click", function () {
-  document.body.classList.remove("contact-mode");
-  document.body.classList.remove("about-mode");
+  clearPageModes();
   document.body.classList.add("skills-mode");
 
   skillsSection.scrollIntoView({
@@ -54,28 +68,68 @@ skillsBackBtn.addEventListener("click", function () {
   });
 });
 
-const packageCard = document.querySelector("#packageCard");
-const packageSection = document.querySelector("#package");
-const backToFrontBtn = document.querySelector("#backToFrontBtn");
+//EXPERIENCE: Shows the experience section and scrolls it into view. Remove/hide other sections.
+experienceBtn.addEventListener("click", function () {
+  clearPageModes();
+  document.body.classList.add("experience-mode");
 
-const cvPanel = document.querySelector("#cv-panel");
-const projectsPanel = document.querySelector("#projects-panel");
+  experienceSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
 
-const flipButtons = document.querySelectorAll('[data-action="flip-card"]');
+//EXPERIENCE: Removes experience mode so the package section becomes visible again with the flip and CV backside
+experienceBackCvBtn.addEventListener("click", function () {
+  document.body.classList.remove("experience-mode");
+
+  packageCard.classList.add("is-flipped");
+
+  projectsPanel.classList.remove("is-active");
+  cvPanel.classList.add("is-active");
+
+  requestAnimationFrame(function () {
+    packageSection.scrollIntoView({
+      behavior: "auto",
+      block: "start",
+    });
+  });
+});
+
+//EXPERIENCE: Removes experience mode so the package section becomes visible again
+experienceBackPackageBtn.addEventListener("click", function () {
+  document.body.classList.remove("experience-mode");
+
+  packageCard.classList.remove("is-flipped");
+
+  cvPanel.classList.remove("is-active");
+  projectsPanel.classList.remove("is-active");
+
+  requestAnimationFrame(function () {
+    packageSection.scrollIntoView({
+      behavior: "auto",
+      block: "start",
+    });
+  });
+});
 
 function hideBackPanels() {
   cvPanel.classList.remove("is-active");
   projectsPanel.classList.remove("is-active");
 }
 
+function clearPageModes() {
+  document.body.classList.remove("about-mode");
+  document.body.classList.remove("skills-mode");
+  document.body.classList.remove("contact-mode");
+  document.body.classList.remove("experience-mode");
+}
+
 flipButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     const sectionName = button.dataset.section;
 
-    document.body.classList.remove("about-mode");
-    document.body.classList.remove("skills-mode");
-    document.body.classList.remove("contact-mode");
-
+    clearPageModes();
     hideBackPanels();
 
     if (sectionName === "cv") {
