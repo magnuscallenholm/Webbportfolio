@@ -44,6 +44,7 @@ if (window.location.hash === "#contact") {
 function openContact(event) {
   event.preventDefault();
   document.body.classList.remove("about-mode");
+  document.body.classList.remove("skills-mode");
   document.body.classList.add("contact-mode");
 
   contactSection.scrollIntoView({
@@ -52,5 +53,6 @@ function openContact(event) {
   });
 }
 
+// EventListeners waiting for be pressed in the footer, den function openContact runs.
 mailButton.addEventListener("click", openContact);
 footerMailLink.addEventListener("click", openContact);
