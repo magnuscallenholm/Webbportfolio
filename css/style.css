@@ -180,6 +180,7 @@ body {
 
 .about-section,
 .skills-section,
+.experience-section,
 .contact-section {
   flex: 1;
 }
@@ -575,6 +576,87 @@ body.skills-mode .language-toggle {
 }
 
 body.skills-mode .skills-section {
+  display: flex;
+}
+
+/*========================
+EXPERIENCE CONTENT
+=========================*/
+
+.experience-section {
+  display: none;
+
+  flex: 1;
+  padding: 3rem 1.5rem 1.5rem;
+
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.experience-card {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+
+  padding: 1.25rem;
+  border-radius: 1rem;
+
+  background: var(--background-section-card);
+  border: 1px solid var(--border-section-card);
+  box-shadow: var(--box-shadow-section-card);
+
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.experience-card h2 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  margin-bottom: 1rem;
+}
+
+.experience-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.experience-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  margin-top: clamp(2rem, 8vw, 4rem);
+}
+
+.experience-back-cv-btn,
+.experience-back-package-btn {
+  background: transparent;
+  border: none;
+
+  color: var(--text-section-back-btn);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.experience-back-cv-btn:hover,
+.experience-back-package-btn:hover {
+  color: var(--heading-color);
+}
+
+/* EXPERIENCE MODE - MOBILE FIRST */
+body.experience-mode .portfolio-app,
+body.experience-mode .brand-mark,
+body.experience-mode .language-toggle {
+  display: none;
+}
+
+body.experience-mode .experience-section {
   display: flex;
 }
 
