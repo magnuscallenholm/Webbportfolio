@@ -92,7 +92,7 @@
       >
         <div class="package-scene">
           <!-- TEMP: add is-flipped while designing the back side -->
-          <div class="package-card is-flipped" id="packageCard">
+          <div class="package-card" id="packageCard">
             <!-- ACTIONFIGUR Magnus FRAMSIDA -->
             <div class="package-face package-front">
               <img
@@ -286,6 +286,96 @@
       </section>
     </main>
 
+    <section id="contact" class="contact-section">
+      <h2>GET IN TOUCH</h2>
+
+      <form
+        action="https://formsubmit.co/d4670de4ac5bb5f6b06e3d726c5de3d2"
+        method="POST"
+        class="contact-form"
+        novalidate
+      >
+        <!-- FormSubmit-inställningar -->
+        <!-- Localhost med Live Server -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input
+          type="hidden"
+          name="_next"
+          value="http://192.168.0.173:5500/thanks.html"
+        />
+
+        <!-- Fullname -->
+        <label for="fullName" class="sr-only">Name:</label>
+        <input
+          type="text"
+          id="fullName"
+          name="Name"
+          required
+          minlength="2"
+          maxlength="50"
+          pattern="[A-Za-zÅÄÖåäö\- ]+"
+          placeholder="Your Name"
+          autocomplete="name"
+        />
+
+        <!-- E-post -->
+        <!-- Pattern kontrollerar:
+          minst ett tecken före @
+          minst ett tecken efter @
+          minst en punkt i slutet
+          Dokumentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern -->
+        <label for="email" class="sr-only">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="From"
+          required
+          placeholder="Your Email"
+          autocomplete="email"
+        />
+
+        <label for="recipient" class="sr-only">To:</label>
+        <input
+          type="email"
+          id="recipient"
+          name="To"
+          value="magnuscallenholm@gmail.com"
+          readonly
+        />
+
+        <label for="subject" class="sr-only">Subject:</label>
+        <input
+          type="text"
+          id="subject"
+          name="Subject"
+          required
+          minlength="3"
+          maxlength="80"
+          placeholder="Your Subject"
+        />
+
+        <!-- MESSAGE -->
+        <label for="message" class="sr-only">Your Message</label>
+        <textarea
+          id="message"
+          name="Message"
+          class="message"
+          rows="6"
+          required
+          minlength="10"
+          maxlength="1000"
+          placeholder="Your Message"
+        ></textarea>
+        <button type="submit">Send Message</button>
+        <div class="form-message" id="formMessage" aria-live="polite"></div>
+      </form>
+
+      <button type="button" class="contact-back-btn" id="contactBackBtn">
+        Back to package →
+      </button>
+    </section>
+
     <footer class="footer">
       <div class="footer-top-wrap">
         <a href="#home" class="footer-brand" aria-label="Back to main">
@@ -321,11 +411,16 @@
             alt="github icon"
             class="footer-icon"
         /></a>
-        <img
-          src="assets/icons/mail-icon-optimized-transparent.svg"
-          alt="mail icon"
-          class="footer-icon"
-        />
+        <a
+          href="#contact"
+          class="footer-mail-link"
+          aria-label="Go to contact form"
+        >
+          <img
+            src="assets/icons/mail-icon-optimized-transparent.svg"
+            alt="mail icon"
+            class="footer-icon"
+        /></a>
       </div>
     </footer>
     <script src="js/main.js"></script>

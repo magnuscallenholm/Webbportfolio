@@ -133,6 +133,7 @@ html {
   min-height: 100%;
   background: var(--html-color);
   scroll-behavior: smooth;
+  font-size: 100%;
 }
 
 body {
@@ -294,7 +295,7 @@ body {
   padding: 0.85rem 1.2rem;
   font-size: 0.95rem;
   font-weight: 700;
-  min-width: 161px;
+  min-width: 10rem;
   text-align: center;
 
   backdrop-filter: blur(10px);
@@ -347,8 +348,8 @@ body {
 
 /* SCROLL ARROW ICON */
 .scroll-arrow-icon {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   display: block;
   animation: bounce 2s infinite;
 }
@@ -762,6 +763,153 @@ body {
 }
 
 /*========================
+  CONTACT-FORM
+=========================*/
+
+/* CONTACT CONTAINER SECTION */
+.contact-section {
+  min-height: auto;
+  padding: 3rem 1.5rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+/* CONTACT HEADER */
+.contact-section h2 {
+  margin-top: 0.3rem;
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(1.7rem, 7vw, 3.2rem);
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+/* CONTACT FORM */
+.contact-form {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 1.25rem;
+  border-radius: 1rem;
+
+  background: rgba(5, 9, 20, 0.418);
+  border: 1px solid rgba(0, 183, 255, 0.22);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(0, 183, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+}
+
+/* CONTACT FORM INPUT AND TEXTAREA */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+
+  border-radius: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+
+  color: var(--text-color);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  resize: none;
+
+  outline: none;
+}
+
+/* SCREEN READ, HIDE LABEL */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* CONTACT TEXTAREA SIZE */
+.contact-form textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+/* CONTACT PLACEHOLDER TEXTCOLOR */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* CONTACT INPUT AND TEXTAREA FOCUS EFFECT */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(0, 183, 255, 0.75);
+  box-shadow: 0 0 18px rgba(0, 183, 255, 0.18);
+}
+
+/* CONTACT SUBMIT BUTTON */
+.contact-form button {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.1rem;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--background-cta-primary);
+  color: var(--text-color-cta-primary);
+
+  font-family: var(--font-body);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* CONTACT BACK BUTTON */
+.contact-back-btn {
+  align-self: center;
+  margin-top: 1.5rem;
+
+  background: transparent;
+  border: none;
+
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.contact-back-btn:hover {
+  color: var(--heading-color);
+}
+
+/* CONTACT SECTION IS HIDDEN BY DEFAULT */
+.contact-section {
+  display: none;
+}
+
+/* CONTACT MODE - MOBILE FIRST */
+body.contact-mode .portfolio-app,
+body.contact-mode .brand-mark,
+body.contact-mode .language-toggle {
+  display: none;
+}
+
+body.contact-mode .contact-section {
+  display: flex;
+}
+
+/*========================
   FOOTER
 =========================*/
 
@@ -807,8 +955,8 @@ body {
 }
 
 .footer-icon {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   display: block;
 }
 
@@ -821,6 +969,10 @@ body {
 =========================*/
 
 @media (min-width: 900px) {
+  html {
+    font-size: 112.5%;
+  }
+
   .portfolio-app {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -843,5 +995,14 @@ body {
 
   .package-scene {
     width: min(100%, 520px);
+  }
+
+  body.contact-mode .portfolio-app,
+  body.contact-mode .footer {
+    display: grid; /* eller flex, beroende på din desktop-layout */
+  }
+
+  body.contact-mode .contact-section {
+    display: flex;
   }
 }
