@@ -179,6 +179,7 @@ body {
 }
 
 .about-section,
+.skills-section,
 .contact-section {
   flex: 1;
 }
@@ -470,6 +471,94 @@ body.about-mode .language-toggle {
 }
 
 body.about-mode .about-section {
+  display: flex;
+}
+
+/*========================
+  SKILLS SECTION
+=========================*/
+
+.skills-section {
+  display: none;
+
+  flex: 1;
+  padding: 3rem 1.5rem 1.5rem;
+
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.skills-card {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+
+  padding: 1.25rem;
+  border-radius: 1rem;
+
+  background: var(--background-section-card);
+  border: 1px solid var(--border-section-card);
+  box-shadow: var(--box-shadow-section-card);
+
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.skills-card h2 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: clamp(1.7rem, 7vw, 3.2rem);
+  margin-bottom: 1.25rem;
+}
+
+.skills-group {
+  margin-bottom: 1.25rem;
+}
+
+.skills-group:last-child {
+  margin-bottom: 0;
+}
+
+.skills-group h3 {
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.skills-group p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.skills-back-btn {
+  align-self: center;
+  margin-top: 1.5rem;
+
+  background: transparent;
+  border: none;
+
+  color: var(--text-section-back-btn);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.skills-back-btn:hover {
+  color: var(--heading-color);
+}
+
+/* SKILLS MODE - MOBILE FIRST */
+body.skills-mode .portfolio-app,
+body.skills-mode .brand-mark,
+body.skills-mode .language-toggle {
+  display: none;
+}
+
+body.skills-mode .skills-section {
   display: flex;
 }
 
