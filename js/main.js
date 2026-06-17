@@ -1,16 +1,24 @@
+//About Me
 const aboutButton = document.querySelector(".package-btn-aboutme");
 const aboutSection = document.querySelector("#about");
 const aboutBackBtn = document.querySelector("#aboutBackBtn");
-
+//Skills
 const skillsButton = document.querySelector(".package-btn-skills");
 const skillsSection = document.querySelector("#skills");
 const skillsBackBtn = document.querySelector("#skillsBackBtn");
-
+//Experience
 const experienceBtn = document.querySelector("#experienceBtn");
 const experienceSection = document.querySelector("#experience");
 const experienceBackCvBtn = document.querySelector("#experienceBackCvBtn");
 const experienceBackPackageBtn = document.querySelector(
   "#experienceBackPackageBtn",
+);
+//References
+const referencesBtn = document.querySelector("#referencesBtn");
+const referencesSection = document.querySelector("#references");
+const referencesBackCvBtn = document.querySelector("#referencesBackCvBtn");
+const referencesBackPackageBtn = document.querySelector(
+  "#referencesBackPackageBtn",
 );
 
 const packageCard = document.querySelector("#packageCard");
@@ -96,7 +104,7 @@ experienceBackCvBtn.addEventListener("click", function () {
   });
 });
 
-//EXPERIENCE: Removes experience mode so the package section becomes visible again
+//EXPERIENCE: Removes experience mode so the package section becomes visible again.
 experienceBackPackageBtn.addEventListener("click", function () {
   document.body.classList.remove("experience-mode");
 
@@ -104,6 +112,52 @@ experienceBackPackageBtn.addEventListener("click", function () {
 
   cvPanel.classList.remove("is-active");
   projectsPanel.classList.remove("is-active");
+
+  requestAnimationFrame(function () {
+    packageSection.scrollIntoView({
+      behavior: "auto",
+      block: "start",
+    });
+  });
+});
+
+//REFERENCE: Shows the references section and scrolls it into view. Remove/hide other sections.
+referencesBtn.addEventListener("click", function () {
+  clearPageModes();
+  document.body.classList.add("references-mode");
+
+  referencesSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
+
+//REFERENCE: Removes references mode so the package section becomes visible again with the flip and CV backside.
+referencesBackCvBtn.addEventListener("click", function () {
+  document.body.classList.remove("references-mode");
+
+  packageCard.classList.add("is-flipped");
+
+  projectsPanel.classList.remove("is-active");
+  cvPanel.classList.add("is-active");
+
+  requestAnimationFrame(function () {
+    packageSection.scrollIntoView({
+      behavior: "auto",
+      block: "start",
+    });
+  });
+});
+
+//REFERENCE: Removes references mode so the package section becomes visible again.
+referencesBackPackageBtn.addEventListener("click", function () {
+  document.body.classList.remove("references-mode");
+
+  packageCard.classList.remove("is-flipped");
+
+  setTimeout(function () {
+    hideBackPanels();
+  }, 800);
 
   requestAnimationFrame(function () {
     packageSection.scrollIntoView({
@@ -123,6 +177,7 @@ function clearPageModes() {
   document.body.classList.remove("skills-mode");
   document.body.classList.remove("contact-mode");
   document.body.classList.remove("experience-mode");
+  document.body.classList.remove("references-mode");
 }
 
 flipButtons.forEach(function (button) {
