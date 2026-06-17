@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="247" viewBox="0 0 512 247" role="img" aria-label="SATS logo transparent">
+  <rect width="512" height="247" fill="none"/>
+  <g transform="translate(28,175) skewX(-12)">
+    <text x="0" y="0" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="136" font-weight="900" letter-spacing="1" fill="#101010">SATS</text>
+  </g>
+</svg>
