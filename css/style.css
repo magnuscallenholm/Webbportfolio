@@ -447,25 +447,6 @@ body {
   border-bottom: 1px solid rgba(227, 192, 143, 0.75);
 }
 
-.about-back-btn {
-  align-self: center;
-  margin-top: clamp(1.5rem, 8vw, 4rem);
-
-  background: transparent;
-  border: none;
-
-  color: var(--text-section-back-btn);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.about-back-btn:hover {
-  color: var(--heading-color);
-}
-
 /* ABOUT MODE - MOBILE FIRST */
 body.about-mode .portfolio-app,
 body.about-mode .brand-mark,
@@ -549,25 +530,6 @@ body.about-mode .about-section {
   height: 2.4rem;
   object-fit: contain;
   display: block;
-}
-
-.skills-back-btn {
-  align-self: center;
-  margin-top: clamp(2rem, 8vw, 4rem);
-
-  background: transparent;
-  border: none;
-
-  color: var(--text-section-back-btn);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.skills-back-btn:hover {
-  color: var(--heading-color);
 }
 
 /* SKILLS MODE - MOBILE FIRST */
@@ -1103,37 +1065,6 @@ body.experience-mode .experience-section {
   margin-bottom: 0;
 }
 
-/* BACK BUTTONS WRAPPER EXPERIENCE */
-.experience-actions {
-  width: 100%;
-  max-width: 24rem;
-  margin: clamp(2rem, 8vw, 4rem) auto 0;
-
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* BACK BUTTONS EXPERIENCE */
-.experience-back-cv-btn,
-.experience-back-package-btn {
-  background: transparent;
-  border: none;
-
-  color: var(--text-section-back-btn);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.experience-back-cv-btn:hover,
-.experience-back-package-btn:hover {
-  color: var(--heading-color);
-}
-
 /* EXPERIENCE MODE - MOBILE FIRST */
 body.experience-mode .portfolio-app,
 body.experience-mode .brand-mark,
@@ -1234,37 +1165,6 @@ body.experience-mode .experience-section {
   color: var(--text-color);
   font-size: 0.88rem;
   line-height: 1.6;
-}
-
-/* BACK BUTTONS WRAPPER REFERENCES */
-.references-actions {
-  width: 100%;
-  max-width: 24rem;
-  margin: clamp(2rem, 8vw, 4rem) auto 0;
-
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* BACK BUTTONS REFERENCES */
-.references-back-cv-btn,
-.references-back-package-btn {
-  background: transparent;
-  border: none;
-
-  color: var(--text-section-back-btn);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.references-back-cv-btn:hover,
-.references-back-package-btn:hover {
-  color: var(--heading-color);
 }
 
 /* REFERENCES MODE - MOBILE FIRST */
@@ -1391,39 +1291,7 @@ body.references-mode .references-section {
   border-color: var(--heading-color);
 }
 
-/* BACK BUTTONS WRAPPER */
-.project-details-actions {
-  width: 100%;
-  max-width: 24rem;
-  margin: clamp(2rem, 8vw, 4rem) auto 0;
-
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* BACK BUTTONS */
-.project-back-projects-btn,
-.project-back-package-btn {
-  background: transparent;
-  border: none;
-
-  color: var(--text-section-back-btn);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.project-back-projects-btn:hover,
-.project-back-package-btn:hover {
-  color: var(--heading-color);
-}
-
 /* BUTTERFLY PROJECT MODE - MOBILE FIRST */
-
 body.butterfly-project-mode .portfolio-app,
 body.butterfly-project-mode .brand-mark,
 body.butterfly-project-mode .language-toggle {
@@ -1558,6 +1426,62 @@ body.snake-project-mode #snake-project {
 }
 
 /*========================
+  SHARED BACK ACTION BUTTONS FOR PROJECT, EXPERIENCE, REFERENCES
+=========================*/
+
+.section-actions {
+  width: 100%;
+  max-width: 24rem;
+  margin: clamp(2rem, 8vw, 4rem) auto 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-back-btn {
+  width: 100%;
+  max-width: 16rem;
+
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.section-back-btn:hover {
+  transform: translateY(-1px);
+}
+
+.section-back-primary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-section-card);
+  color: var(--heading-color);
+}
+
+.section-back-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-section-back-btn);
+}
+
+.section-back-primary:hover,
+.section-back-secondary:hover {
+  color: var(--heading-color);
+  border-color: var(--heading-color);
+}
+
+/*========================
   CONTACT-FORM
 =========================*/
 
@@ -1667,23 +1591,8 @@ body.snake-project-mode #snake-project {
 }
 
 /* CONTACT BACK BUTTON */
-.contact-back-btn {
-  align-self: center;
-  margin-top: clamp(1.5rem, 8vw, 4rem);
-
-  background: transparent;
-  border: none;
-
-  color: var(--text-section-back-btn);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.contact-back-btn:hover {
-  color: var(--heading-color);
+.contact-actions {
+  margin-top: clamp(1rem, 5vw, 2rem);
 }
 
 /* CONTACT SECTION IS HIDDEN BY DEFAULT */
