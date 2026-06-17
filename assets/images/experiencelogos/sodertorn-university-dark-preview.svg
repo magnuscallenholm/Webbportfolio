@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="700" viewBox="0 0 1800 700" role="img" aria-labelledby="titleSUDark descSUDark">
+  <title id="titleSUDark">Södertörn University Stockholm logo on dark preview</title>
+  <desc id="descSUDark">Södertörn University Stockholm logo on a dark preview background.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050914"/>
+      <stop offset="60%" stop-color="#07182D"/>
+      <stop offset="100%" stop-color="#030711"/>
+    </linearGradient>
+  </defs>
+  <rect width="1800" height="700" rx="40" fill="url(#bg2)"/>
+  <g transform="translate(0 50)">
+    <circle cx="190" cy="300" r="190" fill="#F6D20C"/>
+    <circle cx="190" cy="300" r="122" fill="none" stroke="#07182D" stroke-width="88"/>
+    <circle cx="190" cy="300" r="64" fill="#F6D20C"/>
+    <circle cx="760" cy="300" r="88" fill="#F6D20C"/>
+    <rect x="325" y="245" width="6" height="210" fill="#EAF0F8"/>
+    <text x="380" y="330" fill="#F1F5F9" font-family="Arial, Helvetica, sans-serif" font-size="98" font-weight="700" letter-spacing="2">SÖDERTÖRN UNIVERSITY</text>
+    <text x="380" y="445" fill="#D8DEE8" font-family="Arial, Helvetica, sans-serif" font-size="90" font-weight="300" letter-spacing="3">STOCKHOLM</text>
+  </g>
+</svg>
