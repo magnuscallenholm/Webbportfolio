@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <title>Magnus portfolio</title>
   </head>
-  <body>
+  <body class="snake-project-mode">
     <!-- EGET BRAND LOGO samt HEMKNAPP -->
     <a href="#home" class="brand-mark" aria-label="Back to main">
       <span class="brand-name">mange</span>
@@ -662,7 +662,7 @@
     </section>
 
     <!-- PROJECTS CONTENT -->
-    <section id="project-details" class="project-details-section">
+    <section id="snake-project" class="project-details-section">
       <div class="project-details-card">
         <h2>Snake Game</h2>
 
@@ -686,20 +686,28 @@
         <div class="project-links">
           <a href="#" target="_blank" rel="noopener noreferrer">Live demo</a>
           <a
-            href="#"
+            href="https://github.com/magnuscallenholm/Snake-game.git"
             target="_blank"
-            rel="https://github.com/magnuscallenholm/Snake-game.git"
+            rel="noopener noreferrer"
             >GitHub</a
           >
         </div>
       </div>
 
       <div class="project-details-actions">
-        <button type="button" id="projectBackProjectsBtn">
+        <button
+          type="button"
+          class="project-back-projects-btn"
+          id="projectBackProjectsBtn"
+        >
           Back to Projects menu
         </button>
 
-        <button type="button" id="projectBackPackageBtn">
+        <button
+          type="button"
+          class="project-back-package-btn"
+          id="projectBackPackageBtn"
+        >
           Back to package →
         </button>
       </div>
