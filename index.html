@@ -304,9 +304,15 @@
         </div>
       </div>
 
-      <button type="button" class="about-back-btn" id="aboutBackBtn">
-        Back to package →
-      </button>
+      <div class="about-actions section-actions">
+        <button
+          type="button"
+          class="section-back-btn section-back-secondary about-back-btn"
+          id="aboutBackBtn"
+        >
+          Back to package
+        </button>
+      </div>
     </section>
 
     <!-- SKILLS -->
@@ -403,9 +409,15 @@
         </ul>
       </div>
 
-      <button type="button" class="skills-back-btn" id="skillsBackBtn">
-        Back to package →
-      </button>
+      <div class="about-actions section-actions">
+        <button
+          type="button"
+          class="section-back-btn section-back-secondary skills-back-btn"
+          id="skillsBackBtn"
+        >
+          Back to package
+        </button>
+      </div>
     </section>
 
     <!-- CV-TAB WORK and EDUCATION -->
@@ -550,21 +562,21 @@
         </div>
       </div>
 
-      <div class="experience-actions">
+      <div class="experience-actions section-actions">
         <button
           type="button"
-          class="experience-back-cv-btn"
+          class="section-back-btn section-back-primary experience-back-cv-btn"
           id="experienceBackCvBtn"
         >
-          Back to CV menu
+          ← Back to CV menu
         </button>
 
         <button
           type="button"
-          class="experience-back-package-btn"
+          class="section-back-btn section-back-secondary experience-back-package-btn"
           id="experienceBackPackageBtn"
         >
-          Back to package →
+          Back to package
         </button>
       </div>
     </section>
@@ -642,21 +654,129 @@
         </div>
       </div>
 
-      <div class="references-actions">
+      <div class="references-actions section-actions">
         <button
           type="button"
-          class="references-back-cv-btn"
+          class="section-back-btn section-back-primary references-back-cv-btn"
           id="referencesBackCvBtn"
         >
-          Back to CV menu
+          ← Back to CV
         </button>
 
         <button
           type="button"
-          class="references-back-package-btn"
+          class="section-back-btn section-back-secondary references-back-package-btn"
           id="referencesBackPackageBtn"
         >
-          Back to package →
+          Back to package
+        </button>
+      </div>
+    </section>
+
+    <!-- PROJECTS CONTENT -->
+    <section id="snake-project" class="project-details-section">
+      <div class="project-details-card">
+        <h2>Snake Game</h2>
+
+        <img
+          src="assets/images/projects/snake-full.png"
+          alt="Full preview of Snake Game"
+          class="project-details-image"
+        />
+
+        <p class="project-details-description">
+          A JavaScript-focused school project where I worked with an existing
+          Snake game codebase. The project focused on understanding, adapting
+          and extending the game logic, while also improving the visual styling
+          and user experience.
+        </p>
+
+        <ul class="project-tech-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Game Logic</li>
+          <li>DOM</li>
+        </ul>
+
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">Live demo</a>
+          <a
+            href="https://github.com/magnuscallenholm/Snake-game.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </div>
+
+      <div class="project-details-actions section-actions">
+        <button
+          type="button"
+          class="section-back-btn section-back-primary project-back-projects-btn"
+        >
+          ← Back to projects
+        </button>
+
+        <button
+          type="button"
+          class="section-back-btn section-back-secondary project-back-package-btn"
+        >
+          Back to package
+        </button>
+      </div>
+    </section>
+
+    <section id="butterfly-project" class="project-details-section">
+      <div class="project-details-card">
+        <h2>Fjärilarnas Värld</h2>
+
+        <img
+          src="assets/images/projects/butterfly-full.png"
+          alt="Full preview of Fjärilarnas Värld website"
+          class="project-details-image"
+        />
+
+        <p class="project-details-description">
+          A responsive school project focused on building a fictional zoo
+          website with HTML and CSS. The page includes structured content
+          sections, animal presentation, a newsletter form and a clean,
+          user-friendly layout — something I really enjoy creating.
+        </p>
+
+        <ul class="project-tech-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Responsive design</li>
+          <li>Forms</li>
+          <li>Tables</li>
+          <li>Google Maps</li>
+        </ul>
+
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">Live demo</a>
+          <a
+            href="https://github.com/magnuscallenholm/butterfly.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </div>
+
+      <div class="project-details-actions section-actions">
+        <button
+          type="button"
+          class="section-back-btn section-back-primary project-back-projects-btn"
+        >
+          ← Back to projects
+        </button>
+
+        <button
+          type="button"
+          class="section-back-btn section-back-secondary project-back-package-btn"
+        >
+          Back to package
         </button>
       </div>
     </section>
@@ -745,10 +865,15 @@
         <button type="submit">Send Message</button>
         <div class="form-message" id="formMessage" aria-live="polite"></div>
       </form>
-
-      <button type="button" class="contact-back-btn" id="contactBackBtn">
-        Back to package →
-      </button>
+      <div class="contact-actions section-actions">
+        <button
+          type="button"
+          class="section-back-btn section-back-primary contact-back-btn"
+          id="contactBackBtn"
+        >
+          Back to package
+        </button>
+      </div>
     </section>
 
     <!-- FOOTER -->

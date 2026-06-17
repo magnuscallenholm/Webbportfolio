@@ -21,6 +21,19 @@ const referencesBackPackageBtn = document.querySelector(
   "#referencesBackPackageBtn",
 );
 
+// Projects
+const projectButtons = document.querySelectorAll(".project-card[data-project]");
+const snakeProjectSection = document.querySelector("#snake-project");
+const butterflyProjectSection = document.querySelector("#butterfly-project");
+
+const projectBackProjectsBtns = document.querySelectorAll(
+  ".project-back-projects-btn",
+);
+
+const projectBackPackageBtns = document.querySelectorAll(
+  ".project-back-package-btn",
+);
+
 const packageCard = document.querySelector("#packageCard");
 const packageSection = document.querySelector("#package");
 const backToFrontBtn = document.querySelector("#backToFrontBtn");
@@ -167,6 +180,72 @@ referencesBackPackageBtn.addEventListener("click", function () {
   });
 });
 
+//PROJECTS SNAKE/BUTTERFLY: Shows the correct project section depending on which project card is clicked.
+projectButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const projectName = button.dataset.project;
+
+    clearPageModes();
+
+    if (projectName === "snake") {
+      document.body.classList.add("snake-project-mode");
+
+      snakeProjectSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    if (projectName === "butterfly") {
+      document.body.classList.add("butterfly-project-mode");
+
+      butterflyProjectSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
+});
+
+//PROJECTS SNAKE/BUTTERFLY: Returns from project detail view to the projects menu on the backside.
+projectBackProjectsBtns.forEach(function (button) {
+  button.addEventListener("click", function () {
+    clearPageModes();
+
+    packageCard.classList.add("is-flipped");
+
+    cvPanel.classList.remove("is-active");
+    projectsPanel.classList.add("is-active");
+
+    requestAnimationFrame(function () {
+      packageSection.scrollIntoView({
+        behavior: "auto",
+        block: "start",
+      });
+    });
+  });
+});
+
+// PROJECTS SNAKE/BUTTERFLY: Returns from project detail view to the package front side.
+projectBackPackageBtns.forEach(function (button) {
+  button.addEventListener("click", function () {
+    clearPageModes();
+
+    packageCard.classList.remove("is-flipped");
+
+    setTimeout(function () {
+      hideBackPanels();
+    }, 800);
+
+    requestAnimationFrame(function () {
+      packageSection.scrollIntoView({
+        behavior: "auto",
+        block: "start",
+      });
+    });
+  });
+});
+
 function hideBackPanels() {
   cvPanel.classList.remove("is-active");
   projectsPanel.classList.remove("is-active");
@@ -178,6 +257,8 @@ function clearPageModes() {
   document.body.classList.remove("contact-mode");
   document.body.classList.remove("experience-mode");
   document.body.classList.remove("references-mode");
+  document.body.classList.remove("snake-project-mode");
+  document.body.classList.remove("butterfly-project-mode");
 }
 
 flipButtons.forEach(function (button) {
