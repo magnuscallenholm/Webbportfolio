@@ -24,6 +24,8 @@ function openContact(event) {
   document.body.classList.remove("skills-mode");
   document.body.classList.remove("experience-mode");
   document.body.classList.remove("references-mode");
+  document.body.classList.remove("snake-project-mode");
+  document.body.classList.remove("butterfly-project-mode");
 
   contactPackageCard.classList.remove("is-flipped");
   hideContactBackPanels();

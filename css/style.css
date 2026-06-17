@@ -1422,6 +1422,18 @@ body.references-mode .references-section {
   color: var(--heading-color);
 }
 
+/* BUTTERFLY PROJECT MODE - MOBILE FIRST */
+
+body.butterfly-project-mode .portfolio-app,
+body.butterfly-project-mode .brand-mark,
+body.butterfly-project-mode .language-toggle {
+  display: none;
+}
+
+body.butterfly-project-mode #butterfly-project {
+  display: flex;
+}
+
 /* SNAKE PROJECT MODE - MOBILE FIRST */
 body.snake-project-mode .portfolio-app,
 body.snake-project-mode .brand-mark,
