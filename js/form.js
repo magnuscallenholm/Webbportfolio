@@ -23,6 +23,7 @@ function openContact(event) {
   document.body.classList.remove("about-mode");
   document.body.classList.remove("skills-mode");
   document.body.classList.remove("experience-mode");
+  document.body.classList.remove("references-mode");
 
   contactPackageCard.classList.remove("is-flipped");
   hideContactBackPanels();

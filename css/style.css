@@ -1189,20 +1189,50 @@ body.experience-mode .experience-section {
   gap: 1rem;
 }
 
-.reference-item {
-  padding: 0.75rem;
+.reference-card {
+  padding: 1rem;
   border-radius: 0.9rem;
 
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border-section-card);
 
-  overflow: hidden;
+  text-align: left;
 }
 
-.reference-image {
-  width: 100%;
-  display: block;
-  border-radius: 0.65rem;
+.reference-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.reference-avatar {
+  width: 3.25rem;
+  height: 3.25rem;
+
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.reference-card h3 {
+  color: var(--heading-color);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
+.reference-header p {
+  color: var(--text-section-back-btn);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.reference-quote {
+  color: var(--text-color);
+  font-size: 0.88rem;
+  line-height: 1.6;
 }
 
 /* BACK BUTTONS WRAPPER REFERENCES */
