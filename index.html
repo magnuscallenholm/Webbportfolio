@@ -192,15 +192,11 @@
                 <h2>CV</h2>
 
                 <div class="cv-options">
-                  <button
-                    type="button"
-                    class="cv-tab"
-                    data-cv-tab="education-experience"
-                  >
+                  <button type="button" class="cv-tab" id="experienceBtn">
                     Education & Work Experience
                   </button>
 
-                  <button type="button" class="cv-tab" data-cv-tab="references">
+                  <button type="button" class="cv-tab" id="referencesBtn">
                     References
                   </button>
 
@@ -282,6 +278,7 @@
       </section>
     </main>
 
+    <!-- ABOUT ME -->
     <section id="about" class="about-section">
       <div class="about-card">
         <img
@@ -312,98 +309,98 @@
       </button>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="skills-section">
       <div class="skills-card">
         <h2>Skills</h2>
 
         <p class="skills-intro">
-            A selection of technologies and tools I use while learning and
-            building projects.
-          </p>
+          A selection of technologies and tools I use while learning and
+          building projects.
+        </p>
 
-          <ul class="skills-list">
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/html.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>HTML</span>
-            </li>
+        <ul class="skills-list">
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/html.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>HTML</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/css.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>CSS</span>
-            </li>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/css.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>CSS</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/javascript.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>JavaScript</span>
-            </li>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/javascript.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>JavaScript</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/csharp_dotnet.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>C#</span>
-            </li>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/csharp_dotnet.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>C#</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/sql.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>SQL</span>
-            </li>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/sql.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>SQL</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/git.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>Git</span>
-            </li>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/git.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>Git</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/visual_studio.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>Visual Studio</span>
-            </li>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/visual_studio.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>Visual Studio</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/visual_studio_code.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>VS Code</span>
-            </li>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/visual_studio_code.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>VS Code</span>
+          </li>
 
-            <li class="skill-item">
-              <img
-                src="assets/icons/skills-svg/azure.svg"
-                alt=""
-                class="skill-icon"
-              />
-              <span>Azure</span>
-            </li>
-          </ul>
-        </div>
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/azure.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>Azure</span>
+          </li>
+        </ul>
       </div>
 
       <button type="button" class="skills-back-btn" id="skillsBackBtn">
@@ -411,6 +408,260 @@
       </button>
     </section>
 
+    <!-- CV-TAB WORK and EDUCATION -->
+    <section id="experience" class="experience-section">
+      <div class="experience-card">
+        <h2>Education & Work Experience</h2>
+
+        <p class="experience-intro">
+          Here I present my education, recent work experience and the background
+          that has shaped my interest in IT and development.
+        </p>
+
+        <h3 class="experience-subtitle">Work Experience</h3>
+
+        <div class="experience-list">
+          <article class="experience-item">
+            <div class="experience-header">
+              <img
+                src="assets/images/experiencelogos/stadium-logo-dark-preview.svg"
+                alt=""
+                class="experience-logo"
+              />
+
+              <div>
+                <p class="experience-role">Application Specialist</p>
+                <p class="experience-period">Dec 2021 - Oct 2025</p>
+              </div>
+            </div>
+
+            <p class="experience-description">
+              Worked with business-critical applications connected to Stadium's
+              retail and digital business. Focused on supporting stable system
+              operations, improving user experience and contributing to
+              technical solutions for Stadium and Stadium Outlet.
+            </p>
+
+            <ul class="experience-points">
+              <li>
+                Application responsibility for systems connected to business
+                processes
+              </li>
+              <li>
+                Collaboration with business stakeholders, IT teams and external
+                partners
+              </li>
+              <li>
+                Focus on system quality, operations and continuous improvement
+              </li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-header">
+              <img
+                src="assets/images/experiencelogos/fast2-logo-dark-preview.svg"
+                alt=""
+                class="experience-logo"
+              />
+
+              <div>
+                <p class="experience-role">Application Consultant</p>
+                <p class="experience-period">Jan 2019 - Dec 2021</p>
+              </div>
+            </div>
+
+            <p class="experience-description">
+              Worked as an application consultant with focus on system support,
+              customer needs and technical solutions. The role involved
+              understanding business processes and helping users get value from
+              the application.
+            </p>
+
+            <ul class="experience-points">
+              <li>Customer and application support</li>
+              <li>Configuration, troubleshooting and system improvements</li>
+              <li>Close collaboration with users and technical teams</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-header">
+              <img
+                src="assets/images/experiencelogos/sats-logo-dark-preview.svg"
+                alt=""
+                class="experience-logo"
+              />
+
+              <div>
+                <p class="experience-role">IT System Manager</p>
+                <p class="experience-period">Feb 2012 - Jan 2019</p>
+              </div>
+            </div>
+
+            <p class="experience-description">
+              Held several IT-related roles over time, working with systems,
+              projects and business support in a fast-moving organization. The
+              experience gave me a strong understanding of how technology
+              supports daily operations.
+            </p>
+
+            <ul class="experience-points">
+              <li>IT system responsibility and project coordination</li>
+              <li>Support for internal users and business needs</li>
+              <li>
+                Experience from both operational IT and project-based work
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="experience-subtitle">Education</h3>
+
+        <div class="education-list">
+          <article class="experience-item education-item">
+            <div class="experience-header">
+              <img
+                src="assets/images/experiencelogos/yh-akademin-brand-transparent.svg"
+                alt=""
+                class="experience-logo"
+              />
+
+              <div>
+                <p class="experience-role">Higher Vocational Education</p>
+                <p class="experience-period">Jan 2026 - Dec 2027</p>
+              </div>
+            </div>
+
+            <p class="experience-description">
+              Ongoing .NET Developer education focused on C#, .NET, web
+              development, databases, SQL, agile methods and modern system
+              development.
+            </p>
+
+            <ul class="experience-points">
+              <li>C#, .NET and object-oriented programming</li>
+              <li>HTML, CSS, JavaScript and responsive web development</li>
+              <li>
+                Databases, SQL, Git, Azure DevOps and project-based learning
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="experience-actions">
+        <button
+          type="button"
+          class="experience-back-cv-btn"
+          id="experienceBackCvBtn"
+        >
+          Back to CV menu
+        </button>
+
+        <button
+          type="button"
+          class="experience-back-package-btn"
+          id="experienceBackPackageBtn"
+        >
+          Back to package →
+        </button>
+      </div>
+    </section>
+
+    <!-- CV-TAB REFERENCES -->
+    <section id="references" class="references-section">
+      <div class="references-card">
+        <h2>References</h2>
+
+        <div class="references-list">
+          <article class="reference-card">
+            <div class="reference-header">
+              <img
+                src="assets/images/references/ref-anna.png"
+                alt=""
+                class="reference-avatar"
+              />
+
+              <div>
+                <h3>Anna Åberg</h3>
+                <p>Product Management & UX Manager at Stadium</p>
+              </div>
+            </div>
+
+            <p class="reference-quote">
+              “En kollega som kombinerar stort personligt ansvar med ett varmt
+              och nyfiket förhållningssätt.”
+            </p>
+          </article>
+
+          <article class="reference-card">
+            <div class="reference-header">
+              <img
+                src="assets/images/references/ref-david.png"
+                alt=""
+                class="reference-avatar"
+              />
+
+              <div>
+                <h3>David Näslund</h3>
+                <p>Interim Management | CEO</p>
+              </div>
+            </div>
+
+            <p class="reference-quote">
+              “I had opportunity to work with Magnus for almost 4 years at SATS.
+              He always delivered IT Projects on a timely and effective basis.
+              Magnus had a constant comercial and customer mindset in all
+              projects we worked during our tenure together. I would love to
+              work with Magnus in the future.”
+            </p>
+          </article>
+
+          <article class="reference-card">
+            <div class="reference-header">
+              <img
+                src="assets/images/references/ref-alex.png"
+                alt=""
+                class="reference-avatar"
+              />
+
+              <div>
+                <h3>Alex Persson</h3>
+                <p>Interim CFO Support</p>
+              </div>
+            </div>
+
+            <p class="reference-quote">
+              “Magnus visade hög IT-kompetens, analytiskt tänkande och en stark
+              vilja att prestera det lilla extra för att teamet skulle lyckas.
+              Jag rekommenderar varmt Magnus som en kunnig IT-specialist och
+              godhjärtad kollega.”
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <div class="references-actions">
+        <button
+          type="button"
+          class="references-back-cv-btn"
+          id="referencesBackCvBtn"
+        >
+          Back to CV menu
+        </button>
+
+        <button
+          type="button"
+          class="references-back-package-btn"
+          id="referencesBackPackageBtn"
+        >
+          Back to package →
+        </button>
+      </div>
+    </section>
+
+    <!-- FORM -->
     <section id="contact" class="contact-section">
       <h2>GET IN TOUCH</h2>
 
@@ -418,7 +669,6 @@
         action="https://formsubmit.co/d4670de4ac5bb5f6b06e3d726c5de3d2"
         method="POST"
         class="contact-form"
-        novalidate
       >
         <!-- FormSubmit-inställningar -->
         <!-- Localhost med Live Server -->
@@ -501,6 +751,7 @@
       </button>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top-wrap">
         <a href="#home" class="footer-brand" aria-label="Back to main">

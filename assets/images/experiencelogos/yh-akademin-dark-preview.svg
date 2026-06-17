@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="titleYHDark descYHDark">
+  <title id="titleYHDark">YH Akademin logo on dark preview</title>
+  <desc id="descYHDark">YH Akademin logo centered on a dark rounded rectangle preview background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050914"/>
+      <stop offset="60%" stop-color="#07182D"/>
+      <stop offset="100%" stop-color="#030711"/>
+    </linearGradient>
+    <linearGradient id="yhPurpleDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6D09BF"/>
+      <stop offset="100%" stop-color="#5E00A8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="40" fill="url(#bg)"/>
+  <g transform="translate(150 40) scale(0.6)">
+    <circle cx="600" cy="600" r="520" fill="url(#yhPurpleDark)"/>
+    <path d="M290 390h120c0 85 52 124 114 124s114-39 114-124h120c0 108-55 182-152 218v112H442V608c-97-36-152-110-152-218Z" fill="#B7B6EC"/>
+    <path d="M640 390h116v126c28-24 66-38 110-38 99 0 176 79 176 188v54H926v-54c0-52-39-91-90-91-52 0-90 39-90 91v54H640V390Z" fill="#F2E15B"/>
+    <text x="600" y="855" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="128" font-weight="700">Akademin</text>
+  </g>
+</svg>
