@@ -4,7 +4,7 @@
 
 @media (min-width: 900px) {
   html {
-    font-size: 108.25%;
+    font-size: 112.25%;
   }
 
   html,
@@ -36,11 +36,15 @@
 
     min-height: auto;
     justify-content: center;
+
+    align-items: center;
+
+    gap: 1rem;
+    transform: translateY(-2rem);
   }
 
   .hero-content {
     margin-top: 0;
-    transform: translateY(-5rem);
   }
 
   .info-content {
@@ -49,7 +53,15 @@
   }
 
   .eyebrow {
-    display: flex;
+    display: block;
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   .intro-actions {
