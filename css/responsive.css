@@ -1,0 +1,163 @@
+/*========================
+  DESKTOP BASE LAYOUT
+=========================*/
+
+@media (min-width: 900px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  .portfolio-app {
+    height: 100dvh;
+    min-height: 100dvh;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 560px);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+
+    padding: clamp(2rem, 4vw, 4rem) clamp(3rem, 7vw, 7rem);
+    padding-bottom: 6rem;
+  }
+
+  .intro-panel {
+    grid-column: 1;
+    grid-row: 1;
+
+    min-height: auto;
+    justify-content: center;
+  }
+
+  .hero-content {
+    margin-top: 0;
+    transform: translateY(-5rem);
+  }
+
+  .info-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-actions {
+    justify-content: center;
+  }
+
+  .scroll-down-link,
+  .scroll-arrow-icon {
+    display: none;
+  }
+
+  .package-panel {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-content: center;
+    padding: 0;
+
+    transform: translateY(-2rem);
+  }
+
+  .package-scene {
+    width: clamp(390px, 34vw, 540px);
+  }
+
+  body.package-focus-mode .intro-panel {
+    display: flex;
+  }
+
+  body.package-focus-mode .portfolio-app {
+    display: grid;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding-top: clamp(2rem, 4vw, 4rem);
+  }
+
+  body.package-focus-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.package-focus-mode .language-toggle {
+    display: flex;
+  }
+}
+
+/*========================
+  DESKTOP FOOTER
+=========================*/
+
+@media (min-width: 900px) {
+  .footer {
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    bottom: 1rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    background: transparent;
+    border-top: none;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.4rem;
+
+    z-index: 20;
+  }
+
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: -0.9rem;
+    left: 10%;
+    right: 10%;
+
+    height: 1px;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 132, 255, 0.65),
+      rgba(0, 255, 200, 0.35),
+      transparent
+    );
+  }
+
+  .footer-top-wrap {
+    display: contents;
+  }
+
+  .footer-brand {
+    order: 1;
+  }
+
+  .footer-links {
+    order: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  .weather-widget {
+    order: 3;
+  }
+
+  .footer-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .weather-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
