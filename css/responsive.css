@@ -3,6 +3,10 @@
 =========================*/
 
 @media (min-width: 900px) {
+  html {
+    font-size: 108.25%;
+  }
+
   html,
   body {
     height: 100%;
@@ -42,6 +46,10 @@
   .info-content {
     align-items: center;
     text-align: center;
+  }
+
+  .eyebrow {
+    display: flex;
   }
 
   .intro-actions {
