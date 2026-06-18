@@ -1627,9 +1627,8 @@ body.contact-mode .contact-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
-
-  padding: 1.5rem 1.5rem;
+  gap: 0.55rem;
+  padding: 0.9rem 1.25rem 1rem;
   background: var(--background-footer);
   color: var(--text-color);
   border-top: 1px solid rgba(0, 183, 255, 0.18);
@@ -1655,21 +1654,46 @@ body.contact-mode .contact-section {
 }
 
 .footer-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  align-self: center;
-  gap: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer-icon {
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 1.55rem;
+  height: 1.55rem;
   display: block;
 }
 
 .weather-widget {
-  align-self: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 183, 255, 0.18);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.weather-icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  object-fit: contain;
+}
+
+#weatherCity {
+  white-space: nowrap;
+}
+
+#weatherTemp {
+  font-weight: 800;
+  color: var(--heading-color);
 }
 
 /*========================
