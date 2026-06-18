@@ -239,6 +239,32 @@ function clearPageModes() {
   document.body.classList.remove("package-focus-mode");
 }
 
+let hasShownPackageHint = false;
+
+const packageObserver = new IntersectionObserver(
+  function (entries) {
+    const packageEntry = entries[0];
+
+    if (packageEntry.isIntersecting && !hasShownPackageHint) {
+      hasShownPackageHint = true;
+
+      aboutButton.classList.add("button-hint");
+
+      setTimeout(function () {
+        aboutButton.classList.remove("button-hint");
+      }, 4000);
+    }
+  },
+  {
+    threshold: 0.6,
+  },
+);
+
+if (window.innerWidth < 900) {
+  packageObserver.observe(packageSection);
+}
+
+//Open correct page/section
 function openPageMode(modeClass) {
   clearPageModes();
   document.body.classList.add(modeClass);

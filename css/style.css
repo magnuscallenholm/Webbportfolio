@@ -81,6 +81,14 @@
     0 0 50px rgba(255, 70, 70, 0.95), 0 0 10px rgba(255, 70, 70, 0.28);
 
   /*========================
+  BUTTON HINT FOR MOBILEVIEW
+===========================*/
+
+  --hint-glow-blue-rgb: 0, 132, 255;
+  --hint-glow-cyan-rgb: 0, 255, 200;
+  --hint-border-idle: rgba(255, 255, 255, 0.25);
+
+  /*========================
  CARD BACK
 ===========================*/
 
@@ -639,26 +647,6 @@ body.experience-mode .experience-section {
   width: 2.5rem;
   height: 2.5rem;
   display: block;
-  animation: bounce 2s infinite;
-}
-
-/* BOUNCE ANIMATION FOR THE SCROLL ARROW */
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-10px);
-  }
-
-  60% {
-    transform: translateY(-5px);
-  }
 }
 
 /*========================
