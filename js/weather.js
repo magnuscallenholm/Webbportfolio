@@ -93,14 +93,14 @@ async function getWeather() {
     const description = data.weather[0].description;
     const windSpeed = data.wind.speed;
 
-    weatherCity.textContent = data.name;
+    weatherCity.textContent = "Sthlm";
     weatherTemp.textContent = `${temperature}°C`;
     weatherIcon.src = getWeatherIcon(conditionId, windSpeed);
     weatherIcon.alt = description;
   } catch (error) {
     console.error(error);
 
-    weatherCity.textContent = "Stockholm";
+    weatherCity.textContent = "Sthlm";
     weatherTemp.textContent = "--°C";
     weatherIcon.src = "assets/icons/weather/04-cloudy.svg";
     weatherIcon.alt = "Weather unavailable";
