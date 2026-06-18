@@ -34,13 +34,18 @@ const projectBackPackageBtns = document.querySelectorAll(
   ".project-back-package-btn",
 );
 
+//FOOTER
+const homeLinks = document.querySelectorAll('[data-action="go-home"]');
+
 const packageCard = document.querySelector("#packageCard");
 const packageSection = document.querySelector("#package");
 const backToFrontBtn = document.querySelector("#backToFrontBtn");
 
+//CV AND PROJECT PANEL
 const cvPanel = document.querySelector("#cv-panel");
 const projectsPanel = document.querySelector("#projects-panel");
 
+//FLIP THE ACTIONFIGURE
 const flipButtons = document.querySelectorAll('[data-action="flip-card"]');
 const flipDelay = 400;
 const flipAnimationTime = 1100;
@@ -245,6 +250,25 @@ function openPageMode(modeClass) {
     });
   });
 }
+
+//mange (M) HOME BUTTON
+homeLinks.forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    clearPageModes();
+
+    packageCard.classList.remove("is-flipped");
+    hideBackPanels();
+
+    requestAnimationFrame(function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
+    });
+  });
+});
 
 //FLIP BEHAVIOUR TIME and WHERE CV/PROJECTS
 flipButtons.forEach(function (button) {
