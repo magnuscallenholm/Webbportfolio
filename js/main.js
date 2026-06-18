@@ -239,6 +239,7 @@ function clearPageModes() {
   document.body.classList.remove("package-focus-mode");
 }
 
+//BUTTON HINT FUNCTION FOR MOBILE VIEW
 let hasShownPackageHint = false;
 
 const packageObserver = new IntersectionObserver(
