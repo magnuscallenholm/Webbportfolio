@@ -51,6 +51,7 @@
               class="cta-btn cta-primary"
               data-action="flip-card"
               data-section="projects"
+              data-flip-delay="true"
             >
               See My Work
             </button>
@@ -60,6 +61,7 @@
               class="cta-btn cta-secondary"
               data-action="flip-card"
               data-section="cv"
+              data-flip-delay="true"
             >
               CV & References
             </button>
@@ -879,7 +881,12 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top-wrap">
-        <a href="#home" class="footer-brand" aria-label="Back to main">
+        <a
+          href="#home"
+          class="footer-brand"
+          data-action="go-home"
+          aria-label="Back to main"
+        >
           <span class="brand-name">mange</span>
           <span class="brand-symbol">M</span>
         </a>

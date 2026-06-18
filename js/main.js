@@ -34,24 +34,25 @@ const projectBackPackageBtns = document.querySelectorAll(
   ".project-back-package-btn",
 );
 
+//FOOTER
+const homeLinks = document.querySelectorAll('[data-action="go-home"]');
+
 const packageCard = document.querySelector("#packageCard");
 const packageSection = document.querySelector("#package");
 const backToFrontBtn = document.querySelector("#backToFrontBtn");
 
+//CV AND PROJECT PANEL
 const cvPanel = document.querySelector("#cv-panel");
 const projectsPanel = document.querySelector("#projects-panel");
 
+//FLIP THE ACTIONFIGURE
 const flipButtons = document.querySelectorAll('[data-action="flip-card"]');
+const flipDelay = 400;
+const flipAnimationTime = 1100;
 
-//ABOUT: Shows the About me section and scrolls it into view. Remove/hide other sections.
+//ABOUT: Shows the About me section.
 aboutButton.addEventListener("click", function () {
-  clearPageModes();
-  document.body.classList.add("about-mode");
-
-  aboutSection.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  openPageMode("about-mode");
 });
 
 //ABOUT: Removes about mode so the package section becomes visible again.
@@ -66,15 +67,9 @@ aboutBackBtn.addEventListener("click", function () {
   });
 });
 
-//SKILLS: Shows the Skills section and scrolls it into view. Remove/hide other sections.
+//SKILLS: Shows the Skills section.
 skillsButton.addEventListener("click", function () {
-  clearPageModes();
-  document.body.classList.add("skills-mode");
-
-  skillsSection.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  openPageMode("skills-mode");
 });
 
 //SKILLS: Removes skills mode so the package section becomes visible again.
@@ -89,20 +84,16 @@ skillsBackBtn.addEventListener("click", function () {
   });
 });
 
-//EXPERIENCE: Shows the experience section and scrolls it into view. Remove/hide other sections.
+//EXPERIENCE: Shows the Experience section.
 experienceBtn.addEventListener("click", function () {
-  clearPageModes();
-  document.body.classList.add("experience-mode");
-
-  experienceSection.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  openPageMode("experience-mode");
 });
 
 //EXPERIENCE: Removes experience mode so the package section becomes visible again with the flip and CV backside
 experienceBackCvBtn.addEventListener("click", function () {
-  document.body.classList.remove("experience-mode");
+  clearPageModes();
+
+  document.body.classList.add("package-focus-mode");
 
   packageCard.classList.add("is-flipped");
 
@@ -134,20 +125,16 @@ experienceBackPackageBtn.addEventListener("click", function () {
   });
 });
 
-//REFERENCE: Shows the references section and scrolls it into view. Remove/hide other sections.
+//REFERENCE: Shows the references section.
 referencesBtn.addEventListener("click", function () {
-  clearPageModes();
-  document.body.classList.add("references-mode");
-
-  referencesSection.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  openPageMode("references-mode");
 });
 
 //REFERENCE: Removes references mode so the package section becomes visible again with the flip and CV backside.
 referencesBackCvBtn.addEventListener("click", function () {
-  document.body.classList.remove("references-mode");
+  clearPageModes();
+
+  document.body.classList.add("package-focus-mode");
 
   packageCard.classList.add("is-flipped");
 
@@ -170,7 +157,7 @@ referencesBackPackageBtn.addEventListener("click", function () {
 
   setTimeout(function () {
     hideBackPanels();
-  }, 800);
+  }, flipAnimationTime);
 
   requestAnimationFrame(function () {
     packageSection.scrollIntoView({
@@ -180,29 +167,17 @@ referencesBackPackageBtn.addEventListener("click", function () {
   });
 });
 
-//PROJECTS SNAKE/BUTTERFLY: Shows the correct project section depending on which project card is clicked.
+//PROJECTS: Shows the project section.
 projectButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     const projectName = button.dataset.project;
 
-    clearPageModes();
-
     if (projectName === "snake") {
-      document.body.classList.add("snake-project-mode");
-
-      snakeProjectSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      openPageMode("snake-project-mode");
     }
 
     if (projectName === "butterfly") {
-      document.body.classList.add("butterfly-project-mode");
-
-      butterflyProjectSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      openPageMode("butterfly-project-mode");
     }
   });
 });
@@ -211,6 +186,8 @@ projectButtons.forEach(function (button) {
 projectBackProjectsBtns.forEach(function (button) {
   button.addEventListener("click", function () {
     clearPageModes();
+
+    document.body.classList.add("package-focus-mode");
 
     packageCard.classList.add("is-flipped");
 
@@ -235,7 +212,7 @@ projectBackPackageBtns.forEach(function (button) {
 
     setTimeout(function () {
       hideBackPanels();
-    }, 800);
+    }, flipAnimationTime);
 
     requestAnimationFrame(function () {
       packageSection.scrollIntoView({
@@ -259,14 +236,77 @@ function clearPageModes() {
   document.body.classList.remove("references-mode");
   document.body.classList.remove("snake-project-mode");
   document.body.classList.remove("butterfly-project-mode");
+  document.body.classList.remove("package-focus-mode");
 }
 
+//BUTTON HINT FUNCTION FOR MOBILE VIEW
+let hasShownPackageHint = false;
+
+const packageObserver = new IntersectionObserver(
+  function (entries) {
+    const packageEntry = entries[0];
+
+    if (packageEntry.isIntersecting && !hasShownPackageHint) {
+      hasShownPackageHint = true;
+
+      aboutButton.classList.add("button-hint");
+
+      setTimeout(function () {
+        aboutButton.classList.remove("button-hint");
+      }, 4000);
+    }
+  },
+  {
+    threshold: 0.6,
+  },
+);
+
+if (window.innerWidth < 900) {
+  packageObserver.observe(packageSection);
+}
+
+//Open correct page/section
+function openPageMode(modeClass) {
+  clearPageModes();
+  document.body.classList.add(modeClass);
+
+  requestAnimationFrame(function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  });
+}
+
+//mange (M) HOME BUTTON
+homeLinks.forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    clearPageModes();
+
+    packageCard.classList.remove("is-flipped");
+    hideBackPanels();
+
+    requestAnimationFrame(function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
+    });
+  });
+});
+
+//FLIP BEHAVIOUR TIME and WHERE CV/PROJECTS
 flipButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     const sectionName = button.dataset.section;
+    const shouldDelayFlip = button.dataset.flipDelay === "true";
 
     clearPageModes();
     hideBackPanels();
+
+    packageCard.classList.remove("is-flipped");
 
     if (sectionName === "cv") {
       cvPanel.classList.add("is-active");
@@ -276,20 +316,31 @@ flipButtons.forEach(function (button) {
       projectsPanel.classList.add("is-active");
     }
 
-    packageCard.classList.add("is-flipped");
-
     packageSection.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
+
+    if (shouldDelayFlip) {
+      // CTA-knappar: låt smooth scroll hända först.
+      setTimeout(function () {
+        document.body.classList.add("package-focus-mode");
+        packageCard.classList.add("is-flipped");
+      }, flipDelay);
+    } else {
+      // Paketets egna knappar: flippa direkt.
+      document.body.classList.add("package-focus-mode");
+      packageCard.classList.add("is-flipped");
+    }
   });
 });
 
+//FLIP BACK BUTTON
 backToFrontBtn.addEventListener("click", function () {
   packageCard.classList.remove("is-flipped");
 
   // Wait until the flip animation is finished before hiding the back content.
   setTimeout(function () {
     hideBackPanels();
-  }, 800);
+  }, flipAnimationTime);
 });
