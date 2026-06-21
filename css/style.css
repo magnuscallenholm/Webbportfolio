@@ -331,6 +331,11 @@ body {
   max-width: 34rem;
 }
 
+/* HIDE CONTENT ON MOBILE WHEN PRESS CTA BUTTON */
+.desktop-flip-info {
+  display: none;
+}
+
 /*========================
   CTA BUTTONS
 =========================*/

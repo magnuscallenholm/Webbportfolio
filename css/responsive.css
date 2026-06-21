@@ -30,6 +30,24 @@
     padding-bottom: 6rem;
   }
 
+  .desktop-flip-info {
+    max-width: 42rem;
+    text-align: center;
+  }
+
+  .desktop-flip-info h2 {
+    color: var(--heading-color);
+    font-size: clamp(2.4rem, 4vw, 4.5rem);
+    line-height: 0.95;
+    margin-bottom: 1.4rem;
+  }
+
+  .desktop-flip-info p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
   .intro-panel {
     grid-column: 1;
     grid-row: 1;
@@ -104,6 +122,26 @@
 
   body.package-focus-mode .language-toggle {
     display: flex;
+  }
+
+  body.projects-info-mode .intro-actions,
+  body.cv-info-mode .intro-actions {
+    display: none;
+  }
+
+  body.projects-info-mode .info-content,
+  body.cv-info-mode .info-content {
+    display: none;
+  }
+
+  body.projects-info-mode .hero-eyebrow,
+  body.cv-info-mode .hero-eyebrow {
+    display: none;
+  }
+
+  body.projects-info-mode #projectsDesktopInfo,
+  body.cv-info-mode #cvDesktopInfo {
+    display: block;
   }
 }
 

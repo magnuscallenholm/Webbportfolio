@@ -45,6 +45,10 @@ const backToFrontBtn = document.querySelector("#backToFrontBtn");
 const cvPanel = document.querySelector("#cv-panel");
 const projectsPanel = document.querySelector("#projects-panel");
 
+//DISPLAY LEFT CONTENT ON DESKTOP
+document.body.classList.remove("projects-info-mode");
+document.body.classList.remove("cv-info-mode");
+
 //FLIP THE ACTIONFIGURE
 const flipButtons = document.querySelectorAll('[data-action="flip-card"]');
 const flipDelay = 400;
@@ -237,6 +241,8 @@ function clearPageModes() {
   document.body.classList.remove("snake-project-mode");
   document.body.classList.remove("butterfly-project-mode");
   document.body.classList.remove("package-focus-mode");
+  document.body.classList.remove("cv-info-mode");
+  document.body.classList.remove("projects-info-mode");
 }
 
 //BUTTON HINT FUNCTION FOR MOBILE VIEW
@@ -297,7 +303,7 @@ homeLinks.forEach(function (link) {
   });
 });
 
-//FLIP BEHAVIOUR TIME and WHERE CV/PROJECTS
+//FLIP BEHAVIOUR TIME and WHERE CV/PROJECTS AND DISPLAY DESKTOP CONTENT
 flipButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     const sectionName = button.dataset.section;
@@ -310,10 +316,12 @@ flipButtons.forEach(function (button) {
 
     if (sectionName === "cv") {
       cvPanel.classList.add("is-active");
+      document.body.classList.add("cv-info-mode");
     }
 
     if (sectionName === "projects") {
       projectsPanel.classList.add("is-active");
+      document.body.classList.add("projects-info-mode");
     }
 
     packageSection.scrollIntoView({
@@ -338,7 +346,7 @@ flipButtons.forEach(function (button) {
 //FLIP BACK BUTTON
 backToFrontBtn.addEventListener("click", function () {
   packageCard.classList.remove("is-flipped");
-
+  clearPageModes();
   // Wait until the flip animation is finished before hiding the back content.
   setTimeout(function () {
     hideBackPanels();
