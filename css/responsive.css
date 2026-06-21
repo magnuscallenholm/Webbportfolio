@@ -336,6 +336,32 @@
 }
 
 /*========================
+  PACKAGE BACK BUTTONS - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  .cv-tab {
+    width: 78%;
+    min-height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 0.6rem 1rem;
+
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 0.35rem;
+  }
+}
+
+/*========================
   DESKTOP FOOTER
 =========================*/
 
@@ -509,6 +535,14 @@
   body.skills-mode .skill-icon {
     width: 6.4rem;
     height: 6.4rem;
+  }
+}
+
+@media (min-width: 1400px) and (min-height: 850px) {
+  .cv-tab {
+    width: 82%;
+    min-height: 3.3rem;
+    font-size: 0.95rem;
   }
 }
 
