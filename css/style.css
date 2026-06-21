@@ -317,6 +317,10 @@ body {
   letter-spacing: -0.05em;
 }
 
+.info-content h1 span {
+  display: block;
+}
+
 /* HERO BODY */
 .info-content p {
   padding-top: 1rem;
