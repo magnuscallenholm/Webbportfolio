@@ -687,6 +687,8 @@
     overflow: hidden;
     z-index: 10;
 
+    border-radius: 2%;
+
     align-items: center;
     justify-content: center;
   }
@@ -776,6 +778,56 @@
 }
 
 /*========================
+  CONTACT MODE - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  body.contact-mode .portfolio-app {
+    display: grid;
+  }
+
+  body.contact-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.contact-mode .language-toggle {
+    display: flex;
+  }
+
+  body.contact-mode .hero-eyebrow,
+  body.contact-mode .info-content,
+  body.contact-mode .intro-actions,
+  body.contact-mode .desktop-flip-info {
+    display: none;
+  }
+
+  body.contact-mode .contact-section {
+    display: flex;
+
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    top: 5rem;
+    bottom: 5rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    border-radius: 2%;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.contact-mode .contact-back-btn,
+  body.contact-mode #contactBackBtn {
+    display: none;
+  }
+}
+
+/*========================
   DESKTOP FOOTER
 =========================*/
 
@@ -845,6 +897,47 @@
   }
 
   .weather-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .thanks-body .footer {
+    position: fixed;
+    left: 50%;
+    bottom: 1.4rem;
+    width: min(42rem, 90vw);
+    transform: translateX(-50%);
+
+    padding: 0;
+    background: transparent;
+    border-top: none;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.4rem;
+  }
+
+  .thanks-body .footer-top-wrap {
+    display: contents;
+  }
+
+  .thanks-body .footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  .thanks-body .footer-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .thanks-body .weather-icon {
     width: 2rem;
     height: 2rem;
   }
@@ -1081,6 +1174,41 @@
   body.snake-project-mode .project-links,
   body.butterfly-project-mode .project-links {
     margin-top: 1rem;
+  }
+}
+
+/* CONTACT MODE */
+@media (min-width: 1400px) and (min-height: 850px) {
+  body.contact-mode .contact-section {
+    left: clamp(7rem, 8vw, 13rem);
+    width: min(50vw, 58rem);
+    top: 4.5rem;
+    bottom: 5.2rem;
+  }
+
+  body.contact-mode .contact-section h2 {
+    font-size: clamp(3rem, 3.4vw, 4.4rem);
+    margin-bottom: 1rem;
+  }
+
+  body.contact-mode .contact-form {
+    width: min(100%, 42rem);
+    padding: 1.5rem 1.8rem;
+  }
+
+  body.contact-mode .contact-form input,
+  body.contact-mode .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  body.contact-mode .contact-form textarea {
+    min-height: 15rem;
+  }
+
+  body.contact-mode .contact-form button {
+    min-height: 3rem;
+    font-size: 0.95rem;
   }
 }
 
