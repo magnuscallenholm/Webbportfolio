@@ -54,6 +54,10 @@ const flipButtons = document.querySelectorAll('[data-action="flip-card"]');
 const flipDelay = 400;
 const flipAnimationTime = 1100;
 
+//PRESS ME BTN FOR SOUND
+const pressMeButton = document.querySelector("#pressMeButton");
+const pressMeAudio = document.querySelector("#pressMeAudio");
+
 //ABOUT: Shows the About me section.
 aboutButton.addEventListener("click", function () {
   openPageMode("about-mode");
@@ -352,3 +356,11 @@ backToFrontBtn.addEventListener("click", function () {
     hideBackPanels();
   }, flipAnimationTime);
 });
+
+//PRESS ME BUTTON - PLAY SOUND
+if (pressMeButton && pressMeAudio) {
+  pressMeButton.addEventListener("click", function () {
+    pressMeAudio.currentTime = 0;
+    pressMeAudio.play();
+  });
+}
