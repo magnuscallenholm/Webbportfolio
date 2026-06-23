@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interactive portfolio for Magnus Callenholm, .NET developer student and former application specialist. Explore projects, skills, CV, references and contact information."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,14 +38,39 @@
         class="intro-panel"
         aria-label="Portfolio introduction"
       >
-        <p class="eyebrow">Interactive Portfolio</p>
+        <p class="eyebrow hero-eyebrow">Interactive Portfolio</p>
 
         <div class="hero-content">
           <div id="info-content" class="info-content">
-            <h1>Magnus Callenholm</h1>
+            <h1>
+              <span>Magnus</span>
+              <span>Callenholm</span>
+            </h1>
             <p>
-              .NET student and former application specialist with a focus on
-              clean, useful and user-friendly digital solutions.
+              .NET Developer student and former application specialist with a
+              focus on clean, useful and user-friendly digital solutions.
+            </p>
+          </div>
+
+          <div class="desktop-flip-info" id="projectsDesktopInfo">
+            <p class="eyebrow">Projects</p>
+            <h2>Explore my work</h2>
+            <p>
+              On the back of the package, you'll find a selection of my projects
+              — from school assignments to personal builds. Each card shows what
+              I've practiced, what I learned, and where you can view the code or
+              demo.
+            </p>
+          </div>
+
+          <div class="desktop-flip-info" id="cvDesktopInfo">
+            <p class="eyebrow">CV & References</p>
+            <h2>Experience and background</h2>
+            <p>
+              On the back of the package, you can explore my experience,
+              references and download my CV. It brings together my background as
+              an application specialist and my current journey toward becoming a
+              .NET developer.
             </p>
           </div>
           <!-- PRIMARY CALL TO ACTION BUTTON -->
@@ -202,7 +231,11 @@
                     References
                   </button>
 
-                  <a href="assets/documents/CV.pdf" download class="card-link">
+                  <a
+                    href="assets/documents/CV.pdf"
+                    download
+                    class="cv-tab card-link"
+                  >
                     Download CV
                   </a>
                 </div>
@@ -357,15 +390,6 @@
 
           <li class="skill-item">
             <img
-              src="assets/icons/skills-svg/csharp_dotnet.svg"
-              alt=""
-              class="skill-icon"
-            />
-            <span>C#</span>
-          </li>
-
-          <li class="skill-item">
-            <img
               src="assets/icons/skills-svg/sql.svg"
               alt=""
               class="skill-icon"
@@ -375,20 +399,20 @@
 
           <li class="skill-item">
             <img
-              src="assets/icons/skills-svg/git.svg"
+              src="assets/icons/skills-svg/csharp_dotnet.svg"
               alt=""
               class="skill-icon"
             />
-            <span>Git</span>
+            <span>C#</span>
           </li>
 
           <li class="skill-item">
             <img
-              src="assets/icons/skills-svg/visual_studio.svg"
+              src="assets/icons/skills-svg/google.svg"
               alt=""
               class="skill-icon"
             />
-            <span>Visual Studio</span>
+            <span>Google</span>
           </li>
 
           <li class="skill-item">
@@ -398,6 +422,15 @@
               class="skill-icon"
             />
             <span>VS Code</span>
+          </li>
+
+          <li class="skill-item">
+            <img
+              src="assets/icons/skills-svg/visual_studio.svg"
+              alt=""
+              class="skill-icon"
+            />
+            <span>Visual Studio</span>
           </li>
 
           <li class="skill-item">
@@ -592,7 +625,7 @@
           <article class="reference-card">
             <div class="reference-header">
               <img
-                src="assets/images/references/ref-anna.png"
+                src="assets/images/references/ref-anna.webp"
                 alt=""
                 class="reference-avatar"
               />
@@ -612,7 +645,7 @@
           <article class="reference-card">
             <div class="reference-header">
               <img
-                src="assets/images/references/ref-david.png"
+                src="assets/images/references/ref-david4.webp"
                 alt=""
                 class="reference-avatar"
               />
@@ -635,7 +668,7 @@
           <article class="reference-card">
             <div class="reference-header">
               <img
-                src="assets/images/references/ref-alex.png"
+                src="assets/images/references/ref-alex1.webp"
                 alt=""
                 class="reference-avatar"
               />

@@ -317,6 +317,10 @@ body {
   letter-spacing: -0.05em;
 }
 
+.info-content h1 span {
+  display: block;
+}
+
 /* HERO BODY */
 .info-content p {
   padding-top: 1rem;
@@ -325,6 +329,11 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   max-width: 34rem;
+}
+
+/* HIDE CONTENT ON MOBILE WHEN PRESS CTA BUTTON */
+.desktop-flip-info {
+  display: none;
 }
 
 /*========================
@@ -1694,47 +1703,4 @@ body.contact-mode .contact-section {
 #weatherTemp {
   font-weight: 800;
   color: var(--heading-color);
-}
-
-/*========================
-  DESKTOP
-=========================*/
-
-@media (min-width: 900px) {
-  html {
-    font-size: 112.5%;
-  }
-
-  .portfolio-app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 4rem;
-    padding: 4rem 6rem;
-  }
-
-  .intro-actions {
-    display: flex;
-  }
-
-  .scroll-arrow-icon {
-    display: none;
-  }
-
-  .package-panel {
-    justify-content: flex-end;
-  }
-
-  .package-scene {
-    width: min(100%, 520px);
-  }
-
-  body.contact-mode .portfolio-app,
-  body.contact-mode .footer {
-    display: grid; /* eller flex, beroende på din desktop-layout */
-  }
-
-  body.contact-mode .contact-section {
-    display: flex;
-  }
 }

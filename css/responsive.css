@@ -1,0 +1,1417 @@
+/*========================
+  DESKTOP BASE LAYOUT
+=========================*/
+
+@media (min-width: 900px) {
+  html {
+    font-size: 112.25%;
+  }
+
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  .portfolio-app {
+    height: 100dvh;
+    min-height: 100dvh;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 560px);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+
+    padding: clamp(2rem, 4vw, 4rem) clamp(3rem, 7vw, 7rem);
+    padding-bottom: 6rem;
+  }
+
+  .desktop-flip-info {
+    display: none;
+    max-width: 42rem;
+    text-align: center;
+  }
+
+  .desktop-flip-info h2 {
+    color: var(--heading-color);
+    font-size: clamp(2.4rem, 4vw, 4.5rem);
+    line-height: 0.95;
+    margin-bottom: 1.4rem;
+  }
+
+  .desktop-flip-info p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .intro-panel {
+    grid-column: 1;
+    grid-row: 1;
+
+    min-height: auto;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+    transform: translateY(-2rem);
+  }
+
+  .hero-content {
+    margin-top: 0;
+  }
+
+  .info-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: block;
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .intro-actions {
+    justify-content: center;
+  }
+
+  .scroll-down-link,
+  .scroll-arrow-icon {
+    display: none;
+  }
+
+  .package-panel {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-content: center;
+    padding: 0;
+
+    transform: translateY(-2rem);
+  }
+
+  .package-scene {
+    width: clamp(390px, 34vw, 540px);
+  }
+
+  body.package-focus-mode .intro-panel {
+    display: flex;
+  }
+
+  body.package-focus-mode .portfolio-app {
+    display: grid;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding-top: clamp(2rem, 4vw, 4rem);
+  }
+
+  body.package-focus-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.package-focus-mode .language-toggle {
+    display: flex;
+  }
+
+  body.projects-info-mode .intro-actions,
+  body.cv-info-mode .intro-actions {
+    display: none;
+  }
+
+  body.projects-info-mode .info-content,
+  body.cv-info-mode .info-content {
+    display: none;
+  }
+
+  body.projects-info-mode .hero-eyebrow,
+  body.cv-info-mode .hero-eyebrow {
+    display: none;
+  }
+
+  body.projects-info-mode #projectsDesktopInfo,
+  body.cv-info-mode #cvDesktopInfo {
+    display: block;
+  }
+}
+
+/*========================
+  ABOUT MODE - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  body.about-mode .portfolio-app {
+    display: grid;
+  }
+
+  body.about-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.about-mode .language-toggle {
+    display: flex;
+  }
+
+  body.about-mode .hero-eyebrow,
+  body.about-mode .info-content,
+  body.about-mode .intro-actions,
+  body.about-mode .desktop-flip-info {
+    display: none;
+  }
+
+  body.about-mode .about-section {
+    display: flex;
+
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    top: 5rem;
+    bottom: 5rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    border-radius: 2%;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: none;
+  }
+
+  body.about-mode .about-card {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    justify-items: center;
+    align-items: center;
+
+    gap: 0;
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+  body.about-mode .about-card > h2 {
+    display: none;
+  }
+
+  body.about-mode .about-image {
+    width: 100%;
+    max-width: 100%;
+    max-height: 42vh;
+
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  body.about-mode .about-image img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 42vh;
+
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  body.about-mode .about-text {
+    width: 100%;
+    max-width: 40rem;
+
+    padding: 1rem 1.5rem 1.4rem;
+    text-align: center;
+  }
+
+  body.about-mode .about-text h2 {
+    font-size: clamp(3rem, 4vw, 4.6rem);
+    margin-bottom: 0.3rem;
+  }
+
+  body.about-mode .about-text p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  body.about-mode .about-back-btn,
+  body.about-mode #aboutBackBtn {
+    display: none;
+  }
+}
+
+/*========================
+  SKILLS MODE - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  body.skills-mode .portfolio-app {
+    display: grid;
+  }
+
+  body.skills-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.skills-mode .language-toggle {
+    display: flex;
+  }
+
+  body.skills-mode .hero-eyebrow,
+  body.skills-mode .info-content,
+  body.skills-mode .intro-actions,
+  body.skills-mode .desktop-flip-info {
+    display: none;
+  }
+
+  body.skills-mode .skills-section {
+    display: flex;
+
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    top: 5rem;
+    bottom: 5rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    border-radius: 2%;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.skills-mode .skills-card {
+    width: 100%;
+    max-width: none;
+    max-height: 100%;
+
+    padding: clamp(1rem, 2vw, 1.8rem);
+  }
+
+  body.skills-mode .skills-card h2 {
+    font-size: clamp(2.6rem, 4vw, 4.4rem);
+    margin-bottom: 0.6rem;
+  }
+
+  body.skills-mode .skills-intro {
+    max-width: 34rem;
+    margin-bottom: 1.4rem;
+
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  body.skills-mode .skills-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.1rem 0.9rem;
+  }
+
+  body.skills-mode .skill-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  body.skills-mode .skill-item {
+    font-size: 0.78rem;
+  }
+
+  body.skills-mode #skillsBackBtn {
+    display: none;
+  }
+}
+
+/*========================
+  PACKAGE BACK BUTTONS - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  .cv-tab {
+    width: 78%;
+    min-height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 0.6rem 1rem;
+
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 0.35rem;
+  }
+}
+
+/*========================
+  EXPERIENCE MODE - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  body.experience-mode .portfolio-app {
+    display: grid;
+  }
+
+  body.experience-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.experience-mode .language-toggle {
+    display: flex;
+  }
+
+  body.experience-mode .hero-eyebrow,
+  body.experience-mode .info-content,
+  body.experience-mode .intro-actions,
+  body.experience-mode .desktop-flip-info {
+    display: none;
+  }
+
+  body.experience-mode .experience-section {
+    display: flex;
+
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    top: 5rem;
+    bottom: 5rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    border-radius: 2%;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.experience-mode .experience-card {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    padding: 1.1rem;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+
+  body.experience-mode .experience-card > h2 {
+    grid-column: 1 / -1;
+
+    font-size: clamp(2rem, 3.2vw, 3.3rem);
+    line-height: 0.95;
+    text-align: center;
+    margin: 0 0 0.2rem;
+  }
+
+  body.experience-mode .experience-intro,
+  body.experience-mode .experience-subtitle {
+    display: none;
+  }
+
+  body.experience-mode .experience-list,
+  body.experience-mode .education-list {
+    display: contents;
+  }
+
+  body.experience-mode .experience-item {
+    min-width: 0;
+    min-height: 0;
+
+    padding: 1rem 1.1rem;
+    border-radius: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
+
+    overflow: hidden;
+  }
+
+  body.experience-mode .experience-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  body.experience-mode .experience-logo {
+    width: 3.5rem;
+    max-height: 2.2rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  body.experience-mode .experience-role {
+    font-size: 1.05rem;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  body.experience-mode .experience-period {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin: 0;
+    opacity: 0.75;
+  }
+
+  body.experience-mode .experience-description {
+    margin-top: 0.65rem;
+
+    font-size: 0.8rem;
+    line-height: 1.35;
+
+    display: block;
+    overflow: visible;
+
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+  }
+
+  body.experience-mode .experience-points {
+    display: none;
+  }
+
+  body.experience-mode .experience-back-cv-btn,
+  body.experience-mode .experience-back-package-btn,
+  body.experience-mode #experienceBackCvBtn,
+  body.experience-mode #experienceBackPackageBtn {
+    display: none;
+  }
+}
+
+/*========================
+  REFERENCES MODE - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  body.references-mode .portfolio-app {
+    display: grid;
+  }
+
+  body.references-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.references-mode .language-toggle {
+    display: flex;
+  }
+
+  body.references-mode .hero-eyebrow,
+  body.references-mode .info-content,
+  body.references-mode .intro-actions,
+  body.references-mode .desktop-flip-info {
+    display: none;
+  }
+
+  body.references-mode .references-section {
+    display: flex;
+
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    top: 5rem;
+    bottom: 5rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    border-radius: 2%;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.references-mode .references-card {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    padding: 1.1rem;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  body.references-mode .references-card > h2 {
+    font-size: clamp(2.2rem, 3.2vw, 3.6rem);
+    line-height: 0.95;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  body.references-mode .references-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  body.references-mode .reference-card {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    column-gap: 1rem;
+
+    padding: 0.85rem 1rem;
+    border-radius: 0.85rem;
+
+    align-items: start;
+  }
+
+  body.references-mode .reference-header {
+    display: contents;
+  }
+
+  body.references-mode .reference-avatar {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    width: 4.5rem;
+    height: 4.5rem;
+
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  body.references-mode .reference-header div {
+    grid-column: 2;
+  }
+
+  body.references-mode .reference-header h3 {
+    font-size: 0.95rem;
+    margin: 0 0 0.1rem;
+  }
+
+  body.references-mode .reference-header p {
+    font-size: 0.68rem;
+    line-height: 1.25;
+    margin: 0;
+    opacity: 0.75;
+  }
+
+  body.references-mode .reference-quote {
+    grid-column: 2;
+
+    margin: 0.45rem 0 0;
+
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  body.references-mode .references-back-cv-btn,
+  body.references-mode .references-back-package-btn,
+  body.references-mode #referencesBackCvBtn,
+  body.references-mode #referencesBackPackageBtn {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  body.snake-project-mode .portfolio-app,
+  body.butterfly-project-mode .portfolio-app {
+    display: grid;
+  }
+
+  body.snake-project-mode .brand-mark,
+  body.butterfly-project-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.snake-project-mode .language-toggle,
+  body.butterfly-project-mode .language-toggle {
+    display: flex;
+  }
+
+  body.snake-project-mode .hero-eyebrow,
+  body.snake-project-mode .info-content,
+  body.snake-project-mode .intro-actions,
+  body.snake-project-mode .desktop-flip-info,
+  body.snake-project-mode .project-back-projects-btn,
+  body.snake-project-mode .project-back-package-btn,
+  body.butterfly-project-mode .hero-eyebrow,
+  body.butterfly-project-mode .info-content,
+  body.butterfly-project-mode .intro-actions,
+  body.butterfly-project-mode .desktop-flip-info,
+  body.butterfly-project-mode .project-back-projects-btn,
+  body.butterfly-project-mode .project-back-package-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  body.snake-project-mode #snake-project,
+  body.butterfly-project-mode #butterfly-project {
+    display: flex;
+
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    top: 5rem;
+    bottom: 5rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    border-radius: 2%;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.snake-project-mode .project-details-card,
+  body.butterfly-project-mode .project-details-card {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 1.2rem;
+    overflow: hidden;
+  }
+}
+
+/*========================
+  PROJECT DETAILS - DESKTOP FIX
+=========================*/
+
+@media (min-width: 900px) {
+  body.snake-project-mode .project-details-card,
+  body.butterfly-project-mode .project-details-card {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+    gap: 0.7rem;
+
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  body.snake-project-mode .project-details-card h2,
+  body.butterfly-project-mode .project-details-card h2 {
+    font-size: clamp(2.2rem, 3.2vw, 3.6rem);
+    line-height: 0.95;
+    margin: 0;
+    text-align: center;
+  }
+
+  body.snake-project-mode .project-details-image,
+  body.butterfly-project-mode .project-details-image {
+    width: 100%;
+    height: 100%;
+    max-height: 34vh;
+
+    object-fit: fill;
+    display: block;
+    min-height: 0;
+  }
+
+  body.snake-project-mode .project-details-description,
+  body.butterfly-project-mode .project-details-description {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  body.snake-project-mode .project-tech-list,
+  body.butterfly-project-mode .project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+
+    margin: 0;
+  }
+
+  body.snake-project-mode .project-links,
+  body.butterfly-project-mode .project-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+
+    margin: 0;
+  }
+
+  body.snake-project-mode .project-links a,
+  body.butterfly-project-mode .project-links a {
+    min-height: 2.4rem;
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/*========================
+  CONTACT MODE - DESKTOP
+=========================*/
+
+@media (min-width: 900px) {
+  body.contact-mode .portfolio-app {
+    display: grid;
+  }
+
+  body.contact-mode .brand-mark {
+    display: inline-flex;
+  }
+
+  body.contact-mode .language-toggle {
+    display: flex;
+  }
+
+  body.contact-mode .hero-eyebrow,
+  body.contact-mode .info-content,
+  body.contact-mode .intro-actions,
+  body.contact-mode .desktop-flip-info {
+    display: none;
+  }
+
+  body.contact-mode .contact-section {
+    display: flex;
+
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    top: 5rem;
+    bottom: 5rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    border-radius: 2%;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.contact-mode .contact-back-btn,
+  body.contact-mode #contactBackBtn {
+    display: none;
+  }
+}
+
+/*========================
+  DESKTOP FOOTER
+=========================*/
+
+@media (min-width: 900px) {
+  .footer {
+    position: fixed;
+    left: clamp(3rem, 7vw, 7rem);
+    bottom: 1rem;
+
+    width: min(44vw, 44rem);
+
+    padding: 0;
+    background: transparent;
+    border-top: none;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.4rem;
+
+    z-index: 20;
+  }
+
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: -0.9rem;
+    left: 10%;
+    right: 10%;
+
+    height: 1px;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 132, 255, 0.65),
+      rgba(0, 255, 200, 0.35),
+      transparent
+    );
+  }
+
+  .footer-top-wrap {
+    display: contents;
+  }
+
+  .footer-brand {
+    order: 1;
+  }
+
+  .footer-links {
+    order: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  .weather-widget {
+    order: 3;
+  }
+
+  .footer-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .weather-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .thanks-body .footer {
+    position: fixed;
+    left: 50%;
+    bottom: 1.4rem;
+    width: min(42rem, 90vw);
+    transform: translateX(-50%);
+
+    padding: 0;
+    background: transparent;
+    border-top: none;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.4rem;
+  }
+
+  .thanks-body .footer-top-wrap {
+    display: contents;
+  }
+
+  .thanks-body .footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  .thanks-body .footer-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .thanks-body .weather-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/*========================
+  LARGE DESKTOP
+=========================*/
+
+/* HERO SECTION */
+@media (min-width: 1400px) and (min-height: 850px) {
+  .portfolio-app {
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 560px);
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .intro-panel {
+    transform: translateY(-1rem);
+  }
+
+  .package-panel {
+    transform: translateY(0.1rem);
+  }
+
+  .package-scene {
+    width: clamp(440px, 31vw, 560px);
+  }
+
+  /* ABOUT ME */
+  body.about-mode .about-section {
+    left: clamp(7rem, 10vw, 13rem);
+    width: min(50vw, 58rem);
+    top: 4.5rem;
+    bottom: 5.2rem;
+  }
+
+  body.about-mode .about-image,
+  body.about-mode .about-image img {
+    width: min(100%, 42rem);
+    max-width: min(100%, 42rem);
+    max-height: 52vh;
+
+    object-fit: contain;
+    display: block;
+  }
+
+  body.about-mode .about-card {
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.2rem;
+    padding: 0.1rem 1rem 1rem;
+  }
+
+  body.about-mode .about-text {
+    width: min(100%, 40rem);
+    padding: 0;
+  }
+
+  body.about-mode .about-text h2 {
+    font-size: clamp(3rem, 3.2vw, 4.4rem);
+    margin-bottom: 0.1rem;
+  }
+
+  body.about-mode .about-text p {
+    font-size: 0.83rem;
+    line-height: 1.35;
+  }
+
+  .footer {
+    left: clamp(12rem, 18vw, 20rem);
+    width: min(32rem, 34vw);
+    bottom: 1rem;
+  }
+
+  .footer::before {
+    left: 0;
+    right: 0;
+  }
+}
+
+/* SKILLS */
+@media (min-width: 1400px) and (min-height: 850px) {
+  body.skills-mode .skills-section {
+    left: clamp(7rem, 10vw, 13rem);
+    width: min(50vw, 58rem);
+    top: 4.5rem;
+    bottom: 5.2rem;
+  }
+
+  body.skills-mode .skills-card {
+    padding: 2.3rem 2rem;
+  }
+
+  body.skills-mode .skills-list {
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    gap: 1rem 4rem;
+  }
+
+  body.skills-mode .skill-icon {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+}
+
+/* CV */
+@media (min-width: 1400px) and (min-height: 850px) {
+  .cv-tab {
+    width: 82%;
+    min-height: 3.3rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* EXPERIENCE */
+@media (min-width: 1400px) and (min-height: 850px) {
+  body.experience-mode .experience-section {
+    left: clamp(7rem, 10vw, 13rem);
+    width: min(50vw, 58rem);
+    top: 4.5rem;
+    bottom: 5.2rem;
+  }
+
+  body.experience-mode .experience-item {
+    padding: 1.15rem 1.25rem;
+  }
+
+  body.experience-mode .experience-card {
+    padding: 1.4rem;
+    gap: 0.9rem;
+  }
+
+  body.experience-mode .experience-card > h2 {
+    font-size: clamp(2.4rem, 2.2vw, 3.8rem);
+  }
+
+  body.experience-mode .experience-logo {
+    width: 4.4rem;
+  }
+
+  body.experience-mode .experience-description {
+    margin-top: 0.8rem;
+
+    font-size: 0.9rem;
+    line-height: 1.45;
+
+    line-clamp: 5;
+    -webkit-line-clamp: 5;
+  }
+}
+
+/* REFERENCES */
+@media (min-width: 1400px) and (min-height: 850px) {
+  body.references-mode .references-section {
+    left: clamp(7rem, 10vw, 13rem);
+    width: min(50vw, 58rem);
+    top: 4.5rem;
+    bottom: 5.2rem;
+  }
+
+  body.references-mode .references-card {
+    padding: 1.4rem;
+  }
+
+  body.references-mode .reference-card {
+    grid-template-columns: 5rem 1fr;
+    padding: 1rem 1.15rem;
+  }
+
+  body.references-mode .reference-avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  body.references-mode .reference-quote {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+}
+
+/* PROJECTS */
+@media (min-width: 1400px) and (min-height: 850px) {
+  body.snake-project-mode #snake-project,
+  body.butterfly-project-mode #butterfly-project {
+    left: clamp(7rem, 10vw, 13rem);
+    width: min(50vw, 58rem);
+    top: 4.5rem;
+    bottom: 6.3rem;
+  }
+
+  body.snake-project-mode .project-details-card,
+  body.butterfly-project-mode .project-details-card {
+    padding: 1rem;
+    gap: 0.65rem;
+
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+    overflow: hidden;
+  }
+
+  body.snake-project-mode .project-details-card h2,
+  body.butterfly-project-mode .project-details-card h2 {
+    font-size: clamp(2.4rem, 3vw, 3.8rem);
+    line-height: 0.95;
+    margin: 0;
+  }
+
+  body.snake-project-mode .project-details-image,
+  body.butterfly-project-mode .project-details-image {
+    max-height: 45vh;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.snake-project-mode .project-details-description,
+  body.butterfly-project-mode .project-details-description {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  body.snake-project-mode .project-tech-list,
+  body.butterfly-project-mode .project-tech-list {
+    margin-top: 0.8rem;
+  }
+
+  body.snake-project-mode .project-links,
+  body.butterfly-project-mode .project-links {
+    margin-top: 1rem;
+  }
+}
+
+/* CONTACT MODE */
+@media (min-width: 1400px) and (min-height: 850px) {
+  body.contact-mode .contact-section {
+    left: clamp(7rem, 8vw, 13rem);
+    width: min(50vw, 58rem);
+    top: 4.5rem;
+    bottom: 5.2rem;
+  }
+
+  body.contact-mode .contact-section h2 {
+    font-size: clamp(3rem, 3.4vw, 4.4rem);
+    margin-bottom: 1rem;
+  }
+
+  body.contact-mode .contact-form {
+    width: min(100%, 42rem);
+    padding: 1.5rem 1.8rem;
+  }
+
+  body.contact-mode .contact-form input,
+  body.contact-mode .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  body.contact-mode .contact-form textarea {
+    min-height: 15rem;
+  }
+
+  body.contact-mode .contact-form button {
+    min-height: 3rem;
+    font-size: 0.95rem;
+  }
+}
+
+/*========================
+  LAPTOP HEIGHT FIX
+=========================*/
+
+@media (min-width: 900px) and (max-height: 800px) {
+  body.about-mode .about-section {
+    top: 4.8rem;
+    bottom: 5rem;
+  }
+
+  body.about-mode .about-card {
+    gap: 0.6rem;
+    padding: 0.4rem;
+  }
+
+  body.about-mode .about-image,
+  body.about-mode .about-image img {
+    max-width: min(100%, 26rem);
+    max-height: 38vh;
+  }
+
+  body.about-mode .about-text {
+    padding: 0.8rem 1.2rem 1rem;
+  }
+
+  body.about-mode .about-text h2 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: 0.35rem;
+  }
+
+  body.about-mode .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 900px) and (max-height: 800px) {
+  body.references-mode .references-section {
+    top: 4.6rem;
+    bottom: 4.8rem;
+  }
+
+  body.references-mode .references-card {
+    padding: 0.75rem;
+  }
+
+  body.references-mode .references-card > h2 {
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    margin-bottom: 0.6rem;
+  }
+
+  body.references-mode .references-list {
+    gap: 0.55rem;
+  }
+
+  body.references-mode .reference-card {
+    grid-template-columns: 3.8rem 1fr;
+    padding: 0.65rem;
+    column-gap: 0.75rem;
+  }
+
+  body.references-mode .reference-avatar {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  body.references-mode .reference-header h3 {
+    font-size: 0.82rem;
+  }
+
+  body.references-mode .reference-header p {
+    font-size: 0.6rem;
+  }
+
+  body.references-mode .reference-quote {
+    font-size: 0.66rem;
+    line-height: 1.28;
+  }
+}
+
+/*========================
+  LAPTOP FIX - EXPERIENCE
+=========================*/
+
+@media (min-width: 900px) and (max-width: 1600px),
+  (min-width: 900px) and (max-height: 850px) {
+  body.experience-mode .experience-card {
+    padding: 0.65rem;
+    gap: 0.5rem;
+  }
+
+  body.experience-mode .experience-card > h2 {
+    font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+    line-height: 0.95;
+    margin-bottom: 0.1rem;
+  }
+
+  body.experience-mode .experience-item {
+    padding: 0.55rem 0.65rem;
+    gap: 0.3rem;
+    overflow: hidden;
+  }
+
+  body.experience-mode .experience-header {
+    gap: 0.6rem;
+  }
+
+  body.experience-mode .experience-logo {
+    width: 4.3rem;
+    max-height: 1.5rem;
+  }
+
+  body.experience-mode .experience-role {
+    font-size: 0.92rem;
+    line-height: 1.05;
+  }
+
+  body.experience-mode .experience-period {
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+
+  body.experience-mode .experience-description {
+    margin-top: 0.5rem;
+
+    font-size: 0.9rem;
+    line-height: 1.16;
+
+    display: block;
+    overflow: visible;
+
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+  }
+}
+
+/*========================
+  LAPTOP HEIGHT FIX - PROJECTS
+=========================*/
+
+@media (min-width: 900px) and (max-height: 800px) {
+  body.snake-project-mode .project-details-section,
+  body.butterfly-project-mode .project-details-section {
+    top: 4.6rem;
+    bottom: 4.8rem;
+  }
+
+  body.snake-project-mode .project-details-card,
+  body.butterfly-project-mode .project-details-card {
+    padding: 0.75rem;
+    gap: 0.55rem;
+
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  body.snake-project-mode .project-details-card h2,
+  body.butterfly-project-mode .project-details-card h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 0.95;
+    margin-bottom: 0.2rem;
+  }
+
+  body.snake-project-mode .project-details-image,
+  body.butterfly-project-mode .project-details-image {
+    max-height: 24vh;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  body.snake-project-mode .project-details-description,
+  body.butterfly-project-mode .project-details-description {
+    font-size: 0.72rem;
+    line-height: 1.28;
+    margin: 0.2rem 0;
+  }
+
+  body.snake-project-mode .project-tech-list,
+  body.butterfly-project-mode .project-tech-list {
+    gap: 0.35rem;
+    margin: 0.2rem 0;
+  }
+
+  body.snake-project-mode .project-tech-list li,
+  body.butterfly-project-mode .project-tech-list li {
+    font-size: 0.62rem;
+    padding: 0.25rem 0.45rem;
+  }
+
+  body.snake-project-mode .project-links,
+  body.butterfly-project-mode .project-links {
+    margin-top: 0.3rem;
+    gap: 0.5rem;
+  }
+
+  body.snake-project-mode .project-links a,
+  body.butterfly-project-mode .project-links a {
+    min-height: 2.1rem;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.72rem;
+  }
+}
