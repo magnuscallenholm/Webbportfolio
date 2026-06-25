@@ -26,24 +26,32 @@ The portfolio is responsive and designed to work on both mobile and desktop devi
 ## Methods and principles used
 
 ### Mobile-first design
+
 The project was built with a mobile-first approach. The base layout was first created for smaller screens and later adapted for desktop using media queries.
 
 ### Responsive design
+
 The portfolio is responsive and adapts to different screen sizes by using:
+
 - CSS media queries
 - flexible sizing with rem, clamp() and percentages
 - separate desktop layout adjustments
 
 ### CSS Grid and Flexbox
+
 Both Grid and Flexbox were used throughout the project:
+
 - Grid for larger layout structure
 - Flexbox for alignment, spacing and smaller interface groups
 
 ### Semantic HTML
+
 Semantic HTML elements such as `main`, `section`, `footer`, `button`, `form` and proper heading hierarchy were used to create a clear and structured layout.
 
 ### JavaScript interactivity
+
 JavaScript was used to handle:
+
 - section switching
 - card flipping interactions
 - project detail views
@@ -52,31 +60,38 @@ JavaScript was used to handle:
 - page/view state changes through CSS classes
 
 ### Reusable styling
+
 Reusable classes and shared styling patterns were used to keep the design consistent across sections.
 
 ### Version control with Git and GitHub
+
 The project was developed using Git and GitHub with:
+
 - feature branches
 - structured commits
 - merge workflow into main
 
 ### User experience focus
+
 A strong focus was placed on:
+
 - clear navigation
 - visual clarity
 - responsive presentation
 - interactive but understandable user flow
 
 ### API integration
+
 A weather widget was implemented in the footer using weather API data.
 
 ### Form handling
+
 The contact form allows visitors to send a message and redirects them to a thank-you page after submission.
 
 ## Built with
 
-- HTML5
-- CSS3
+- HTML
+- CSS (VANILLA)
 - JavaScript
 - OpenWeather API
 - FormSubmit
@@ -104,3 +119,4 @@ thanks.html
 README.md
 
 
+```

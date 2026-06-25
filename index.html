@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Luckiest+Guy&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -255,6 +255,7 @@
                     type="button"
                     class="project-card"
                     data-project="snake"
+                    aria-label="Open Snake Game project"
                   >
                     <div class="project-preview-frame">
                       <img
@@ -269,6 +270,7 @@
                     type="button"
                     class="project-card"
                     data-project="butterfly"
+                    aria-label="Open Butterfly web project"
                   >
                     <div class="project-preview-frame">
                       <img
@@ -297,6 +299,7 @@
                     type="button"
                     class="project-card"
                     data-project="comingsoon"
+                    aria-label="Coming soon project placeholder"
                   >
                     <div class="project-preview-frame">
                       <img
@@ -741,7 +744,9 @@
         </ul>
 
         <div class="project-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">Live demo</a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+            >Live demo coming soon</a
+          >
           <a
             href="https://github.com/magnuscallenholm/Snake-game.git"
             target="_blank"
@@ -795,7 +800,9 @@
         </ul>
 
         <div class="project-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">Live demo</a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+            >Live demo coming soon</a
+          >
           <a
             href="https://github.com/magnuscallenholm/butterfly.git"
             target="_blank"
@@ -838,7 +845,7 @@
         <input
           type="hidden"
           name="_next"
-          value="http://192.168.0.173:5500/thanks.html"
+          value="http://127.0.0.1:5500/thanks.html"
         />
 
         <!-- Fullname -->
@@ -867,6 +874,8 @@
           id="email"
           name="From"
           required
+          pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+          title="Please enter a valid email address, for example name@example.com"
           placeholder="Your Email"
           autocomplete="email"
         />
@@ -949,6 +958,7 @@
           href="https://www.linkedin.com/in/magnus-callenholm-b5428569/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Visit my LinkedIn profile"
           ><img
             src="assets/icons/linkedin-icon-optimized-transparent.svg"
             alt="linkedin icon"
@@ -959,6 +969,7 @@
           href="https://github.com/magnuscallenholm"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Visit my GitHub profile"
         >
           <img
             src="assets/icons/github-icon-optimized-transparent.svg"
