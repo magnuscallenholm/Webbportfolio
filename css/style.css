@@ -191,7 +191,8 @@ body {
 .experience-section,
 .references-section,
 .project-details-section,
-.contact-section {
+.contact-section,
+.portfolio-app {
   flex: 1;
 }
 
