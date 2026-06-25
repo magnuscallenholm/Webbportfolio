@@ -1,19 +1,19 @@
-//About Me
+//ABOUT
 const aboutButton = document.querySelector(".package-btn-aboutme");
 const aboutSection = document.querySelector("#about");
 const aboutBackBtn = document.querySelector("#aboutBackBtn");
-//Skills
+//SKILLS
 const skillsButton = document.querySelector(".package-btn-skills");
 const skillsSection = document.querySelector("#skills");
 const skillsBackBtn = document.querySelector("#skillsBackBtn");
-//Experience
+//EXPERIENCE
 const experienceBtn = document.querySelector("#experienceBtn");
 const experienceSection = document.querySelector("#experience");
 const experienceBackCvBtn = document.querySelector("#experienceBackCvBtn");
 const experienceBackPackageBtn = document.querySelector(
   "#experienceBackPackageBtn",
 );
-//References
+//REFERENCES
 const referencesBtn = document.querySelector("#referencesBtn");
 const referencesSection = document.querySelector("#references");
 const referencesBackCvBtn = document.querySelector("#referencesBackCvBtn");
@@ -21,7 +21,7 @@ const referencesBackPackageBtn = document.querySelector(
   "#referencesBackPackageBtn",
 );
 
-// Projects
+//PROJECTS
 const projectButtons = document.querySelectorAll(".project-card[data-project]");
 const snakeProjectSection = document.querySelector("#snake-project");
 const butterflyProjectSection = document.querySelector("#butterfly-project");
