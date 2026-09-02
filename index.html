@@ -30,10 +30,34 @@
       <span class="brand-symbol">M</span>
     </a>
     <!-- TOGGLE LANGUAGE BUTTONS -->
-    <div class="language-toggle" aria-label="Language selection">
-      <button type="button" class="language-btn active">EN</button>
-      <span>/</span>
-      <button type="button" class="language-btn">SV</button>
+    <div
+      class="language-toggle"
+      aria-label="Language selection"
+      data-i18n-aria-label="language.selection"
+    >
+      <button
+        type="button"
+        class="language-btn active"
+        data-language="en"
+        aria-label="English"
+        data-i18n-aria-label="language.english"
+        aria-pressed="true"
+      >
+        EN
+      </button>
+
+      <span aria-hidden="true">/</span>
+
+      <button
+        type="button"
+        class="language-btn"
+        data-language="sv"
+        aria-label="Swedish"
+        data-i18n-aria-label="language.swedish"
+        aria-pressed="false"
+      >
+        SV
+      </button>
     </div>
 
     <main class="portfolio-app">
@@ -43,7 +67,9 @@
         class="intro-panel"
         aria-label="Portfolio introduction"
       >
-        <p class="eyebrow hero-eyebrow">Interactive Portfolio</p>
+        <p class="eyebrow hero-eyebrow" data-i18n="hero.eyebrow">
+          Interactive Portfolio
+        </p>
 
         <div class="hero-content">
           <div id="info-content" class="info-content">
@@ -51,16 +77,18 @@
               <span>Magnus</span>
               <span>Callenholm</span>
             </h1>
-            <p>
+            <p data-i18n="hero.description">
               .NET Developer student and former application specialist with a
               focus on clean, useful and user-friendly digital solutions.
             </p>
           </div>
 
           <div class="desktop-flip-info" id="projectsDesktopInfo">
-            <p class="eyebrow">Projects</p>
-            <h2>Explore my work</h2>
-            <p>
+            <p class="eyebrow" data-i18n="projects.eyebrow">Projects</p>
+
+            <h2 data-i18n="projects.title">Explore my work</h2>
+
+            <p data-i18n="projects.description">
               On the back of the package, you'll find a selection of my projects
               — from school assignments to personal builds. Each card shows what
               I've practiced, what I learned, and where you can view the code or
@@ -69,15 +97,18 @@
           </div>
 
           <div class="desktop-flip-info" id="cvDesktopInfo">
-            <p class="eyebrow">CV & References</p>
-            <h2>Experience and background</h2>
-            <p>
+            <p class="eyebrow" data-i18n="cv.eyebrow">CV & References</p>
+
+            <h2 data-i18n="cv.title">Experience and background</h2>
+
+            <p data-i18n="cv.description">
               On the back of the package, you can explore my experience,
               references and download my CV. It brings together my background as
               an application specialist and my current journey toward becoming a
               .NET developer.
             </p>
           </div>
+
           <!-- PRIMARY CALL TO ACTION BUTTON -->
           <div class="intro-actions">
             <button
@@ -86,9 +117,11 @@
               data-action="flip-card"
               data-section="projects"
               data-flip-delay="true"
+              data-i18n="hero.seeWork"
             >
               See My Work
             </button>
+
             <!-- SECONDARY CALL TO ACTION BUTTON -->
             <button
               type="button"
@@ -96,6 +129,7 @@
               data-action="flip-card"
               data-section="cv"
               data-flip-delay="true"
+              data-i18n="hero.cvReferences"
             >
               CV & References
             </button>
@@ -133,12 +167,18 @@
                 class="package-image"
               />
 
-              <nav class="package-navbar" aria-label="Main navigation">
+              <nav
+                class="package-navbar"
+                aria-label="Main navigation"
+                data-i18n-aria-label="package.navigation"
+              >
                 <button
                   type="button"
                   id="pressMeButton"
                   class="package-btn package-btn-icon package-btn-pressme"
                   aria-label="Play voice greeting"
+                  data-i18n="package.pressMe"
+                  data-i18n-aria-label="package.playGreeting"
                 >
                   PRESS ME
                 </button>
@@ -153,6 +193,7 @@
                   class="package-btn package-btn-menu package-btn-aboutme"
                   data-action="show-info"
                   data-section="about"
+                  data-i18n="package.about"
                 >
                   About me
                 </button>
@@ -162,6 +203,7 @@
                   class="package-btn package-btn-menu package-btn-skills"
                   data-action="show-info"
                   data-section="skills"
+                  data-i18n="package.skills"
                 >
                   Skills
                 </button>
@@ -171,6 +213,7 @@
                   class="package-btn package-btn-menu package-btn-cv"
                   data-action="flip-card"
                   data-section="cv"
+                  data-i18n="package.cv"
                 >
                   CV
                 </button>
@@ -180,6 +223,7 @@
                   class="package-btn package-btn-menu package-btn-projects"
                   data-action="flip-card"
                   data-section="projects"
+                  data-i18n="package.projects"
                 >
                   Projects
                 </button>
@@ -190,6 +234,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit my LinkedIn profile"
+                  data-i18n-aria-label="package.linkedin"
                 >
                 </a>
 
@@ -199,6 +244,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit my GitHub profile"
+                  data-i18n-aria-label="package.github"
                 >
                 </a>
 
@@ -207,6 +253,7 @@
                   class="package-btn package-btn-mail"
                   data-action="show-info"
                   data-section="contact"
+                  data-i18n="package.mail"
                 >
                   Mail
                 </button>
@@ -225,11 +272,21 @@
                 <h2>CV</h2>
 
                 <div class="cv-options">
-                  <button type="button" class="cv-tab" id="experienceBtn">
+                  <button
+                    type="button"
+                    class="cv-tab"
+                    id="experienceBtn"
+                    data-i18n="back.educationExperience"
+                  >
                     Education & Work Experience
                   </button>
 
-                  <button type="button" class="cv-tab" id="referencesBtn">
+                  <button
+                    type="button"
+                    class="cv-tab"
+                    id="referencesBtn"
+                    data-i18n="back.references"
+                  >
                     References
                   </button>
 
@@ -237,6 +294,7 @@
                     href="assets/documents/CV.pdf"
                     download
                     class="cv-tab card-link"
+                    data-i18n="back.downloadCv"
                   >
                     Download CV
                   </a>
@@ -244,7 +302,7 @@
               </section>
 
               <section class="back-section" id="projects-panel">
-                <h2>Projects</h2>
+                <h2 data-i18n="projectPanel.title">Projects</h2>
 
                 <div class="project-options">
                   <button
@@ -252,11 +310,13 @@
                     class="project-card"
                     data-project="snake"
                     aria-label="Open Snake Game project"
+                    data-i18n-aria-label="projectPanel.snakeLabel"
                   >
                     <div class="project-preview-frame">
                       <img
                         src="assets/images/projects/snake-preview.png"
                         alt="Preview of Snake Game"
+                        data-i18n-alt="projectPanel.snakeAlt"
                         class="project-preview"
                       />
                     </div>
@@ -267,26 +327,13 @@
                     class="project-card"
                     data-project="butterfly"
                     aria-label="Open Butterfly web project"
+                    data-i18n-aria-label="projectPanel.butterflyLabel"
                   >
                     <div class="project-preview-frame">
                       <img
                         src="assets/images/projects/butterfly-preview.png"
                         alt="Preview of Butterfly Website"
-                        class="project-preview"
-                      />
-                    </div>
-                  </button>
-
-                  <button
-                    type="button"
-                    class="project-card"
-                    disabled
-                    data-project="comingsoon"
-                  >
-                    <div class="project-preview-frame">
-                      <img
-                        src="assets/images/projects/comingsoon.png"
-                        alt="Preview of comingsoon"
+                        data-i18n-alt="projectPanel.butterflyAlt"
                         class="project-preview"
                       />
                     </div>
@@ -298,11 +345,31 @@
                     disabled
                     data-project="comingsoon"
                     aria-label="Coming soon project placeholder"
+                    data-i18n-aria-label="projectPanel.comingSoonLabel"
                   >
                     <div class="project-preview-frame">
                       <img
                         src="assets/images/projects/comingsoon.png"
-                        alt="Preview of comingsoon"
+                        alt="Preview of a coming project"
+                        data-i18n-alt="projectPanel.comingSoonAlt"
+                        class="project-preview"
+                      />
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="project-card"
+                    disabled
+                    data-project="comingsoon"
+                    aria-label="Coming soon project placeholder"
+                    data-i18n-aria-label="projectPanel.comingSoonLabel"
+                  >
+                    <div class="project-preview-frame">
+                      <img
+                        src="assets/images/projects/comingsoon.png"
+                        alt="Preview of a coming project"
+                        data-i18n-alt="projectPanel.comingSoonAlt"
                         class="project-preview"
                       />
                     </div>
@@ -312,7 +379,9 @@
 
               <button type="button" class="flip-back-btn" id="backToFrontBtn">
                 <span class="barcode-lines" aria-hidden="true"></span>
-                <span class="back-btn-text">FLIP BACK</span>
+                <span class="back-btn-text" data-i18n="back.flipBack">
+                  FLIP BACK
+                </span>
               </button>
             </div>
           </div>
@@ -326,22 +395,33 @@
         <img
           src="assets/images/portrait/magnus.png"
           alt="Portrait of Magnus Callenholm"
+          data-i18n-alt="about.portraitAlt"
           class="about-image"
         />
 
         <div class="about-text">
-          <h2>About me</h2>
+          <h2 data-i18n="about.title">About me</h2>
 
           <p>
-            Hi, I'm Magnus Callenholm, a
-            <span class="text-highlight">.NET developer</span> student with
-            previous experience working in IT as an application specialist.
+            <span data-i18n="about.paragraph1.before"
+              >Hi, I'm Magnus Callenholm, a </span
+            ><span class="text-highlight" data-i18n="about.paragraph1.highlight"
+              >.NET developer</span
+            ><span data-i18n="about.paragraph1.after">
+              student with previous experience working in IT as an application
+              specialist.</span
+            >
           </p>
 
           <p>
-            I enjoy building clean and
-            <span class="text-highlight">user-friendly</span> digital solutions
-            where design, functionality and problem-solving work together.
+            <span data-i18n="about.paragraph2.before"
+              >I enjoy building clean and </span
+            ><span class="text-highlight" data-i18n="about.paragraph2.highlight"
+              >user-friendly</span
+            ><span data-i18n="about.paragraph2.after">
+              digital solutions where design, functionality and problem-solving
+              work together.</span
+            >
           </p>
         </div>
       </div>
@@ -351,6 +431,7 @@
           type="button"
           class="section-back-btn section-back-secondary about-back-btn"
           id="aboutBackBtn"
+          data-i18n="common.backToPackage"
         >
           Back to package
         </button>
@@ -360,9 +441,9 @@
     <!-- SKILLS -->
     <section id="skills" class="skills-section">
       <div class="skills-card">
-        <h2>Skills</h2>
+        <h2 data-i18n="skills.title">Skills</h2>
 
-        <p class="skills-intro">
+        <p class="skills-intro" data-i18n="skills.intro">
           A selection of technologies and tools I use while learning and
           building projects.
         </p>
@@ -456,6 +537,7 @@
           type="button"
           class="section-back-btn section-back-secondary skills-back-btn"
           id="skillsBackBtn"
+          data-i18n="common.backToPackage"
         >
           Back to package
         </button>
@@ -465,16 +547,19 @@
     <!-- CV-TAB WORK and EDUCATION -->
     <section id="experience" class="experience-section">
       <div class="experience-card">
-        <h2>Education & Work Experience</h2>
+        <h2 data-i18n="experience.title">Education & Work Experience</h2>
 
-        <p class="experience-intro">
+        <p class="experience-intro" data-i18n="experience.intro">
           Here I present my education, recent work experience and the background
           that has shaped my interest in IT and development.
         </p>
 
-        <h3 class="experience-subtitle">Work Experience</h3>
+        <h3 class="experience-subtitle" data-i18n="experience.workTitle">
+          Work Experience
+        </h3>
 
         <div class="experience-list">
+          <!-- STADIUM -->
           <article class="experience-item">
             <div class="experience-header">
               <img
@@ -484,12 +569,23 @@
               />
 
               <div>
-                <p class="experience-role">Application Specialist</p>
-                <p class="experience-period">Dec 2021 - Oct 2025</p>
+                <p class="experience-role" data-i18n="experience.stadium.role">
+                  Application Specialist
+                </p>
+
+                <p
+                  class="experience-period"
+                  data-i18n="experience.stadium.period"
+                >
+                  Dec 2021 - Oct 2025
+                </p>
               </div>
             </div>
 
-            <p class="experience-description">
+            <p
+              class="experience-description"
+              data-i18n="experience.stadium.description"
+            >
               Worked with business-critical applications connected to Stadium's
               retail and digital business. Focused on supporting stable system
               operations, improving user experience and contributing to
@@ -497,20 +593,23 @@
             </p>
 
             <ul class="experience-points">
-              <li>
+              <li data-i18n="experience.stadium.point1">
                 Application responsibility for systems connected to business
                 processes
               </li>
-              <li>
+
+              <li data-i18n="experience.stadium.point2">
                 Collaboration with business stakeholders, IT teams and external
                 partners
               </li>
-              <li>
+
+              <li data-i18n="experience.stadium.point3">
                 Focus on system quality, operations and continuous improvement
               </li>
             </ul>
           </article>
 
+          <!-- FAST2 -->
           <article class="experience-item">
             <div class="experience-header">
               <img
@@ -520,12 +619,23 @@
               />
 
               <div>
-                <p class="experience-role">Application Consultant</p>
-                <p class="experience-period">Jan 2019 - Dec 2021</p>
+                <p class="experience-role" data-i18n="experience.fast2.role">
+                  Application Consultant
+                </p>
+
+                <p
+                  class="experience-period"
+                  data-i18n="experience.fast2.period"
+                >
+                  Jan 2019 - Dec 2021
+                </p>
               </div>
             </div>
 
-            <p class="experience-description">
+            <p
+              class="experience-description"
+              data-i18n="experience.fast2.description"
+            >
               Worked as an application consultant with focus on system support,
               customer needs and technical solutions. The role involved
               understanding business processes and helping users get value from
@@ -533,12 +643,21 @@
             </p>
 
             <ul class="experience-points">
-              <li>Customer and application support</li>
-              <li>Configuration, troubleshooting and system improvements</li>
-              <li>Close collaboration with users and technical teams</li>
+              <li data-i18n="experience.fast2.point1">
+                Customer and application support
+              </li>
+
+              <li data-i18n="experience.fast2.point2">
+                Configuration, troubleshooting and system improvements
+              </li>
+
+              <li data-i18n="experience.fast2.point3">
+                Close collaboration with users and technical teams
+              </li>
             </ul>
           </article>
 
+          <!-- SATS -->
           <article class="experience-item">
             <div class="experience-header">
               <img
@@ -548,12 +667,20 @@
               />
 
               <div>
-                <p class="experience-role">IT System Manager</p>
-                <p class="experience-period">Feb 2012 - Jan 2019</p>
+                <p class="experience-role" data-i18n="experience.sats.role">
+                  IT System Manager
+                </p>
+
+                <p class="experience-period" data-i18n="experience.sats.period">
+                  Feb 2012 - Jan 2019
+                </p>
               </div>
             </div>
 
-            <p class="experience-description">
+            <p
+              class="experience-description"
+              data-i18n="experience.sats.description"
+            >
               Held several IT-related roles over time, working with systems,
               projects and business support in a fast-moving organization. The
               experience gave me a strong understanding of how technology
@@ -561,16 +688,25 @@
             </p>
 
             <ul class="experience-points">
-              <li>IT system responsibility and project coordination</li>
-              <li>Support for internal users and business needs</li>
-              <li>
+              <li data-i18n="experience.sats.point1">
+                IT system responsibility and project coordination
+              </li>
+
+              <li data-i18n="experience.sats.point2">
+                Support for internal users and business needs
+              </li>
+
+              <li data-i18n="experience.sats.point3">
                 Experience from both operational IT and project-based work
               </li>
             </ul>
           </article>
         </div>
 
-        <h3 class="experience-subtitle">Education</h3>
+        <!-- EDUCATION -->
+        <h3 class="experience-subtitle" data-i18n="experience.educationTitle">
+          Education
+        </h3>
 
         <div class="education-list">
           <article class="experience-item education-item">
@@ -582,21 +718,41 @@
               />
 
               <div>
-                <p class="experience-role">Higher Vocational Education</p>
-                <p class="experience-period">Jan 2026 - Dec 2027</p>
+                <p
+                  class="experience-role"
+                  data-i18n="experience.education.role"
+                >
+                  Higher Vocational Education
+                </p>
+
+                <p
+                  class="experience-period"
+                  data-i18n="experience.education.period"
+                >
+                  Jan 2026 - Dec 2027
+                </p>
               </div>
             </div>
 
-            <p class="experience-description">
+            <p
+              class="experience-description"
+              data-i18n="experience.education.description"
+            >
               Ongoing .NET Developer education focused on C#, .NET, web
               development, databases, SQL, agile methods and modern system
               development.
             </p>
 
             <ul class="experience-points">
-              <li>C#, .NET and object-oriented programming</li>
-              <li>HTML, CSS, JavaScript and responsive web development</li>
-              <li>
+              <li data-i18n="experience.education.point1">
+                C#, .NET and object-oriented programming
+              </li>
+
+              <li data-i18n="experience.education.point2">
+                HTML, CSS, JavaScript and responsive web development
+              </li>
+
+              <li data-i18n="experience.education.point3">
                 Databases, SQL, Git, Azure DevOps and project-based learning
               </li>
             </ul>
@@ -609,6 +765,7 @@
           type="button"
           class="section-back-btn section-back-primary experience-back-cv-btn"
           id="experienceBackCvBtn"
+          data-i18n="experience.backToCv"
         >
           ← Back to CV menu
         </button>
@@ -617,6 +774,7 @@
           type="button"
           class="section-back-btn section-back-secondary experience-back-package-btn"
           id="experienceBackPackageBtn"
+          data-i18n="common.backToPackage"
         >
           Back to package
         </button>
@@ -626,9 +784,10 @@
     <!-- CV-TAB REFERENCES -->
     <section id="references" class="references-section">
       <div class="references-card">
-        <h2>References</h2>
+        <h2 data-i18n="references.title">References</h2>
 
         <div class="references-list">
+          <!-- ANNA -->
           <article class="reference-card">
             <div class="reference-header">
               <img
@@ -639,16 +798,20 @@
 
               <div>
                 <h3>Anna Åberg</h3>
-                <p>Product Management & UX Manager at Stadium</p>
+
+                <p data-i18n="references.anna.role">
+                  Product Management & UX Manager at Stadium
+                </p>
               </div>
             </div>
 
-            <p class="reference-quote">
+            <p class="reference-quote" data-i18n="references.anna.quote">
               “En kollega som kombinerar stort personligt ansvar med ett varmt
               och nyfiket förhållningssätt.”
             </p>
           </article>
 
+          <!-- DAVID -->
           <article class="reference-card">
             <div class="reference-header">
               <img
@@ -659,11 +822,14 @@
 
               <div>
                 <h3>David Näslund</h3>
-                <p>Interim Management | CEO</p>
+
+                <p data-i18n="references.david.role">
+                  Interim Management | CEO
+                </p>
               </div>
             </div>
 
-            <p class="reference-quote">
+            <p class="reference-quote" data-i18n="references.david.quote">
               “I had opportunity to work with Magnus for almost 4 years at SATS.
               He always delivered IT Projects on a timely and effective basis.
               Magnus had a constant comercial and customer mindset in all
@@ -672,6 +838,7 @@
             </p>
           </article>
 
+          <!-- ALEX -->
           <article class="reference-card">
             <div class="reference-header">
               <img
@@ -682,11 +849,12 @@
 
               <div>
                 <h3>Alex Persson</h3>
-                <p>Interim CFO Support</p>
+
+                <p data-i18n="references.alex.role">Interim CFO Support</p>
               </div>
             </div>
 
-            <p class="reference-quote">
+            <p class="reference-quote" data-i18n="references.alex.quote">
               “Magnus visade hög IT-kompetens, analytiskt tänkande och en stark
               vilja att prestera det lilla extra för att teamet skulle lyckas.
               Jag rekommenderar varmt Magnus som en kunnig IT-specialist och
@@ -701,6 +869,7 @@
           type="button"
           class="section-back-btn section-back-primary references-back-cv-btn"
           id="referencesBackCvBtn"
+          data-i18n="references.backToCv"
         >
           ← Back to CV
         </button>
@@ -709,6 +878,7 @@
           type="button"
           class="section-back-btn section-back-secondary references-back-package-btn"
           id="referencesBackPackageBtn"
+          data-i18n="common.backToPackage"
         >
           Back to package
         </button>
@@ -718,15 +888,16 @@
     <!-- PROJECTS CONTENT -->
     <section id="snake-project" class="project-details-section">
       <div class="project-details-card">
-        <h2>Snake Game</h2>
+        <h2 data-i18n="snake.title">Snake Game</h2>
 
         <img
           src="assets/images/projects/snake-full.png"
           alt="Full preview of Snake Game"
+          data-i18n-alt="snake.imageAlt"
           class="project-details-image"
         />
 
-        <p class="project-details-description">
+        <p class="project-details-description" data-i18n="snake.description">
           A JavaScript-focused school project where I worked with an existing
           Snake game codebase. The project focused on understanding, adapting
           and extending the game logic, while also improving the visual styling
@@ -737,20 +908,27 @@
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
-          <li>Game Logic</li>
+          <li data-i18n="snake.gameLogic">Game Logic</li>
           <li>DOM</li>
         </ul>
 
         <div class="project-links">
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >Live demo coming soon</a
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="projects.liveDemoComingSoon"
           >
+            Live demo coming soon
+          </a>
+
           <a
             href="https://github.com/magnuscallenholm/Snake-game.git"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub</a
           >
+            GitHub
+          </a>
         </div>
       </div>
 
@@ -758,6 +936,7 @@
         <button
           type="button"
           class="section-back-btn section-back-primary project-back-projects-btn"
+          data-i18n="projects.backToProjects"
         >
           ← Back to projects
         </button>
@@ -765,6 +944,7 @@
         <button
           type="button"
           class="section-back-btn section-back-secondary project-back-package-btn"
+          data-i18n="common.backToPackage"
         >
           Back to package
         </button>
@@ -773,15 +953,19 @@
 
     <section id="butterfly-project" class="project-details-section">
       <div class="project-details-card">
-        <h2>Fjärilarnas Värld</h2>
+        <h2 data-i18n="butterfly.title">Fjärilarnas Värld</h2>
 
         <img
           src="assets/images/projects/butterfly-full.png"
           alt="Full preview of Fjärilarnas Värld website"
+          data-i18n-alt="butterfly.imageAlt"
           class="project-details-image"
         />
 
-        <p class="project-details-description">
+        <p
+          class="project-details-description"
+          data-i18n="butterfly.description"
+        >
           A responsive school project focused on building a fictional zoo
           website with HTML and CSS. The page includes structured content
           sections, animal presentation, a newsletter form and a clean,
@@ -791,22 +975,29 @@
         <ul class="project-tech-list">
           <li>HTML</li>
           <li>CSS</li>
-          <li>Responsive design</li>
-          <li>Forms</li>
-          <li>Tables</li>
+          <li data-i18n="butterfly.responsiveDesign">Responsive design</li>
+          <li data-i18n="butterfly.forms">Forms</li>
+          <li data-i18n="butterfly.tables">Tables</li>
           <li>Google Maps</li>
         </ul>
 
         <div class="project-links">
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            >Live demo coming soon</a
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="projects.liveDemoComingSoon"
           >
+            Live demo coming soon
+          </a>
+
           <a
             href="https://github.com/magnuscallenholm/butterfly.git"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub</a
           >
+            GitHub
+          </a>
         </div>
       </div>
 
@@ -814,6 +1005,7 @@
         <button
           type="button"
           class="section-back-btn section-back-primary project-back-projects-btn"
+          data-i18n="projects.backToProjects"
         >
           ← Back to projects
         </button>
@@ -821,6 +1013,7 @@
         <button
           type="button"
           class="section-back-btn section-back-secondary project-back-package-btn"
+          data-i18n="common.backToPackage"
         >
           Back to package
         </button>
@@ -829,7 +1022,7 @@
 
     <!-- FORM -->
     <section id="contact" class="contact-section">
-      <h2>GET IN TOUCH</h2>
+      <h2 data-i18n="contact.title">GET IN TOUCH</h2>
 
       <form
         action="https://formsubmit.co/d4670de4ac5bb5f6b06e3d726c5de3d2"
@@ -840,6 +1033,7 @@
         <!-- Localhost med Live Server -->
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
+
         <input
           type="hidden"
           name="_next"
@@ -847,7 +1041,10 @@
         />
 
         <!-- Fullname -->
-        <label for="fullName" class="sr-only">Name:</label>
+        <label for="fullName" class="sr-only" data-i18n="contact.nameLabel">
+          Name:
+        </label>
+
         <input
           type="text"
           id="fullName"
@@ -857,16 +1054,15 @@
           maxlength="50"
           pattern="[A-Za-zÅÄÖåäö\- ]+"
           placeholder="Your Name"
+          data-i18n-placeholder="contact.namePlaceholder"
           autocomplete="name"
         />
 
         <!-- E-post -->
-        <!-- Pattern kontrollerar:
-          minst ett tecken före @
-          minst ett tecken efter @
-          minst en punkt i slutet
-          Dokumentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern -->
-        <label for="email" class="sr-only">Email:</label>
+        <label for="email" class="sr-only" data-i18n="contact.emailLabel">
+          Email:
+        </label>
+
         <input
           type="email"
           id="email"
@@ -874,11 +1070,16 @@
           required
           pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
           title="Please enter a valid email address, for example name@example.com"
+          data-i18n-title="contact.emailTitle"
           placeholder="Your Email"
+          data-i18n-placeholder="contact.emailPlaceholder"
           autocomplete="email"
         />
 
-        <label for="recipient" class="sr-only">To:</label>
+        <label for="recipient" class="sr-only" data-i18n="contact.toLabel">
+          To:
+        </label>
+
         <input
           type="email"
           id="recipient"
@@ -887,7 +1088,10 @@
           readonly
         />
 
-        <label for="subject" class="sr-only">Subject:</label>
+        <label for="subject" class="sr-only" data-i18n="contact.subjectLabel">
+          Subject:
+        </label>
+
         <input
           type="text"
           id="subject"
@@ -896,10 +1100,14 @@
           minlength="3"
           maxlength="80"
           placeholder="Your Subject"
+          data-i18n-placeholder="contact.subjectPlaceholder"
         />
 
         <!-- MESSAGE -->
-        <label for="message" class="sr-only">Your Message</label>
+        <label for="message" class="sr-only" data-i18n="contact.messageLabel">
+          Your Message
+        </label>
+
         <textarea
           id="message"
           name="Message"
@@ -909,15 +1117,20 @@
           minlength="10"
           maxlength="1000"
           placeholder="Your Message"
+          data-i18n-placeholder="contact.messagePlaceholder"
         ></textarea>
-        <button type="submit">Send Message</button>
+
+        <button type="submit" data-i18n="contact.submit">Send Message</button>
+
         <div class="form-message" id="formMessage" aria-live="polite"></div>
       </form>
+
       <div class="contact-actions section-actions">
         <button
           type="button"
           class="section-back-btn section-back-primary contact-back-btn"
           id="contactBackBtn"
+          data-i18n="common.backToPackage"
         >
           Back to package
         </button>
@@ -989,5 +1202,6 @@
     <script src="js/main.js"></script>
     <script src="js/form.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/language.js"></script>
   </body>
 </html>
