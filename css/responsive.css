@@ -1216,25 +1216,38 @@
   LAPTOP HEIGHT FIX
 =========================*/
 
-@media (min-width: 900px) and (max-height: 800px) {
+@media (min-width: 900px) and (max-height: 850px) {
   body.about-mode .about-section {
     top: 4.8rem;
     bottom: 5rem;
   }
 
   body.about-mode .about-card {
-    gap: 0.6rem;
-    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.25rem;
+    padding: 0.8rem 0.4rem 0.4rem;
   }
 
-  body.about-mode .about-image,
-  body.about-mode .about-image img {
-    max-width: min(100%, 26rem);
-    max-height: 38vh;
+  body.about-mode .about-image {
+    width: auto;
+    height: auto;
+
+    max-width: min(100%, 23rem);
+    max-height: 30vh;
+
+    margin: 0 auto;
+    object-fit: contain;
+    flex-shrink: 1;
   }
 
   body.about-mode .about-text {
-    padding: 0.8rem 1.2rem 1rem;
+    width: 100%;
+    padding: 0.35rem 1.2rem 0.6rem;
+    flex-shrink: 0;
   }
 
   body.about-mode .about-text h2 {
@@ -1243,8 +1256,13 @@
   }
 
   body.about-mode .about-text p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    margin-bottom: 0.65rem;
+  }
+
+  body.about-mode .about-text p:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -1413,5 +1431,58 @@
     min-height: 2.1rem;
     padding: 0.45rem 0.8rem;
     font-size: 0.72rem;
+  }
+
+  /*========================
+  NARROW DESKTOP
+=========================*/
+
+  @media (min-width: 900px) and (max-width: 1199px) {
+    html {
+      font-size: 100%;
+    }
+
+    .portfolio-app {
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+
+      padding-top: 4.5rem;
+      padding-right: clamp(1.5rem, 4vw, 3rem);
+      padding-bottom: 5rem;
+      padding-left: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .package-scene {
+      width: clamp(320px, 36vw, 390px);
+    }
+
+    .info-content h1 {
+      font-size: clamp(3.2rem, 7vw, 4.5rem);
+    }
+
+    .info-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+
+  /*========================
+  LOW HEIGHT DESKTOP
+=========================*/
+
+  @media (min-width: 900px) and (max-height: 850px) {
+    .portfolio-app {
+      padding-top: 3.5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .package-scene {
+      width: clamp(300px, min(36vw, calc(66dvh - 6rem)), 460px);
+    }
+
+    .intro-panel,
+    .package-panel {
+      transform: translateY(-0.5rem);
+    }
   }
 }
