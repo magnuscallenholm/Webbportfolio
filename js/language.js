@@ -139,6 +139,7 @@
       "butterfly.tables": "Tables",
 
       "projects.liveDemoComingSoon": "Live demo coming soon",
+      "projects.liveDemo": "Live demo",
       "projects.backToProjects": "← Back to projects",
 
       "contact.title": "GET IN TOUCH",
@@ -302,6 +303,7 @@
       "butterfly.tables": "Tabeller",
 
       "projects.liveDemoComingSoon": "Demo kommer snart",
+      "projects.liveDemo": "Visa demo",
       "projects.backToProjects": "← Tillbaka till projekt",
 
       "contact.title": "KONTAKTA MIG",
