@@ -7,6 +7,9 @@
       name="description"
       content="Thank you page for Magnus Callenholm's interactive portfolio contact form."
     />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,10 +26,11 @@
   <body class="thanks-body">
     <main class="thanks-page">
       <div class="thanks-card">
-        <h1>Thank you!</h1>
-        <p>Your message has been sent successfully.</p>
+        <h1 id="thanksTitle">Thank you!</h1>
 
-        <a class="thanks-button" href="index.html#package">
+        <p id="thanksMessage">Your message has been sent successfully.</p>
+
+        <a class="thanks-button" id="thanksButton" href="index.html#home">
           Back to portfolio
         </a>
       </div>
@@ -83,5 +87,6 @@
         /></a>
       </div>
     </footer>
+    <script src="js/thanks.js"></script>
   </body>
 </html>
