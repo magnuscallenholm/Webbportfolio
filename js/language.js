@@ -324,6 +324,17 @@
     },
   };
 
+  function updateCvLink(language) {
+    const cvLink = document.querySelector("#downloadCv");
+
+    const cvFiles = {
+      en: "assets/documents/Magnus_Callenholm_CV_ENG.pdf",
+      sv: "assets/documents/Magnus_Callenholm_CV_SWE.pdf",
+    };
+
+    cvLink.href = cvFiles[language] || cvFiles.en;
+  }
+
   const audioSources = {
     en: "assets/sounds/engelska.mp3",
     sv: "assets/sounds/svenska.mp3",
@@ -385,6 +396,7 @@
     });
 
     document.documentElement.lang = language;
+    updateCvLink(language);
 
     languageButtons.forEach((button) => {
       const isActive = button.dataset.language === language;
