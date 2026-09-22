@@ -6,7 +6,7 @@ The portfolio is designed as an interactive action figure package where the user
 
 ## Preview
 
-![Portfolio mockup](assets/images/mockup/mange-mockup.png)
+![Portfolio mockup](assets/images/mockup/mange-mockup1.png)
 
 The portfolio is responsive and designed to work on both mobile and desktop devices.
 
